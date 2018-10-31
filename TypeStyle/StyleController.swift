@@ -5,6 +5,7 @@ class StyleController: UIViewController {
 
   let tableView = UITableView()
   let inputField = InputField()
+  let inputFieldPadding: CGFloat = 10
 
   let input = "Hello World"
 
@@ -21,20 +22,21 @@ class StyleController: UIViewController {
     view.addSubview(inputField)
 
     inputField.snp.makeConstraints { make in
-      make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
-      make.left.equalToSuperview()
-      make.right.equalToSuperview()
+      make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(inputFieldPadding)
+      make.left.equalToSuperview().offset(inputFieldPadding)
+      make.right.equalToSuperview().offset(-inputFieldPadding)
     }
   }
 
   func setUpTableView() {
     tableView.dataSource = self
     tableView.backgroundColor = .appBackground
+    tableView.separatorStyle = .none
 
     view.addSubview(tableView)
 
     tableView.snp.makeConstraints { make in
-      make.top.equalTo(inputField.snp.bottom)
+      make.top.equalTo(inputField.snp.bottom).offset(inputFieldPadding)
       make.left.equalToSuperview()
       make.right.equalToSuperview()
       make.bottom.equalToSuperview()
@@ -52,8 +54,7 @@ extension StyleController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: StyleCell.identifier) as! StyleCell
 
-    cell.textLabel?.text = StyleManager.shared.styledText(forText: input, rowIndex: indexPath.row)
-    
+    cell.outputLabel.text = StyleManager.shared.styledText(forText: input, rowIndex: indexPath.row)
 
     return cell
   }

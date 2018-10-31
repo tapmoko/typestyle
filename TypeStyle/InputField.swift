@@ -6,6 +6,9 @@ class InputField: UITextField {
     super.init(frame: .zero)
 
     keyboardAppearance = .dark
+    textColor = .appText
+    font = UIFont.preferredFont(forTextStyle: .title1)
+    tintColor = .appText
   }
 
   required init?(coder aDecoder: NSCoder) {
