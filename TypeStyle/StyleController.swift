@@ -1,6 +1,6 @@
 import UIKit
 
-class ViewController: UITableViewController {
+class StyleController: UITableViewController {
 
   let input = "Hello World"
 
@@ -13,7 +13,7 @@ class ViewController: UITableViewController {
 }
 
 // MARK: UITableView Data Source
-extension ViewController {
+extension StyleController {
 
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return StyleManager.shared.styles.count
