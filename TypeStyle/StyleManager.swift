@@ -15,12 +15,10 @@ class StyleManager {
   func styledText(forText text: String, rowIndex: Int) -> String {
     let newStyle = styles[rowIndex]
 
-    let newText: String = String(text.map {
-      if let index = base.firstIndex(of: $0) {
-        return newStyle[index]
-      } else {
-        return $0
-      }
+    let convert = Dictionary(uniqueKeysWithValues: zip(base, newStyle))
+
+    let newText = String(text.map {
+      convert[$0] ?? $0
     })
 
     return newText
