@@ -15,6 +15,7 @@
 		B68C6EAB218A3493007CB17A /* StyleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68C6EAA218A3493007CB17A /* StyleManager.swift */; };
 		B68C6EAD218A365A007CB17A /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68C6EAC218A365A007CB17A /* UIColor+Extension.swift */; };
 		B68C6EAF218A3E63007CB17A /* StyleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68C6EAE218A3E63007CB17A /* StyleCell.swift */; };
+		B69D280A218A407C00A298A9 /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69D2809218A407C00A298A9 /* InputField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		B68C6EAA218A3493007CB17A /* StyleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleManager.swift; sourceTree = "<group>"; };
 		B68C6EAC218A365A007CB17A /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		B68C6EAE218A3E63007CB17A /* StyleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleCell.swift; sourceTree = "<group>"; };
+		B69D2809218A407C00A298A9 /* InputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				B66B54882187C4750038C84A /* AppDelegate.swift */,
 				B68C6EAE218A3E63007CB17A /* StyleCell.swift */,
 				B66B548A2187C4750038C84A /* StyleController.swift */,
+				B69D2809218A407C00A298A9 /* InputField.swift */,
 				B68C6EAC218A365A007CB17A /* UIColor+Extension.swift */,
 				B68C6EAA218A3493007CB17A /* StyleManager.swift */,
 				B66B548F2187C4770038C84A /* Assets.xcassets */,
@@ -210,6 +213,7 @@
 				B68C6EAB218A3493007CB17A /* StyleManager.swift in Sources */,
 				B68C6EAD218A365A007CB17A /* UIColor+Extension.swift in Sources */,
 				B68C6EAF218A3E63007CB17A /* StyleCell.swift in Sources */,
+				B69D280A218A407C00A298A9 /* InputField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -4,7 +4,7 @@ import SnapKit
 class StyleController: UIViewController {
 
   let tableView = UITableView()
-  let inputField = UITextField()
+  let inputField = InputField()
 
   let input = "Hello World"
 
