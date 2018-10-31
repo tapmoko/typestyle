@@ -9,7 +9,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     window = UIWindow(frame: UIScreen.main.bounds)
     window?.rootViewController = StyleController()
     window?.makeKeyAndVisible()
-    window?.backgroundColor = .purple
+    window?.backgroundColor = .appBackground
 
     return true
   }
