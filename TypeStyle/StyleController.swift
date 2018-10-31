@@ -7,7 +7,7 @@ class StyleController: UIViewController {
   let inputField = InputField()
   let inputFieldPadding: CGFloat = 10
 
-  let input = "Hello World"
+  var input = ""
 
   var isInitialAppearance = true
 
@@ -21,6 +21,8 @@ class StyleController: UIViewController {
   }
 
   func setUpInputField() {
+    inputField.addTarget(self, action: #selector(inputFieldDidChange), for: .editingChanged)
+
     view.addSubview(inputField)
 
     inputField.snp.makeConstraints { make in
@@ -52,6 +54,11 @@ class StyleController: UIViewController {
 
     inputField.becomeFirstResponder()
     isInitialAppearance = false
+  }
+
+  @objc func inputFieldDidChange() {
+    input = inputField.text ?? ""
+    tableView.reloadData()
   }
 
 }
