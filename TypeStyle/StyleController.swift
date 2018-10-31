@@ -9,6 +9,8 @@ class StyleController: UIViewController {
 
   let input = "Hello World"
 
+  var isInitialAppearance = true
+
   override func viewDidLoad() {
     super.viewDidLoad()
 
@@ -41,6 +43,15 @@ class StyleController: UIViewController {
       make.right.equalToSuperview()
       make.bottom.equalToSuperview()
     }
+  }
+
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+
+    guard isInitialAppearance else { return }
+
+    inputField.becomeFirstResponder()
+    isInitialAppearance = false
   }
 
 }
