@@ -9,6 +9,10 @@ class StyleCell: UITableViewCell {
 
     textLabel?.textColor = .appText
     backgroundColor = .appBackground
+
+    let selectedView = UIView()
+    selectedView.backgroundColor = .appSelected
+    selectedBackgroundView = selectedView
   }
 
   required init?(coder aDecoder: NSCoder) {
