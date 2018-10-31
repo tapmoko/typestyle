@@ -1,25 +1,39 @@
 import UIKit
+import SnapKit
 
-class StyleController: UITableViewController {
+class StyleController: UIViewController {
+
+  let tableView = UITableView()
 
   let input = "Hello World"
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    setUpTableView()
+  }
+
+  func setUpTableView() {
+    tableView.dataSource = self
+
     tableView.backgroundColor = .appBackground
+
+    view.addSubview(tableView)
+
+    tableView.snp.makeConstraints { make in
+      make.edges.equalToSuperview()
+    }
   }
 
 }
 
-// MARK: UITableView Data Source
-extension StyleController {
+extension StyleController: UITableViewDataSource {
 
-  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return StyleManager.shared.styles.count
   }
 
-  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = UITableViewCell()
 
     cell.textLabel?.text = StyleManager.shared.styledText(forText: input, rowIndex: indexPath.row)
