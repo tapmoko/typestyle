@@ -11,6 +11,8 @@ class StyleController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    tableView.register(StyleCell.self, forCellReuseIdentifier: StyleCell.identifier)
+
     setUpInputField()
     setUpTableView()
   }
@@ -48,11 +50,10 @@ extension StyleController: UITableViewDataSource {
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = UITableViewCell()
+    let cell = tableView.dequeueReusableCell(withIdentifier: StyleCell.identifier) as! StyleCell
 
     cell.textLabel?.text = StyleManager.shared.styledText(forText: input, rowIndex: indexPath.row)
-    cell.textLabel?.textColor = .appText
-    cell.backgroundColor = .appBackground
+    
 
     return cell
   }

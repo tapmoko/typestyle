@@ -14,6 +14,7 @@
 		B66B54932187C4770038C84A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B66B54912187C4770038C84A /* LaunchScreen.storyboard */; };
 		B68C6EAB218A3493007CB17A /* StyleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68C6EAA218A3493007CB17A /* StyleManager.swift */; };
 		B68C6EAD218A365A007CB17A /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68C6EAC218A365A007CB17A /* UIColor+Extension.swift */; };
+		B68C6EAF218A3E63007CB17A /* StyleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68C6EAE218A3E63007CB17A /* StyleCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		B66B54942187C4770038C84A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B68C6EAA218A3493007CB17A /* StyleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleManager.swift; sourceTree = "<group>"; };
 		B68C6EAC218A365A007CB17A /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		B68C6EAE218A3E63007CB17A /* StyleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				B66B54882187C4750038C84A /* AppDelegate.swift */,
+				B68C6EAE218A3E63007CB17A /* StyleCell.swift */,
 				B66B548A2187C4750038C84A /* StyleController.swift */,
 				B68C6EAC218A365A007CB17A /* UIColor+Extension.swift */,
 				B68C6EAA218A3493007CB17A /* StyleManager.swift */,
@@ -206,6 +209,7 @@
 				B66B54892187C4750038C84A /* AppDelegate.swift in Sources */,
 				B68C6EAB218A3493007CB17A /* StyleManager.swift in Sources */,
 				B68C6EAD218A365A007CB17A /* UIColor+Extension.swift in Sources */,
+				B68C6EAF218A3E63007CB17A /* StyleCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
