@@ -48,7 +48,7 @@ class StyleController: UIViewController {
       make.top.equalTo(inputContainerView.snp.bottom)
       make.left.equalTo(view.safeAreaLayoutGuide.snp.left)
       make.right.equalTo(view.safeAreaLayoutGuide.snp.right)
-      make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+      make.bottom.equalToSuperview()
     }
   }
 
