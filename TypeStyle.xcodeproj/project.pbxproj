@@ -15,7 +15,7 @@
 		B68C6EAB218A3493007CB17A /* StyleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68C6EAA218A3493007CB17A /* StyleManager.swift */; };
 		B68C6EAD218A365A007CB17A /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68C6EAC218A365A007CB17A /* UIColor+Extension.swift */; };
 		B68C6EAF218A3E63007CB17A /* StyleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68C6EAE218A3E63007CB17A /* StyleCell.swift */; };
-		B69D280A218A407C00A298A9 /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69D2809218A407C00A298A9 /* InputField.swift */; };
+		B69D280A218A407C00A298A9 /* InputTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69D2809218A407C00A298A9 /* InputTextView.swift */; };
 		B69D280C218A780800A298A9 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69D280B218A780800A298A9 /* Style.swift */; };
 /* End PBXBuildFile section */
 
@@ -32,7 +32,7 @@
 		B68C6EAA218A3493007CB17A /* StyleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleManager.swift; sourceTree = "<group>"; };
 		B68C6EAC218A365A007CB17A /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		B68C6EAE218A3E63007CB17A /* StyleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleCell.swift; sourceTree = "<group>"; };
-		B69D2809218A407C00A298A9 /* InputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputField.swift; sourceTree = "<group>"; };
+		B69D2809218A407C00A298A9 /* InputTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextView.swift; sourceTree = "<group>"; };
 		B69D280B218A780800A298A9 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,7 +110,7 @@
 		B69D280E218A7A4100A298A9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B69D2809218A407C00A298A9 /* InputField.swift */,
+				B69D2809218A407C00A298A9 /* InputTextView.swift */,
 				B68C6EAE218A3E63007CB17A /* StyleCell.swift */,
 			);
 			path = Views;
@@ -241,7 +241,7 @@
 				B68C6EAD218A365A007CB17A /* UIColor+Extension.swift in Sources */,
 				B68C6EAF218A3E63007CB17A /* StyleCell.swift in Sources */,
 				B69D280C218A780800A298A9 /* Style.swift in Sources */,
-				B69D280A218A407C00A298A9 /* InputField.swift in Sources */,
+				B69D280A218A407C00A298A9 /* InputTextView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

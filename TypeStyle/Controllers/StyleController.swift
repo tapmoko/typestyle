@@ -4,8 +4,8 @@ import SnapKit
 class StyleController: UIViewController {
 
   let tableView = UITableView()
-  let inputField = InputField()
-  let inputFieldPadding: CGFloat = 10
+  let inputTextView = InputTextView()
+  let inputTextViewPadding: CGFloat = 10
 
   var input = ""
 
@@ -16,19 +16,19 @@ class StyleController: UIViewController {
 
     tableView.register(StyleCell.self, forCellReuseIdentifier: StyleCell.identifier)
 
-    setUpInputField()
+    setUpInputTextView()
     setUpTableView()
   }
 
-  func setUpInputField() {
-    inputField.addTarget(self, action: #selector(inputFieldDidChange), for: .editingChanged)
+  func setUpInputTextView() {
+    inputTextView.delegate = self
 
-    view.addSubview(inputField)
+    view.addSubview(inputTextView)
 
-    inputField.snp.makeConstraints { make in
-      make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(inputFieldPadding)
-      make.left.equalToSuperview().offset(inputFieldPadding)
-      make.right.equalToSuperview().offset(-inputFieldPadding)
+    inputTextView.snp.makeConstraints { make in
+      make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(inputTextViewPadding)
+      make.left.equalToSuperview().offset(inputTextViewPadding)
+      make.right.equalToSuperview().offset(-inputTextViewPadding)
     }
   }
 
@@ -41,7 +41,7 @@ class StyleController: UIViewController {
     view.addSubview(tableView)
 
     tableView.snp.makeConstraints { make in
-      make.top.equalTo(inputField.snp.bottom).offset(inputFieldPadding)
+      make.top.equalTo(inputTextView.snp.bottom).offset(inputTextViewPadding)
       make.left.equalToSuperview()
       make.right.equalToSuperview()
       make.bottom.equalToSuperview()
@@ -53,13 +53,8 @@ class StyleController: UIViewController {
 
     guard isInitialAppearance else { return }
 
-    inputField.becomeFirstResponder()
+    inputTextView.becomeFirstResponder()
     isInitialAppearance = false
-  }
-
-  @objc func inputFieldDidChange() {
-    input = inputField.text ?? ""
-    tableView.reloadData()
   }
 
 }
@@ -83,7 +78,7 @@ extension StyleController: UITableViewDataSource {
 extension StyleController: UITableViewDelegate {
 
   func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-    inputField.resignFirstResponder()
+    inputTextView.resignFirstResponder()
   }
 
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -97,6 +92,15 @@ extension StyleController: UITableViewDelegate {
                                             style: .default,
                                             handler: nil))
     present(alertController, animated: true, completion: nil)
+  }
+
+}
+
+extension StyleController: UITextViewDelegate {
+
+  func textViewDidChange(_ textView: UITextView) {
+    input = inputTextView.text ?? ""
+    tableView.reloadData()
   }
 
 }
