@@ -75,6 +75,7 @@ class StyleController: UIViewController {
   @objc func didTapClearButton() {
     inputContainerView.inputTextView.text = ""
     refreshUI()
+    inputContainerView.inputTextView.becomeFirstResponder()
   }
 
   func refreshUI() {
@@ -88,6 +89,7 @@ class StyleController: UIViewController {
 extension StyleController: UITableViewDataSource {
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    if input.isEmpty { return 0 } // Don't show output cells if input is empty
     return StyleManager.shared.styles.count
   }
 
