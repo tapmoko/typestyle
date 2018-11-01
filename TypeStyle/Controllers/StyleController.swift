@@ -34,6 +34,7 @@ class StyleController: UIViewController {
 
   func setUpTableView() {
     tableView.dataSource = self
+    tableView.delegate = self
     tableView.backgroundColor = .appBackground
     tableView.separatorStyle = .none
 
@@ -75,6 +76,14 @@ extension StyleController: UITableViewDataSource {
     cell.outputLabel.text = StyleManager.shared.styledText(forText: input, rowIndex: indexPath.row)
 
     return cell
+  }
+
+}
+
+extension StyleController: UITableViewDelegate {
+
+  func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+    inputField.resignFirstResponder()
   }
 
 }
