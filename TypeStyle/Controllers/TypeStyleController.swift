@@ -7,9 +7,12 @@ class TypeStyleController: UIViewController {
   var isInitialAppearance = true
   let feedbackGenerator = UINotificationFeedbackGenerator()
 
-  let tableView = UITableView()
   let inputContainerView = InputContainerView()
+  let tableView = UITableView()
+  let modeSegmentedControl = UISegmentedControl(items: ["Styles", "Decorations"])
   let copiedView = CopiedView()
+
+  let generalMargin: CGFloat = 15
 
   var input = ""
 
@@ -19,6 +22,7 @@ class TypeStyleController: UIViewController {
     tableView.register(StyleCell.self, forCellReuseIdentifier: StyleCell.identifier)
 
     setUpInputContainerView()
+    setUpModeSegmentedControl()
     setUpTableView()
     setUpCopiedView()
   }
@@ -36,6 +40,19 @@ class TypeStyleController: UIViewController {
     }
   }
 
+  func setUpModeSegmentedControl() {
+    modeSegmentedControl.tintColor = .appText
+    modeSegmentedControl.selectedSegmentIndex = 0
+
+    view.addSubview(modeSegmentedControl)
+
+    modeSegmentedControl.snp.makeConstraints { make in
+      make.left.equalTo(view.safeAreaLayoutGuide.snp.left).offset(generalMargin)
+      make.right.equalTo(view.safeAreaLayoutGuide.snp.right).offset(-generalMargin)
+      make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-generalMargin)
+    }
+  }
+
   func setUpTableView() {
     tableView.dataSource = self
     tableView.delegate = self
@@ -48,7 +65,7 @@ class TypeStyleController: UIViewController {
       make.top.equalTo(inputContainerView.snp.bottom)
       make.left.equalTo(view.safeAreaLayoutGuide.snp.left)
       make.right.equalTo(view.safeAreaLayoutGuide.snp.right)
-      make.bottom.equalToSuperview()
+      make.bottom.equalTo(modeSegmentedControl.snp.top).offset(-generalMargin)
     }
   }
 
