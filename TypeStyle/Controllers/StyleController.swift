@@ -86,4 +86,17 @@ extension StyleController: UITableViewDelegate {
     inputField.resignFirstResponder()
   }
 
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let selectedString = StyleManager.shared.styledText(forText: input, rowIndex: indexPath.row)
+    UIPasteboard.general.string = selectedString
+
+    let alertController = UIAlertController(title: "Copied",
+                                            message: selectedString,
+                                            preferredStyle: .alert)
+    alertController.addAction(UIAlertAction(title: "OK",
+                                            style: .default,
+                                            handler: nil))
+    present(alertController, animated: true, completion: nil)
+  }
+
 }
