@@ -3,17 +3,14 @@ import SnapKit
 
 class StyleController: UIViewController {
 
-  override var preferredStatusBarStyle: UIStatusBarStyle {
-    return .lightContent
-  }
+  override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
+  var isInitialAppearance = true
 
   let tableView = UITableView()
   let inputTextView = InputTextView()
-  let inputTextViewPadding: CGFloat = 10
+  let inputTextViewMargin: CGFloat = 10
 
   var input = ""
-
-  var isInitialAppearance = true
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -30,9 +27,9 @@ class StyleController: UIViewController {
     view.addSubview(inputTextView)
 
     inputTextView.snp.makeConstraints { make in
-      make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(inputTextViewPadding)
-      make.left.equalToSuperview().offset(inputTextViewPadding)
-      make.right.equalToSuperview().offset(-inputTextViewPadding)
+      make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(inputTextViewMargin)
+      make.left.equalToSuperview().offset(inputTextViewMargin)
+      make.right.equalToSuperview().offset(-inputTextViewMargin)
     }
   }
 
@@ -45,7 +42,7 @@ class StyleController: UIViewController {
     view.addSubview(tableView)
 
     tableView.snp.makeConstraints { make in
-      make.top.equalTo(inputTextView.snp.bottom).offset(inputTextViewPadding)
+      make.top.equalTo(inputTextView.snp.bottom).offset(inputTextViewMargin)
       make.left.equalToSuperview()
       make.right.equalToSuperview()
       make.bottom.equalToSuperview()
