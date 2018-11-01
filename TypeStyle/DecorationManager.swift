@@ -14,8 +14,8 @@ struct DecorationManager {
     Decoration(name: "Decoration 7", prepend: "▌│█║▌║▌║", append: "║▌║▌║█│▌"),
   ]
 
-  func decoratedText(forText text: String, rowIndex: Int) -> String {
-    let newDecoration = decorations[rowIndex]
+  func decoratedText(for text: String, index: Int) -> String {
+    let newDecoration = decorations[index]
     return "\(newDecoration.prepend) \(text) \(newDecoration.append)"
   }
 

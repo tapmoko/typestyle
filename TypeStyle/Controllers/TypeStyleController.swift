@@ -132,10 +132,8 @@ extension TypeStyleController: UITableViewDataSource {
     let cell = tableView.dequeueReusableCell(withIdentifier: StyleCell.identifier) as! StyleCell
 
     switch mode {
-    case .styles: cell.outputLabel.text = StyleManager.shared.styledText(forText: input,
-                                                                         rowIndex: indexPath.row)
-    case .decorations: cell.outputLabel.text = DecorationManager.shared.decoratedText(forText: input,
-                                                                                      rowIndex: indexPath.row)
+    case .styles: cell.outputLabel.text = StyleManager.shared.styledText(for: input, index: indexPath.row)
+    case .decorations: cell.outputLabel.text = DecorationManager.shared.decoratedText(for: input, index: indexPath.row)
     }
 
     return cell
@@ -154,8 +152,8 @@ extension TypeStyleController: UITableViewDelegate {
 
     var selectedString = ""
     switch mode {
-    case .styles: selectedString = StyleManager.shared.styledText(forText: input, rowIndex: indexPath.row)
-    case .decorations: selectedString = DecorationManager.shared.decoratedText(forText: input, rowIndex: indexPath.row)
+    case .styles: selectedString = StyleManager.shared.styledText(for: input, index: indexPath.row)
+    case .decorations: selectedString = DecorationManager.shared.decoratedText(for: input, index: indexPath.row)
     }
 
     UIPasteboard.general.string = selectedString

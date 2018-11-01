@@ -77,8 +77,8 @@ struct StyleManager {
           outputBase: "丹日亡句ヨ乍呂廾工勹片し冊几回尸甲尺己卞凵レ山メと乙丹日亡句ヨ乍呂廾工勹片し冊几回尸甲尺己卞凵レ山メと乙"),
   ]
 
-  func styledText(forText text: String, rowIndex: Int) -> String {
-    let newStyle = styles[rowIndex].outputBase
+  func styledText(for text: String, index: Int) -> String {
+    let newStyle = styles[index].outputBase
     let convert = Dictionary(uniqueKeysWithValues: zip(inputBase, newStyle))
 
     let newText = String(text.map {
