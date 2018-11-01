@@ -2,6 +2,9 @@ import UIKit
 
 class InputTextView: UITextView {
 
+  let radius: CGFloat = 10
+  let padding: CGFloat = 15
+
   init() {
     super.init(frame: .zero, textContainer: nil)
 
@@ -9,10 +12,12 @@ class InputTextView: UITextView {
     isScrollEnabled = false
 
     keyboardAppearance = .dark
-    textColor = .appText
+    textColor = .appBackground
+    tintColor = .appBackground
     font = UIFont.preferredFont(forTextStyle: .title1)
-    tintColor = .appText
-    backgroundColor = .appBackground
+    backgroundColor = .appText
+    layer.cornerRadius = radius
+    textContainerInset = UIEdgeInsets(top: padding, left: padding, bottom: padding, right: padding)
   }
 
   required init?(coder aDecoder: NSCoder) {
