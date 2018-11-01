@@ -39,7 +39,7 @@ class StyleController: UIViewController {
   func setUpTableView() {
     tableView.dataSource = self
     tableView.delegate = self
-    tableView.backgroundColor = .appBackground
+    tableView.backgroundColor = nil
     tableView.separatorStyle = .none
 
     view.addSubview(tableView)

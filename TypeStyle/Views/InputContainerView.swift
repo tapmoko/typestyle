@@ -25,6 +25,13 @@ class InputContainerView: UIView {
   func setUpInputTextViewContainer() {
     inputTextViewContainer.layer.cornerRadius = inputTextViewRadius
     inputTextViewContainer.backgroundColor = .appDarkBackground
+
+    // Shadow
+    layer.shadowRadius = 8
+    layer.shadowOffset = CGSize(width: 0, height: 0)
+    layer.shadowColor = UIColor.black.cgColor
+    layer.shadowOpacity = 0.3
+
     addSubview(inputTextViewContainer)
 
     inputTextViewContainer.snp.makeConstraints { make in
@@ -38,6 +45,7 @@ class InputContainerView: UIView {
   func setUpClearInputButton() {
     clearButton.setTitle("×", for: .normal)
     clearButton.titleLabel?.font = UIFont.preferredFont(forTextStyle: .title2)
+    clearButton.titleLabel?.adjustsFontForContentSizeCategory = true
     clearButton.setTitleColor(.appText, for: .normal)
     clearButton.isHidden = true
 
@@ -64,6 +72,7 @@ class InputContainerView: UIView {
 
     // Font
     inputTextView.font = UIFont.preferredFont(forTextStyle: .title2)
+    inputTextView.adjustsFontForContentSizeCategory = true
 
     // Shape
     inputTextView.layer.cornerRadius = inputTextViewRadius

@@ -36,6 +36,7 @@ class CopiedView: UIView {
     checkmarkLabel.text = "✓"
     checkmarkLabel.textColor = .appText
     checkmarkLabel.font = UIFont.preferredFont(forTextStyle: .title1)
+    checkmarkLabel.adjustsFontForContentSizeCategory = true
 
     addSubview(checkmarkLabel)
 
@@ -49,6 +50,7 @@ class CopiedView: UIView {
     copiedLabel.text = "Copied"
     copiedLabel.textColor = .appText
     copiedLabel.font = UIFont.preferredFont(forTextStyle: .body)
+    copiedLabel.adjustsFontForContentSizeCategory = true
 
     addSubview(copiedLabel)
 
