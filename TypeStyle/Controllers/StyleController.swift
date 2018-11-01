@@ -8,8 +8,7 @@ class StyleController: UIViewController {
   let feedbackGenerator = UINotificationFeedbackGenerator()
 
   let tableView = UITableView()
-  let inputTextView = InputTextView()
-  let inputTextViewMargin: CGFloat = 10
+  let inputContainerView = InputContainerView()
   let copiedView = CopiedView()
 
   var input = ""
@@ -25,14 +24,14 @@ class StyleController: UIViewController {
   }
 
   func setUpInputTextView() {
-    inputTextView.delegate = self
+    inputContainerView.inputTextView.delegate = self
 
-    view.addSubview(inputTextView)
+    view.addSubview(inputContainerView)
 
-    inputTextView.snp.makeConstraints { make in
-      make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(inputTextViewMargin)
-      make.left.equalToSuperview().offset(inputTextViewMargin)
-      make.right.equalToSuperview().offset(-inputTextViewMargin)
+    inputContainerView.snp.makeConstraints { make in
+      make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+      make.left.equalToSuperview()
+      make.right.equalToSuperview()
     }
   }
 
@@ -45,7 +44,7 @@ class StyleController: UIViewController {
     view.addSubview(tableView)
 
     tableView.snp.makeConstraints { make in
-      make.top.equalTo(inputTextView.snp.bottom).offset(inputTextViewMargin)
+      make.top.equalTo(inputContainerView.snp.bottom)
       make.left.equalToSuperview()
       make.right.equalToSuperview()
       make.bottom.equalToSuperview()
@@ -68,7 +67,7 @@ class StyleController: UIViewController {
 
     guard isInitialAppearance else { return }
 
-    inputTextView.becomeFirstResponder()
+    inputContainerView.inputTextView.becomeFirstResponder()
     isInitialAppearance = false
   }
 
@@ -91,11 +90,11 @@ extension StyleController: UITableViewDataSource {
 extension StyleController: UITableViewDelegate {
 
   func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-    inputTextView.resignFirstResponder()
+    inputContainerView.inputTextView.resignFirstResponder()
   }
 
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    inputTextView.resignFirstResponder()
+    inputContainerView.inputTextView.resignFirstResponder()
 
     let selectedString = StyleManager.shared.styledText(forText: input, rowIndex: indexPath.row)
     UIPasteboard.general.string = selectedString
@@ -126,7 +125,7 @@ extension StyleController: UITableViewDelegate {
 extension StyleController: UITextViewDelegate {
 
   func textViewDidChange(_ textView: UITextView) {
-    input = inputTextView.text ?? ""
+    input = inputContainerView.inputTextView.text ?? ""
     tableView.reloadData()
   }
 
