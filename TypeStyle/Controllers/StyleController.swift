@@ -3,6 +3,10 @@ import SnapKit
 
 class StyleController: UIViewController {
 
+  override var preferredStatusBarStyle: UIStatusBarStyle {
+    return .lightContent
+  }
+
   let tableView = UITableView()
   let inputTextView = InputTextView()
   let inputTextViewPadding: CGFloat = 10
