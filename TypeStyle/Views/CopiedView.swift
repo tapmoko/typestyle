@@ -11,7 +11,7 @@ class CopiedView: UIView {
   override init(frame: CGRect) {
     super.init(frame: frame)
 
-    backgroundColor = .appText
+    backgroundColor = .appDarkBackground
     layer.cornerRadius = radius
     
     snp.makeConstraints { make in
@@ -34,7 +34,7 @@ class CopiedView: UIView {
 
   func setUpCheckmarkLabel() {
     checkmarkLabel.text = "✓"
-    checkmarkLabel.textColor = .appBackground
+    checkmarkLabel.textColor = .appText
     checkmarkLabel.font = UIFont.preferredFont(forTextStyle: .title1)
 
     addSubview(checkmarkLabel)
@@ -47,7 +47,7 @@ class CopiedView: UIView {
 
   func setUpCopiedLabel() {
     copiedLabel.text = "Copied"
-    copiedLabel.textColor = .appBackground
+    copiedLabel.textColor = .appText
     copiedLabel.font = UIFont.preferredFont(forTextStyle: .body)
 
     addSubview(copiedLabel)
