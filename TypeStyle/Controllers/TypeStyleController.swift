@@ -3,6 +3,11 @@ import SnapKit
 
 class TypeStyleController: UIViewController {
 
+  enum Mode {
+    case styles
+    case decorations
+  }
+
   override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
   var isInitialAppearance = true
   let feedbackGenerator = UINotificationFeedbackGenerator()
@@ -15,6 +20,7 @@ class TypeStyleController: UIViewController {
   let generalMargin: CGFloat = 15
 
   var input = ""
+  var mode: Mode = .styles
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -43,6 +49,7 @@ class TypeStyleController: UIViewController {
   func setUpModeSegmentedControl() {
     modeSegmentedControl.tintColor = .appText
     modeSegmentedControl.selectedSegmentIndex = 0
+    modeSegmentedControl.addTarget(self, action: #selector(modeDidChange), for: .valueChanged)
 
     view.addSubview(modeSegmentedControl)
 
@@ -101,18 +108,36 @@ class TypeStyleController: UIViewController {
     tableView.reloadData()
   }
 
+  @objc func modeDidChange() {
+    switch modeSegmentedControl.selectedSegmentIndex {
+    case 0: mode = .styles
+    case 1: mode = .decorations
+    default: break
+    }
+
+    refreshUI()
+  }
+
 }
 
 extension TypeStyleController: UITableViewDataSource {
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     if input.isEmpty { return 0 } // Don't show output cells if input is empty
-    return StyleManager.shared.styles.count
+    return (mode == .styles) ? StyleManager.shared.styles.count
+                             : DecorationManager.shared.decorations.count
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: StyleCell.identifier) as! StyleCell
-    cell.outputLabel.text = StyleManager.shared.styledText(forText: input, rowIndex: indexPath.row)
+
+    switch mode {
+    case .styles: cell.outputLabel.text = StyleManager.shared.styledText(forText: input,
+                                                                         rowIndex: indexPath.row)
+    case .decorations: cell.outputLabel.text = DecorationManager.shared.decoratedText(forText: input,
+                                                                                      rowIndex: indexPath.row)
+    }
+
     return cell
   }
 
@@ -127,7 +152,12 @@ extension TypeStyleController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     inputContainerView.inputTextView.resignFirstResponder()
 
-    let selectedString = StyleManager.shared.styledText(forText: input, rowIndex: indexPath.row)
+    var selectedString = ""
+    switch mode {
+    case .styles: selectedString = StyleManager.shared.styledText(forText: input, rowIndex: indexPath.row)
+    case .decorations: selectedString = DecorationManager.shared.decoratedText(forText: input, rowIndex: indexPath.row)
+    }
+
     UIPasteboard.general.string = selectedString
 
     feedbackGenerator.notificationOccurred(.success)

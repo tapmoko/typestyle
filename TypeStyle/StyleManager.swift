@@ -1,6 +1,6 @@
 import Foundation
 
-class StyleManager {
+struct StyleManager {
 
   static let shared = StyleManager()
 
