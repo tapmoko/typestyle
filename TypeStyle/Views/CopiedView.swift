@@ -4,6 +4,7 @@ import SnapKit
 class CopiedView: UIView {
 
   let radius: CGFloat = 10
+  let checkmarkLabel = UILabel()
   let copiedLabel = UILabel()
   let copiedLabelPadding: CGFloat = 10
 
@@ -23,6 +24,7 @@ class CopiedView: UIView {
     layer.shadowColor = UIColor.black.cgColor
     layer.shadowOpacity = 0.3
 
+    setUpCheckmarkLabel()
     setUpCopiedLabel()
   }
 
@@ -30,15 +32,29 @@ class CopiedView: UIView {
     fatalError("init(coder:) has not been implemented")
   }
 
+  func setUpCheckmarkLabel() {
+    checkmarkLabel.text = "✓"
+    checkmarkLabel.textColor = .appBackground
+    checkmarkLabel.font = UIFont.preferredFont(forTextStyle: .title1)
+
+    addSubview(checkmarkLabel)
+
+    checkmarkLabel.snp.makeConstraints { make in
+      make.centerX.equalToSuperview()
+      make.centerY.equalToSuperview().offset(-10)
+    }
+  }
+
   func setUpCopiedLabel() {
-    copiedLabel.text = "Copied ✓"
+    copiedLabel.text = "Copied"
     copiedLabel.textColor = .appBackground
     copiedLabel.font = UIFont.preferredFont(forTextStyle: .body)
 
     addSubview(copiedLabel)
 
     copiedLabel.snp.makeConstraints { make in
-      make.center.equalToSuperview()
+      make.centerX.equalToSuperview()
+      make.centerY.equalToSuperview().offset(15)
       make.left.equalToSuperview().offset(copiedLabelPadding)
       make.right.equalToSuperview().offset(-copiedLabelPadding)
     }
