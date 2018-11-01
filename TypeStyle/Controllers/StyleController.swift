@@ -5,6 +5,7 @@ class StyleController: UIViewController {
 
   override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
   var isInitialAppearance = true
+  let feedbackGenerator = UINotificationFeedbackGenerator()
 
   let tableView = UITableView()
   let inputTextView = InputTextView()
@@ -85,6 +86,8 @@ extension StyleController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let selectedString = StyleManager.shared.styledText(forText: input, rowIndex: indexPath.row)
     UIPasteboard.general.string = selectedString
+
+    feedbackGenerator.notificationOccurred(.success)
 
     let alertController = UIAlertController(title: "Copied",
                                             message: selectedString,
