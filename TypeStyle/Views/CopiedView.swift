@@ -17,6 +17,12 @@ class CopiedView: UIView {
       make.width.equalTo(snp.height)
     }
 
+    // Shadow
+    layer.shadowRadius = 8
+    layer.shadowOffset = CGSize(width: 0, height: 0)
+    layer.shadowColor = UIColor.black.cgColor
+    layer.shadowOpacity = 0.3
+
     setUpCopiedLabel()
   }
 
