@@ -18,13 +18,14 @@ class StyleController: UIViewController {
 
     tableView.register(StyleCell.self, forCellReuseIdentifier: StyleCell.identifier)
 
-    setUpInputTextView()
+    setUpInputContainerView()
     setUpTableView()
     setUpCopiedView()
   }
 
-  func setUpInputTextView() {
+  func setUpInputContainerView() {
     inputContainerView.inputTextView.delegate = self
+    inputContainerView.clearButton.addTarget(self, action: #selector(didTapClearButton), for: .touchUpInside)
 
     view.addSubview(inputContainerView)
 
@@ -71,6 +72,17 @@ class StyleController: UIViewController {
     isInitialAppearance = false
   }
 
+  @objc func didTapClearButton() {
+    inputContainerView.inputTextView.text = ""
+    refreshUI()
+  }
+
+  func refreshUI() {
+    input = inputContainerView.inputTextView.text ?? ""
+    inputContainerView.clearButton.isHidden = input.isEmpty
+    tableView.reloadData()
+  }
+
 }
 
 extension StyleController: UITableViewDataSource {
@@ -113,7 +125,7 @@ extension StyleController: UITableViewDelegate {
   }
 
   func hideCopiedView() {
-    UIView.animate(withDuration: 0.1, delay: 1, options: [], animations: {
+    UIView.animate(withDuration: 0.1, delay: 0.5, options: [], animations: {
       self.copiedView.alpha = 0
     }, completion: { _ in
       self.copiedView.isHidden = true
@@ -125,8 +137,7 @@ extension StyleController: UITableViewDelegate {
 extension StyleController: UITextViewDelegate {
 
   func textViewDidChange(_ textView: UITextView) {
-    input = inputContainerView.inputTextView.text ?? ""
-    tableView.reloadData()
+    refreshUI()
   }
 
 }
