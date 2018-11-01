@@ -10,6 +10,7 @@ class StyleController: UIViewController {
   let tableView = UITableView()
   let inputTextView = InputTextView()
   let inputTextViewMargin: CGFloat = 10
+  let copiedView = CopiedView()
 
   var input = ""
 
@@ -20,6 +21,7 @@ class StyleController: UIViewController {
 
     setUpInputTextView()
     setUpTableView()
+    setUpCopiedView()
   }
 
   func setUpInputTextView() {
@@ -50,6 +52,17 @@ class StyleController: UIViewController {
     }
   }
 
+  func setUpCopiedView() {
+    view.addSubview(copiedView)
+
+    copiedView.snp.makeConstraints { make in
+      make.center.equalToSuperview()
+    }
+
+    copiedView.isHidden = true
+    copiedView.alpha = 0
+  }
+
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
 
@@ -69,9 +82,7 @@ extension StyleController: UITableViewDataSource {
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: StyleCell.identifier) as! StyleCell
-
     cell.outputLabel.text = StyleManager.shared.styledText(forText: input, rowIndex: indexPath.row)
-
     return cell
   }
 
@@ -84,18 +95,30 @@ extension StyleController: UITableViewDelegate {
   }
 
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    inputTextView.resignFirstResponder()
+
     let selectedString = StyleManager.shared.styledText(forText: input, rowIndex: indexPath.row)
     UIPasteboard.general.string = selectedString
 
     feedbackGenerator.notificationOccurred(.success)
+    showCopiedView()
+  }
 
-    let alertController = UIAlertController(title: "Copied",
-                                            message: selectedString,
-                                            preferredStyle: .alert)
-    alertController.addAction(UIAlertAction(title: "OK",
-                                            style: .default,
-                                            handler: nil))
-    present(alertController, animated: true, completion: nil)
+  func showCopiedView() {
+    copiedView.isHidden = false
+    UIView.animate(withDuration: 0.1, delay: 0, options: [], animations: {
+      self.copiedView.alpha = 1
+    }, completion: { _ in
+      self.hideCopiedView()
+    })
+  }
+
+  func hideCopiedView() {
+    UIView.animate(withDuration: 0.1, delay: 1, options: [], animations: {
+      self.copiedView.alpha = 0
+    }, completion: { _ in
+      self.copiedView.isHidden = true
+    })
   }
 
 }

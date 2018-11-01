@@ -17,6 +17,7 @@
 		B68C6EAF218A3E63007CB17A /* StyleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68C6EAE218A3E63007CB17A /* StyleCell.swift */; };
 		B69D280A218A407C00A298A9 /* InputTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69D2809218A407C00A298A9 /* InputTextView.swift */; };
 		B69D280C218A780800A298A9 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69D280B218A780800A298A9 /* Style.swift */; };
+		B69D2813218A8ACD00A298A9 /* CopiedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69D2812218A8ACD00A298A9 /* CopiedView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		B68C6EAE218A3E63007CB17A /* StyleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleCell.swift; sourceTree = "<group>"; };
 		B69D2809218A407C00A298A9 /* InputTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextView.swift; sourceTree = "<group>"; };
 		B69D280B218A780800A298A9 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
+		B69D2812218A8ACD00A298A9 /* CopiedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopiedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				B69D2809218A407C00A298A9 /* InputTextView.swift */,
+				B69D2812218A8ACD00A298A9 /* CopiedView.swift */,
 				B68C6EAE218A3E63007CB17A /* StyleCell.swift */,
 			);
 			path = Views;
@@ -237,6 +240,7 @@
 			files = (
 				B66B548B2187C4750038C84A /* StyleController.swift in Sources */,
 				B66B54892187C4750038C84A /* AppDelegate.swift in Sources */,
+				B69D2813218A8ACD00A298A9 /* CopiedView.swift in Sources */,
 				B68C6EAB218A3493007CB17A /* StyleManager.swift in Sources */,
 				B68C6EAD218A365A007CB17A /* UIColor+Extension.swift in Sources */,
 				B68C6EAF218A3E63007CB17A /* StyleCell.swift in Sources */,
