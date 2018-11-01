@@ -31,8 +31,8 @@ class StyleController: UIViewController {
 
     inputContainerView.snp.makeConstraints { make in
       make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
-      make.left.equalToSuperview()
-      make.right.equalToSuperview()
+      make.left.equalTo(view.safeAreaLayoutGuide.snp.left)
+      make.right.equalTo(view.safeAreaLayoutGuide.snp.right)
     }
   }
 
@@ -46,9 +46,9 @@ class StyleController: UIViewController {
 
     tableView.snp.makeConstraints { make in
       make.top.equalTo(inputContainerView.snp.bottom)
-      make.left.equalToSuperview()
-      make.right.equalToSuperview()
-      make.bottom.equalToSuperview()
+      make.left.equalTo(view.safeAreaLayoutGuide.snp.left)
+      make.right.equalTo(view.safeAreaLayoutGuide.snp.right)
+      make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
     }
   }
 
