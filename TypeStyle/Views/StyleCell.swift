@@ -10,7 +10,6 @@ class StyleCell: UITableViewCell {
   override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
 
-    textLabel?.textColor = .appText
     backgroundColor = .appBackground
 
     let selectedView = UIView()
@@ -26,6 +25,7 @@ class StyleCell: UITableViewCell {
 
   func setUpOutputLabel() {
     outputLabel.textColor = .appText
+    outputLabel.numberOfLines = 0 // unlimited
 
     addSubview(outputLabel)
 
