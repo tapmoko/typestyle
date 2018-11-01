@@ -1,7 +1,7 @@
 import UIKit
 import SnapKit
 
-class StyleController: UIViewController {
+class TypeStyleController: UIViewController {
 
   override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
   var isInitialAppearance = true
@@ -86,7 +86,7 @@ class StyleController: UIViewController {
 
 }
 
-extension StyleController: UITableViewDataSource {
+extension TypeStyleController: UITableViewDataSource {
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     if input.isEmpty { return 0 } // Don't show output cells if input is empty
@@ -101,7 +101,7 @@ extension StyleController: UITableViewDataSource {
 
 }
 
-extension StyleController: UITableViewDelegate {
+extension TypeStyleController: UITableViewDelegate {
 
   func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
     inputContainerView.inputTextView.resignFirstResponder()
@@ -136,7 +136,7 @@ extension StyleController: UITableViewDelegate {
 
 }
 
-extension StyleController: UITextViewDelegate {
+extension TypeStyleController: UITextViewDelegate {
 
   func textViewDidChange(_ textView: UITextView) {
     refreshUI()
