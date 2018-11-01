@@ -73,6 +73,8 @@ class StyleManager {
           outputBase: "ᎪbᏟᎠᎬfᎶhᎥjᏦᏞmᏁᎾᏢqᏒsᏆuᏉᎳxᎽᏃᎪbᏟᎠᎬfᎶhᎥjᏦᏞmᏁᎾᏢqᏒsᏆuᏉᎳxᎽᏃ"),
     Style(name: "Rusify",
           outputBase: "АБCДЄFGHЇJКГѪЙѲPФЯ$TЦѴШЖЧЗабcдёfgнїjкгѫпѳpфя$тцѵщжчз"),
+    Style(name: "Kanjify",
+          outputBase: "丹日亡句ヨ乍呂廾工勹片し冊几回尸甲尺己卞凵レ山メと乙丹日亡句ヨ乍呂廾工勹片し冊几回尸甲尺己卞凵レ山メと乙"),
   ]
 
   func styledText(forText text: String, rowIndex: Int) -> String {
