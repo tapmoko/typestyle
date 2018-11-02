@@ -20,6 +20,8 @@
 		B69D2813218A8ACD00A298A9 /* CopiedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69D2812218A8ACD00A298A9 /* CopiedView.swift */; };
 		B69D2815218B996E00A298A9 /* Decoration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69D2814218B996E00A298A9 /* Decoration.swift */; };
 		B69D2817218B999800A298A9 /* DecorationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69D2816218B999800A298A9 /* DecorationManager.swift */; };
+		B69D281A218BC95200A298A9 /* StyleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69D2819218BC95200A298A9 /* StyleFactory.swift */; };
+		B69D281C218BC96E00A298A9 /* DecorationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69D281B218BC96E00A298A9 /* DecorationFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		B69D2812218A8ACD00A298A9 /* CopiedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopiedView.swift; sourceTree = "<group>"; };
 		B69D2814218B996E00A298A9 /* Decoration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decoration.swift; sourceTree = "<group>"; };
 		B69D2816218B999800A298A9 /* DecorationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecorationManager.swift; sourceTree = "<group>"; };
+		B69D2819218BC95200A298A9 /* StyleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StyleFactory.swift; path = "TypeStyle/Factories/StyleFactory.swift"; sourceTree = SOURCE_ROOT; };
+		B69D281B218BC96E00A298A9 /* DecorationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecorationFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,8 +100,8 @@
 				B69D280D218A7A3800A298A9 /* Models */,
 				B69D280E218A7A4100A298A9 /* Views */,
 				B69D280F218A7A4800A298A9 /* Controllers */,
-				B68C6EAA218A3493007CB17A /* StyleManager.swift */,
-				B69D2816218B999800A298A9 /* DecorationManager.swift */,
+				B69D2818218BC94000A298A9 /* Managers */,
+				B69D281D218BCA4600A298A9 /* Factories */,
 				B68C6EAC218A365A007CB17A /* UIColor+Extension.swift */,
 				B66B548F2187C4770038C84A /* Assets.xcassets */,
 				B66B54912187C4770038C84A /* LaunchScreen.storyboard */,
@@ -131,6 +135,24 @@
 				B66B548A2187C4750038C84A /* TypeStyleController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B69D2818218BC94000A298A9 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				B68C6EAA218A3493007CB17A /* StyleManager.swift */,
+				B69D2816218B999800A298A9 /* DecorationManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		B69D281D218BCA4600A298A9 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				B69D2819218BC95200A298A9 /* StyleFactory.swift */,
+				B69D281B218BC96E00A298A9 /* DecorationFactory.swift */,
+			);
+			path = Factories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,6 +270,8 @@
 				B66B54892187C4750038C84A /* AppDelegate.swift in Sources */,
 				B69D2813218A8ACD00A298A9 /* CopiedView.swift in Sources */,
 				B68C6EAB218A3493007CB17A /* StyleManager.swift in Sources */,
+				B69D281A218BC95200A298A9 /* StyleFactory.swift in Sources */,
+				B69D281C218BC96E00A298A9 /* DecorationFactory.swift in Sources */,
 				B68C6EAD218A365A007CB17A /* UIColor+Extension.swift in Sources */,
 				B69D2817218B999800A298A9 /* DecorationManager.swift in Sources */,
 				B68C6EAF218A3E63007CB17A /* StyleCell.swift in Sources */,
