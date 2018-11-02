@@ -128,18 +128,19 @@ extension TypeStyleController: UITableViewDataSource {
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     if input.isEmpty { return 0 } // Don't show output cells if input is empty
-    return (mode == .styles) ? StyleManager.shared.styles.count
-                             : DecorationManager.shared.decorations.count
+    return (mode == .styles) ? TransformerManager.shared.styles.count
+                             : TransformerManager.shared.decorations.count
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: OutputCell.identifier) as! OutputCell
-
+    var output = ""
     switch mode {
-    case .styles: cell.outputLabel.text = StyleManager.shared.styledText(for: input, index: indexPath.row)
-    case .decorations: cell.outputLabel.text = DecorationManager.shared.decoratedText(for: input, index: indexPath.row)
+    case .styles: output = TransformerManager.shared.styledText(for: input, index: indexPath.row)
+    case .decorations: output = TransformerManager.shared.decoratedText(for: input, index: indexPath.row)
     }
 
+    let cell = tableView.dequeueReusableCell(withIdentifier: OutputCell.identifier) as! OutputCell
+    cell.outputLabel.text = output
     return cell
   }
 
@@ -156,8 +157,8 @@ extension TypeStyleController: UITableViewDelegate {
 
     var selectedString = ""
     switch mode {
-    case .styles: selectedString = StyleManager.shared.styledText(for: input, index: indexPath.row)
-    case .decorations: selectedString = DecorationManager.shared.decoratedText(for: input, index: indexPath.row)
+    case .styles: selectedString = TransformerManager.shared.styledText(for: input, index: indexPath.row)
+    case .decorations: selectedString = TransformerManager.shared.decoratedText(for: input, index: indexPath.row)
     }
 
     UIPasteboard.general.string = selectedString

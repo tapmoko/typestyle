@@ -12,12 +12,11 @@
 		B66B548B2187C4750038C84A /* TypeStyleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66B548A2187C4750038C84A /* TypeStyleController.swift */; };
 		B66B54902187C4770038C84A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B66B548F2187C4770038C84A /* Assets.xcassets */; };
 		B66B54932187C4770038C84A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B66B54912187C4770038C84A /* LaunchScreen.storyboard */; };
-		B68C6EAB218A3493007CB17A /* StyleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68C6EAA218A3493007CB17A /* StyleManager.swift */; };
+		B68C6EAB218A3493007CB17A /* TransformerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68C6EAA218A3493007CB17A /* TransformerManager.swift */; };
 		B68C6EAD218A365A007CB17A /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68C6EAC218A365A007CB17A /* UIColor+Extension.swift */; };
 		B68C6EAF218A3E63007CB17A /* OutputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68C6EAE218A3E63007CB17A /* OutputCell.swift */; };
 		B69D280A218A407C00A298A9 /* InputContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69D2809218A407C00A298A9 /* InputContainerView.swift */; };
 		B69D2813218A8ACD00A298A9 /* CopiedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69D2812218A8ACD00A298A9 /* CopiedView.swift */; };
-		B69D2817218B999800A298A9 /* DecorationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69D2816218B999800A298A9 /* DecorationManager.swift */; };
 		B69D281A218BC95200A298A9 /* StyleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69D2819218BC95200A298A9 /* StyleFactory.swift */; };
 		B69D281C218BC96E00A298A9 /* DecorationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69D281B218BC96E00A298A9 /* DecorationFactory.swift */; };
 		B69D281F218BD2E800A298A9 /* Transformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69D281E218BD2E800A298A9 /* Transformer.swift */; };
@@ -33,12 +32,11 @@
 		B66B548F2187C4770038C84A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B66B54922187C4770038C84A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B66B54942187C4770038C84A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B68C6EAA218A3493007CB17A /* StyleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleManager.swift; sourceTree = "<group>"; };
+		B68C6EAA218A3493007CB17A /* TransformerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerManager.swift; sourceTree = "<group>"; };
 		B68C6EAC218A365A007CB17A /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		B68C6EAE218A3E63007CB17A /* OutputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputCell.swift; sourceTree = "<group>"; };
 		B69D2809218A407C00A298A9 /* InputContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputContainerView.swift; sourceTree = "<group>"; };
 		B69D2812218A8ACD00A298A9 /* CopiedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopiedView.swift; sourceTree = "<group>"; };
-		B69D2816218B999800A298A9 /* DecorationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecorationManager.swift; sourceTree = "<group>"; };
 		B69D2819218BC95200A298A9 /* StyleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StyleFactory.swift; path = TypeStyle/Factories/StyleFactory.swift; sourceTree = SOURCE_ROOT; };
 		B69D281B218BC96E00A298A9 /* DecorationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecorationFactory.swift; sourceTree = "<group>"; };
 		B69D281E218BD2E800A298A9 /* Transformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transformer.swift; sourceTree = "<group>"; };
@@ -137,8 +135,7 @@
 		B69D2818218BC94000A298A9 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				B68C6EAA218A3493007CB17A /* StyleManager.swift */,
-				B69D2816218B999800A298A9 /* DecorationManager.swift */,
+				B68C6EAA218A3493007CB17A /* TransformerManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -266,12 +263,11 @@
 				B66B548B2187C4750038C84A /* TypeStyleController.swift in Sources */,
 				B66B54892187C4750038C84A /* AppDelegate.swift in Sources */,
 				B69D2813218A8ACD00A298A9 /* CopiedView.swift in Sources */,
-				B68C6EAB218A3493007CB17A /* StyleManager.swift in Sources */,
+				B68C6EAB218A3493007CB17A /* TransformerManager.swift in Sources */,
 				B69D281A218BC95200A298A9 /* StyleFactory.swift in Sources */,
 				B69D281C218BC96E00A298A9 /* DecorationFactory.swift in Sources */,
 				B69D281F218BD2E800A298A9 /* Transformer.swift in Sources */,
 				B68C6EAD218A365A007CB17A /* UIColor+Extension.swift in Sources */,
-				B69D2817218B999800A298A9 /* DecorationManager.swift in Sources */,
 				B68C6EAF218A3E63007CB17A /* OutputCell.swift in Sources */,
 				B69D280A218A407C00A298A9 /* InputContainerView.swift in Sources */,
 			);
