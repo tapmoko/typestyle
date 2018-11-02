@@ -22,6 +22,7 @@
 		B69D2817218B999800A298A9 /* DecorationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69D2816218B999800A298A9 /* DecorationManager.swift */; };
 		B69D281A218BC95200A298A9 /* StyleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69D2819218BC95200A298A9 /* StyleFactory.swift */; };
 		B69D281C218BC96E00A298A9 /* DecorationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69D281B218BC96E00A298A9 /* DecorationFactory.swift */; };
+		B69D281F218BD2E800A298A9 /* Transformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69D281E218BD2E800A298A9 /* Transformation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,8 +43,9 @@
 		B69D2812218A8ACD00A298A9 /* CopiedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopiedView.swift; sourceTree = "<group>"; };
 		B69D2814218B996E00A298A9 /* Decoration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decoration.swift; sourceTree = "<group>"; };
 		B69D2816218B999800A298A9 /* DecorationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecorationManager.swift; sourceTree = "<group>"; };
-		B69D2819218BC95200A298A9 /* StyleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StyleFactory.swift; path = "TypeStyle/Factories/StyleFactory.swift"; sourceTree = SOURCE_ROOT; };
+		B69D2819218BC95200A298A9 /* StyleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StyleFactory.swift; path = TypeStyle/Factories/StyleFactory.swift; sourceTree = SOURCE_ROOT; };
 		B69D281B218BC96E00A298A9 /* DecorationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecorationFactory.swift; sourceTree = "<group>"; };
+		B69D281E218BD2E800A298A9 /* Transformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transformation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 			children = (
 				B69D280B218A780800A298A9 /* Style.swift */,
 				B69D2814218B996E00A298A9 /* Decoration.swift */,
+				B69D281E218BD2E800A298A9 /* Transformation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				B68C6EAB218A3493007CB17A /* StyleManager.swift in Sources */,
 				B69D281A218BC95200A298A9 /* StyleFactory.swift in Sources */,
 				B69D281C218BC96E00A298A9 /* DecorationFactory.swift in Sources */,
+				B69D281F218BD2E800A298A9 /* Transformation.swift in Sources */,
 				B68C6EAD218A365A007CB17A /* UIColor+Extension.swift in Sources */,
 				B69D2817218B999800A298A9 /* DecorationManager.swift in Sources */,
 				B68C6EAF218A3E63007CB17A /* StyleCell.swift in Sources */,
