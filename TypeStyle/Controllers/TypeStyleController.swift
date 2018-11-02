@@ -191,4 +191,8 @@ extension TypeStyleController: UITextViewDelegate {
     refreshUI()
   }
 
+  func textViewDidEndEditing(_ textView: UITextView) {
+    refreshUI()
+  }
+
 }
