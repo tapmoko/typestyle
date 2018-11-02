@@ -1,9 +1,9 @@
 import Foundation
 
-struct Transformation {
+struct Transformer {
 
   let name: String
-  let transformer: (String) -> String
+  let transform: (String) -> String
 
   init(name: String, outputBase: String) {
     self.name = name
@@ -11,7 +11,7 @@ struct Transformation {
     let inputBase = StyleFactory.inputBase()
     let transformerDictionary = Dictionary(uniqueKeysWithValues: zip(inputBase, outputBase))
 
-    self.transformer = { (input) -> String in
+    self.transform = { (input) -> String in
       return String(input.map {
         transformerDictionary[$0] ?? $0
       })
@@ -20,7 +20,7 @@ struct Transformation {
 
   init(name: String, before: String, after: String) {
     self.name = name
-    self.transformer = { (input) -> String in
+    self.transform = { (input) -> String in
       return "\(before) \(input) \(after)"
     }
   }

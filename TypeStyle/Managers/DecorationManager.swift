@@ -8,7 +8,7 @@ struct DecorationManager {
 
   func decoratedText(for text: String, index: Int) -> String {
     let decoration = decorations[index]
-    return decoration.transformer(text)
+    return decoration.transform(text)
   }
 
 }

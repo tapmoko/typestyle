@@ -9,7 +9,7 @@ struct StyleManager {
 
   func styledText(for text: String, index: Int) -> String {
     let style = styles[index]
-    return style.transformer(text)
+    return style.transform(text)
   }
 
 }
