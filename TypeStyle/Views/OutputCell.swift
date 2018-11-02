@@ -1,8 +1,8 @@
 import UIKit
 
-class StyleCell: UITableViewCell {
+class OutputCell: UITableViewCell {
 
-  static let identifier = "StyleCell"
+  static let identifier = "OutputCell"
 
   let outputLabel = UILabel()
   let padding: CGFloat = 10

@@ -25,7 +25,7 @@ class TypeStyleController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    tableView.register(StyleCell.self, forCellReuseIdentifier: StyleCell.identifier)
+    tableView.register(OutputCell.self, forCellReuseIdentifier: OutputCell.identifier)
 
     setUpInputContainerView()
     setUpModeSegmentedControl()
@@ -129,7 +129,7 @@ extension TypeStyleController: UITableViewDataSource {
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: StyleCell.identifier) as! StyleCell
+    let cell = tableView.dequeueReusableCell(withIdentifier: OutputCell.identifier) as! OutputCell
 
     switch mode {
     case .styles: cell.outputLabel.text = StyleManager.shared.styledText(for: input, index: indexPath.row)
