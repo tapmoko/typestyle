@@ -51,6 +51,10 @@ class TypeStyleController: UIViewController {
     modeSegmentedControl.selectedSegmentIndex = 0
     modeSegmentedControl.addTarget(self, action: #selector(modeDidChange), for: .valueChanged)
 
+    // TODO: Make this adjust automatically somehow, not just on app launch
+    let font = UIFont.preferredFont(forTextStyle: .body)
+    modeSegmentedControl.setTitleTextAttributes([.font: font], for: .normal)
+
     view.addSubview(modeSegmentedControl)
 
     modeSegmentedControl.snp.makeConstraints { make in
