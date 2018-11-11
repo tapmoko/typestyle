@@ -10,6 +10,9 @@ struct StyleFactory {
     return [
       Transformer(name: "Monospace",
                   outputBase: "𝙰𝙱𝙲𝙳𝙴𝙵𝙶𝙷𝙸𝙹𝙺𝙻𝙼𝙽𝙾𝙿𝚀𝚁𝚂𝚃𝚄𝚅𝚆𝚇𝚈𝚉𝚊𝚋𝚌𝚍𝚎𝚏𝚐𝚑𝚒𝚓𝚔𝚕𝚖𝚗𝚘𝚙𝚚𝚛𝚜𝚝𝚞𝚟𝚠𝚡𝚢𝚣"),
+      Transformer(name: "Reverse",
+                  outputBase: "ɐqɔpǝɟƃɥıɾʞlɯuodbɹsʇnʌʍxʎzɐbɔdǝɟƃɥıɾʞlɯnodbɹsʇnʌʍxʎz",
+                  reverse: true),
       Transformer(name: "Fraktur",
                   outputBase: "𝔄𝔅ℭ𝔇𝔈𝔉𝔊ℌℑ𝔍𝔎𝔏𝔐𝔑𝔒𝔓𝔔ℜ𝔖𝔗𝔘𝔙𝔚𝔛𝔜ℨ𝔞𝔟𝔠𝔡𝔢𝔣𝔤𝔥𝔦𝔧𝔨𝔩𝔪𝔫𝔬𝔭𝔮𝔯𝔰𝔱𝔲𝔳𝔴𝔵𝔶𝔷"),
       Transformer(name: "Bold Fraktur",
