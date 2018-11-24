@@ -69,7 +69,7 @@ class TypeStyleController: UIViewController {
     tableView.dataSource = self
     tableView.delegate = self
     tableView.dragDelegate = self
-    tableView.backgroundColor = nil
+    tableView.backgroundColor = .appBackground
     tableView.separatorStyle = .none
 
     view.addSubview(tableView)
