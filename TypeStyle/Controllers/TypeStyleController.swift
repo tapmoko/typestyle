@@ -122,6 +122,13 @@ class TypeStyleController: UIViewController {
     refreshUI()
   }
 
+  func output(forIndexPath indexPath: IndexPath) -> String {
+    switch mode {
+    case .styles: return TransformerManager.shared.styledText(for: input, index: indexPath.row)
+    case .decorations: return TransformerManager.shared.decoratedText(for: input, index: indexPath.row)
+    }
+  }
+
 }
 
 extension TypeStyleController: UITableViewDataSource {
@@ -133,14 +140,8 @@ extension TypeStyleController: UITableViewDataSource {
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    var output = ""
-    switch mode {
-    case .styles: output = TransformerManager.shared.styledText(for: input, index: indexPath.row)
-    case .decorations: output = TransformerManager.shared.decoratedText(for: input, index: indexPath.row)
-    }
-
     let cell = tableView.dequeueReusableCell(withIdentifier: OutputCell.identifier) as! OutputCell
-    cell.outputLabel.text = output
+    cell.outputLabel.text = output(forIndexPath: indexPath)
     return cell
   }
 
