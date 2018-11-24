@@ -147,6 +147,17 @@ extension TypeStyleController: UITableViewDataSource {
     return cell
   }
 
+  func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+    let favoriteAction = UITableViewRowAction(style: .normal, title: "Favorite", handler: didFavorite)
+    favoriteAction.backgroundColor = .appDarkBackground
+
+    return [favoriteAction]
+  }
+
+  func didFavorite(rowAction: UITableViewRowAction, at indexPath: IndexPath) {
+    
+  }
+
 }
 
 extension TypeStyleController: UITableViewDelegate {
