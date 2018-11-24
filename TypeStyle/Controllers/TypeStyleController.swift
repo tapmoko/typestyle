@@ -1,5 +1,6 @@
 import UIKit
 import SnapKit
+import CoreServices
 
 class TypeStyleController: UIViewController {
 
@@ -67,6 +68,7 @@ class TypeStyleController: UIViewController {
   func setUpTableView() {
     tableView.dataSource = self
     tableView.delegate = self
+    tableView.dragDelegate = self
     tableView.backgroundColor = nil
     tableView.separatorStyle = .none
 
@@ -195,6 +197,26 @@ extension TypeStyleController: UITextViewDelegate {
 
   func textViewDidEndEditing(_ textView: UITextView) {
     refreshUI()
+  }
+
+}
+
+extension TypeStyleController: UITableViewDragDelegate {
+
+  func tableView(_ tableView: UITableView,
+                 itemsForBeginning session: UIDragSession,
+                 at indexPath: IndexPath) -> [UIDragItem] {
+    let draggedValue = output(forIndexPath: indexPath).data(using: .utf8)
+
+    let itemProvider = NSItemProvider()
+    let typeIdentifier = kUTTypePlainText as String
+
+    itemProvider.registerDataRepresentation(forTypeIdentifier: typeIdentifier, visibility: .all) { completion in
+      completion(draggedValue, nil)
+      return nil
+    }
+
+    return [UIDragItem(itemProvider: itemProvider)]
   }
 
 }
