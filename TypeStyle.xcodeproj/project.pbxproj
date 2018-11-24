@@ -20,6 +20,7 @@
 		B69D281A218BC95200A298A9 /* StyleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69D2819218BC95200A298A9 /* StyleFactory.swift */; };
 		B69D281C218BC96E00A298A9 /* DecorationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69D281B218BC96E00A298A9 /* DecorationFactory.swift */; };
 		B69D281F218BD2E800A298A9 /* Transformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69D281E218BD2E800A298A9 /* Transformer.swift */; };
+		B6E91DE621AA19B8003214C9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E91DE521AA19B8003214C9 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		B69D2819218BC95200A298A9 /* StyleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StyleFactory.swift; path = TypeStyle/Factories/StyleFactory.swift; sourceTree = SOURCE_ROOT; };
 		B69D281B218BC96E00A298A9 /* DecorationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecorationFactory.swift; sourceTree = "<group>"; };
 		B69D281E218BD2E800A298A9 /* Transformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transformer.swift; sourceTree = "<group>"; };
+		B6E91DE521AA19B8003214C9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 				B69D2818218BC94000A298A9 /* Managers */,
 				B69D281D218BCA4600A298A9 /* Factories */,
 				B68C6EAC218A365A007CB17A /* UIColor+Extension.swift */,
+				B6E91DE521AA19B8003214C9 /* Constants.swift */,
 				B66B548F2187C4770038C84A /* Assets.xcassets */,
 				B66B54912187C4770038C84A /* LaunchScreen.storyboard */,
 				B66B54942187C4770038C84A /* Info.plist */,
@@ -261,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B66B548B2187C4750038C84A /* TypeStyleController.swift in Sources */,
+				B6E91DE621AA19B8003214C9 /* Constants.swift in Sources */,
 				B66B54892187C4750038C84A /* AppDelegate.swift in Sources */,
 				B69D2813218A8ACD00A298A9 /* CopiedView.swift in Sources */,
 				B68C6EAB218A3493007CB17A /* TransformerManager.swift in Sources */,

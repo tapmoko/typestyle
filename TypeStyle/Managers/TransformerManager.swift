@@ -19,3 +19,20 @@ struct TransformerManager {
   }
 
 }
+
+// MARK: Favoriting
+
+extension TransformerManager {
+
+  func isFavorited(transformer: Transformer) -> Bool {
+    return UserDefaults.standard.bool(forKey: String.localizedStringWithFormat(transformerFavoritedKey,
+                                                                               transformer.name))
+  }
+
+  func toggleFavorite(transformer: Transformer) {
+    UserDefaults.standard.set(!isFavorited(transformer: transformer),
+                              forKey: String.localizedStringWithFormat(transformerFavoritedKey,
+                                                                       transformer.name))
+  }
+
+}
