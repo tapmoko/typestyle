@@ -22,10 +22,10 @@ struct TransformerManager {
   }
 
   mutating func updateTransformersToDisplay() {
-    let unsortedTransformers = (mode == .styles) ? styles : decorations
-    transformersToDisplay = unsortedTransformers.sorted() { first, second in
-      isFavorited(transformer: first)
-    }
+    let unsorted = (mode == .styles) ? styles : decorations
+    let favorited = unsorted.filter { isFavorited(transformer: $0) }
+    let unfavorited = unsorted.filter { !isFavorited(transformer: $0) }
+    transformersToDisplay = favorited + unfavorited
   }
 
   func transformedText(for text: String, index: Int) -> String {
@@ -37,6 +37,10 @@ struct TransformerManager {
 // MARK: Favoriting
 
 extension TransformerManager {
+
+  func isFavorited(at index: Int) -> Bool {
+    return isFavorited(transformer: transformersToDisplay[index])
+  }
 
   func isFavorited(transformer: Transformer) -> Bool {
     return UserDefaults.standard.bool(forKey: String.localizedStringWithFormat(transformerFavoritedKey,
