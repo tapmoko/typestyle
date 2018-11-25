@@ -5,7 +5,11 @@ class AboutViewController: UITableViewController {
 
   let cells: [UITableViewCell] = [
     AboutLabelTableViewCell(text: "TypeStyle is an app created by me, Eugene Belinski."),
-    AboutButtonTableViewCell(text: "My Website", link: "https://ebelinski.com")
+    AboutButtonTableViewCell(text: "My Website", link: "https://ebelinski.com"),
+    AboutLabelTableViewCell(text: "TypeStyle is open source! It is written in Swift 4.2, and released under the GNU-GPL 3.0 license."),
+    AboutButtonTableViewCell(text: "View Source", link: "https://github.com/ebelinski/typestyle-ios"),
+    AboutLabelTableViewCell(text: "The TypeStyle privacy policy is available here:"),
+    AboutButtonTableViewCell(text: "View Source", link: "https://typestyle.app/privacy-policy")
   ]
 
   override func viewDidLoad() {
