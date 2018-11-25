@@ -1,6 +1,6 @@
 import UIKit
 
-protocol AboutButtonTableViewCellDelegate {
+protocol AboutButtonTableViewCellDelegate: class {
   func open(link: String)
 }
 
@@ -9,7 +9,7 @@ class AboutButtonTableViewCell: UITableViewCell {
   let button = UIButton()
   let padding: CGFloat = 20
   let link: String
-  var delegate: AboutButtonTableViewCellDelegate?
+  weak var delegate: AboutButtonTableViewCellDelegate?
 
   init(text: String, link: String) {
     self.link = link
