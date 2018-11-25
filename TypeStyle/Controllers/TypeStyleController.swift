@@ -118,7 +118,9 @@ class TypeStyleController: UIViewController {
   }
 
   @objc func didTapAboutButton() {
-
+    let aboutVC = AboutViewController()
+    let aboutNavigationVC = UINavigationController(rootViewController: aboutVC)
+    present(aboutNavigationVC, animated: true, completion: nil)
   }
 
   func refreshUI() {
