@@ -133,6 +133,7 @@ extension TypeStyleController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: OutputCell.identifier) as! OutputCell
     cell.outputLabel.text = output(for: indexPath)
+    cell.favoriteLabel.text = TransformerManager.shared.isFavorited(at: indexPath.row) ? "\u{2661}\u{0000FE0E}" : ""
     return cell
   }
 

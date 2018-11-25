@@ -5,6 +5,7 @@ class OutputCell: UITableViewCell {
   static let identifier = "OutputCell"
 
   let outputLabel = UILabel()
+  let favoriteLabel = UILabel()
   let padding: CGFloat = 10
 
   override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -17,6 +18,7 @@ class OutputCell: UITableViewCell {
     selectedBackgroundView = selectedView
 
     setUpOutputLabel()
+    setUpFavoriteLabel()
   }
 
   required init?(coder aDecoder: NSCoder) {
@@ -34,6 +36,22 @@ class OutputCell: UITableViewCell {
     outputLabel.snp.makeConstraints { make in
       make.top.equalToSuperview().offset(padding)
       make.left.equalToSuperview().offset(padding)
+      make.bottom.equalToSuperview().offset(-padding)
+    }
+  }
+
+  func setUpFavoriteLabel() {
+    favoriteLabel.textColor = .appText
+    favoriteLabel.font = UIFont.preferredFont(forTextStyle: .body)
+    favoriteLabel.adjustsFontForContentSizeCategory = true
+    favoriteLabel.textAlignment = .right
+    favoriteLabel.setContentCompressionResistancePriority(UILayoutPriority(rawValue: 10000), for: .horizontal)
+
+    addSubview(favoriteLabel)
+
+    favoriteLabel.snp.makeConstraints { make in
+      make.top.equalToSuperview().offset(padding)
+      make.left.greaterThanOrEqualTo(outputLabel.snp.right).offset(padding)
       make.right.equalToSuperview().offset(-padding)
       make.bottom.equalToSuperview().offset(-padding)
     }
