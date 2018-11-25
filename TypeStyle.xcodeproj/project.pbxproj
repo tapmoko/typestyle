@@ -22,6 +22,7 @@
 		B69D281F218BD2E800A298A9 /* Transformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69D281E218BD2E800A298A9 /* Transformer.swift */; };
 		B6E91DE621AA19B8003214C9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E91DE521AA19B8003214C9 /* Constants.swift */; };
 		B6E91DE821AA2FA7003214C9 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E91DE721AA2FA7003214C9 /* AboutViewController.swift */; };
+		B6E91DEA21AA32CD003214C9 /* AboutLabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E91DE921AA32CD003214C9 /* AboutLabelTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		B69D281E218BD2E800A298A9 /* Transformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transformer.swift; sourceTree = "<group>"; };
 		B6E91DE521AA19B8003214C9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B6E91DE721AA2FA7003214C9 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		B6E91DE921AA32CD003214C9 /* AboutLabelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutLabelTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 				B69D2809218A407C00A298A9 /* InputContainerView.swift */,
 				B69D2812218A8ACD00A298A9 /* CopiedView.swift */,
 				B68C6EAE218A3E63007CB17A /* OutputCell.swift */,
+				B6E91DE921AA32CD003214C9 /* AboutLabelTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				B69D2813218A8ACD00A298A9 /* CopiedView.swift in Sources */,
 				B68C6EAB218A3493007CB17A /* TransformerManager.swift in Sources */,
 				B69D281A218BC95200A298A9 /* StyleFactory.swift in Sources */,
+				B6E91DEA21AA32CD003214C9 /* AboutLabelTableViewCell.swift in Sources */,
 				B6E91DE821AA2FA7003214C9 /* AboutViewController.swift in Sources */,
 				B69D281C218BC96E00A298A9 /* DecorationFactory.swift in Sources */,
 				B69D281F218BD2E800A298A9 /* Transformer.swift in Sources */,

@@ -2,6 +2,10 @@ import UIKit
 
 class AboutViewController: UITableViewController {
 
+  let cells: [UITableViewCell] = [
+    AboutLabelTableViewCell(text: "TypeStyle is an app created by Eugene Belinski.")
+  ]
+
   override func viewDidLoad() {
     super.viewDidLoad()
 
@@ -28,6 +32,14 @@ class AboutViewController: UITableViewController {
 
   @objc func didTapDoneButton() {
     dismiss(animated: true, completion: nil)
+  }
+
+  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return cells.count
+  }
+
+  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    return cells[indexPath.row]
   }
 
 }
