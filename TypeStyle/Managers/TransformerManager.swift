@@ -16,6 +16,10 @@ struct TransformerManager {
   var mode: Mode = .styles
   var transformersToDisplay = StyleFactory.allStyles()
 
+  init() {
+    updateTransformersToDisplay()
+  }
+
   mutating func set(mode: Mode) {
     self.mode = mode
     updateTransformersToDisplay()
