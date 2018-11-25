@@ -1,11 +1,19 @@
 import UIKit
 
+protocol AboutButtonTableViewCellDelegate {
+  func open(link: String)
+}
+
 class AboutButtonTableViewCell: UITableViewCell {
 
   let button = UIButton()
   let padding: CGFloat = 20
+  let link: String
+  var delegate: AboutButtonTableViewCellDelegate?
 
   init(text: String, link: String) {
+    self.link = link
+
     super.init(style: .default, reuseIdentifier: nil)
 
     backgroundColor = .appBackground
@@ -27,6 +35,8 @@ class AboutButtonTableViewCell: UITableViewCell {
     button.titleLabel?.adjustsFontForContentSizeCategory = true
     button.titleLabel?.numberOfLines = 0 // unlimited
 
+    button.addTarget(self, action: #selector(openLink), for: .touchUpInside)
+
     let attributes: [NSAttributedString.Key: Any] = [
       NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue,
       NSAttributedString.Key.foregroundColor: UIColor.appText
@@ -43,6 +53,10 @@ class AboutButtonTableViewCell: UITableViewCell {
       make.width.lessThanOrEqualToSuperview().offset(-padding * 2)
       make.bottom.equalToSuperview().offset(-padding / 2)
     }
+  }
+
+  @objc func openLink() {
+    delegate?.open(link: link)
   }
 
 }

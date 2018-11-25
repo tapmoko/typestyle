@@ -1,9 +1,10 @@
 import UIKit
+import SafariServices
 
 class AboutViewController: UITableViewController {
 
   let cells: [UITableViewCell] = [
-    AboutLabelTableViewCell(text: "TypeStyle is an app created by Eugene Belinski."),
+    AboutLabelTableViewCell(text: "TypeStyle is an app created by me, Eugene Belinski."),
     AboutButtonTableViewCell(text: "My Website", link: "https://ebelinski.com")
   ]
 
@@ -36,12 +37,33 @@ class AboutViewController: UITableViewController {
     dismiss(animated: true, completion: nil)
   }
 
+}
+
+// MARK: Table view data source
+
+extension AboutViewController {
+
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return cells.count
   }
 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    return cells[indexPath.row]
+    let cell = cells[indexPath.row]
+    (cell as? AboutButtonTableViewCell)?.delegate = self
+    return cell
+  }
+}
+
+// MARK: URL opening
+
+extension AboutViewController: AboutButtonTableViewCellDelegate {
+
+  func open(link: String) {
+    guard let url = URL(string: link) else { return }
+    let svc = SFSafariViewController(url: url)
+    svc.preferredBarTintColor = .appBackground
+    svc.preferredControlTintColor = .appText
+    present(svc, animated: true, completion: nil)
   }
 
 }
