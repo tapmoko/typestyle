@@ -7,13 +7,13 @@ class TypeStyleController: UIViewController {
   override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
   var isInitialAppearance = true
   let feedbackGenerator = UINotificationFeedbackGenerator()
+  var transformerManager = TransformerManager()
 
   let inputContainerView = InputContainerView()
   let tableView = UITableView()
   let modeSegmentedControl = UISegmentedControl(items: ["Styles", "Decorations"])
   let copiedView = CopiedView()
   let aboutButton = UIButton(type: .infoLight)
-
   let generalMargin: CGFloat = 15
 
   var input = ""
@@ -131,15 +131,15 @@ class TypeStyleController: UIViewController {
 
   @objc func modeDidChange() {
     switch modeSegmentedControl.selectedSegmentIndex {
-    case 0: TransformerManager.shared.set(mode: .styles)
-    case 1: TransformerManager.shared.set(mode: .decorations)
+    case 0: transformerManager.set(mode: .styles)
+    case 1: transformerManager.set(mode: .decorations)
     default: break
     }
     refreshUI()
   }
 
   func output(for indexPath: IndexPath) -> String {
-    return TransformerManager.shared.transformedText(for: input, index: indexPath.row)
+    return transformerManager.transformedText(for: input, index: indexPath.row)
   }
 
 }
@@ -148,18 +148,18 @@ extension TypeStyleController: UITableViewDataSource {
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     if input.isEmpty { return 0 } // Don't show output cells if input is empty
-    return TransformerManager.shared.transformersToDisplay.count
+    return transformerManager.transformersToDisplay.count
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: OutputCell.identifier) as! OutputCell
     cell.outputLabel.text = output(for: indexPath)
-    cell.favoriteLabel.text = TransformerManager.shared.isFavorited(at: indexPath.row) ? "\u{2661}\u{0000FE0E}" : ""
+    cell.favoriteLabel.text = transformerManager.isFavorited(at: indexPath.row) ? "\u{2661}\u{0000FE0E}" : ""
     return cell
   }
 
   func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-    let title = TransformerManager.shared.isFavorited(at: indexPath.row) ? "Unfavorite" : "Favorite"
+    let title = transformerManager.isFavorited(at: indexPath.row) ? "Unfavorite" : "Favorite"
     let favoriteAction = UITableViewRowAction(style: .normal, title: title, handler: didFavorite)
     favoriteAction.backgroundColor = .appDarkBackground
 
@@ -167,9 +167,9 @@ extension TypeStyleController: UITableViewDataSource {
   }
 
   func didFavorite(rowAction: UITableViewRowAction, at indexPath: IndexPath) {
-    let transformer = TransformerManager.shared.transformersToDisplay[indexPath.row]
-    TransformerManager.shared.toggleFavorite(transformer: transformer)
-    TransformerManager.shared.updateTransformersToDisplay()
+    let transformer = transformerManager.transformersToDisplay[indexPath.row]
+    transformerManager.toggleFavorite(transformer: transformer)
+    transformerManager.updateTransformersToDisplay()
     refreshUI()
   }
 
