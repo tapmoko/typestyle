@@ -31,7 +31,7 @@ class AboutLabelTableViewCell: UITableViewCell {
     addSubview(label)
 
     label.snp.makeConstraints { make in
-      make.top.equalToSuperview().offset(padding)
+      make.top.equalToSuperview().offset(padding / 2)
       make.left.equalToSuperview().offset(padding)
       make.right.equalToSuperview().offset(-padding)
       make.bottom.equalToSuperview().offset(-padding / 2)

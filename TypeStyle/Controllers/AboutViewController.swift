@@ -3,7 +3,8 @@ import UIKit
 class AboutViewController: UITableViewController {
 
   let cells: [UITableViewCell] = [
-    AboutLabelTableViewCell(text: "TypeStyle is an app created by Eugene Belinski.")
+    AboutLabelTableViewCell(text: "TypeStyle is an app created by Eugene Belinski."),
+    AboutButtonTableViewCell(text: "My Website", link: "https://ebelinski.com")
   ]
 
   override func viewDidLoad() {
@@ -28,6 +29,7 @@ class AboutViewController: UITableViewController {
     // Set up table view
 
     tableView.separatorStyle = .none
+    tableView.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
   }
 
   @objc func didTapDoneButton() {
