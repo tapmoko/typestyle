@@ -159,7 +159,8 @@ extension TypeStyleController: UITableViewDataSource {
   }
 
   func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-    let favoriteAction = UITableViewRowAction(style: .normal, title: "Favorite", handler: didFavorite)
+    let title = TransformerManager.shared.isFavorited(at: indexPath.row) ? "Unfavorite" : "Favorite"
+    let favoriteAction = UITableViewRowAction(style: .normal, title: title, handler: didFavorite)
     favoriteAction.backgroundColor = .appDarkBackground
 
     return [favoriteAction]
