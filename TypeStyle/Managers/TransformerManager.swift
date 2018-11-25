@@ -2,20 +2,34 @@ import Foundation
 
 struct TransformerManager {
 
-  static let shared = TransformerManager()
+  enum Mode {
+    case styles
+    case decorations
+  }
+
+  static var shared = TransformerManager()
 
   let styleInputBase = StyleFactory.inputBase()
   let styles = StyleFactory.allStyles()
   let decorations = DecorationFactory.allDecorations()
+  
+  var mode: Mode = .styles
+  var transformersToDisplay = StyleFactory.allStyles()
 
-  func styledText(for text: String, index: Int) -> String {
-    let style = styles[index]
-    return style.transform(text)
+  mutating func set(mode: Mode) {
+    self.mode = mode
+    updateTransformersToDisplay()
   }
 
-  func decoratedText(for text: String, index: Int) -> String {
-    let decoration = decorations[index]
-    return decoration.transform(text)
+  mutating func updateTransformersToDisplay() {
+    let unsortedTransformers = (mode == .styles) ? styles : decorations
+    transformersToDisplay = unsortedTransformers.sorted() { first, second in
+      isFavorited(transformer: first)
+    }
+  }
+
+  func transformedText(for text: String, index: Int) -> String {
+    return transformersToDisplay[index].transform(text)
   }
 
 }

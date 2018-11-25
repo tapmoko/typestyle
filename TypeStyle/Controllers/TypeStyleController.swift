@@ -4,11 +4,6 @@ import CoreServices
 
 class TypeStyleController: UIViewController {
 
-  enum Mode {
-    case styles
-    case decorations
-  }
-
   override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
   var isInitialAppearance = true
   let feedbackGenerator = UINotificationFeedbackGenerator()
@@ -21,7 +16,6 @@ class TypeStyleController: UIViewController {
   let generalMargin: CGFloat = 15
 
   var input = ""
-  var mode: Mode = .styles
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -116,19 +110,15 @@ class TypeStyleController: UIViewController {
 
   @objc func modeDidChange() {
     switch modeSegmentedControl.selectedSegmentIndex {
-    case 0: mode = .styles
-    case 1: mode = .decorations
+    case 0: TransformerManager.shared.set(mode: .styles)
+    case 1: TransformerManager.shared.set(mode: .decorations)
     default: break
     }
-
     refreshUI()
   }
 
-  func output(forIndexPath indexPath: IndexPath) -> String {
-    switch mode {
-    case .styles: return TransformerManager.shared.styledText(for: input, index: indexPath.row)
-    case .decorations: return TransformerManager.shared.decoratedText(for: input, index: indexPath.row)
-    }
+  func output(for indexPath: IndexPath) -> String {
+    return TransformerManager.shared.transformedText(for: input, index: indexPath.row)
   }
 
 }
@@ -137,13 +127,12 @@ extension TypeStyleController: UITableViewDataSource {
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     if input.isEmpty { return 0 } // Don't show output cells if input is empty
-    return (mode == .styles) ? TransformerManager.shared.styles.count
-                             : TransformerManager.shared.decorations.count
+    return TransformerManager.shared.transformersToDisplay.count
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: OutputCell.identifier) as! OutputCell
-    cell.outputLabel.text = output(forIndexPath: indexPath)
+    cell.outputLabel.text = output(for: indexPath)
     return cell
   }
 
@@ -155,7 +144,10 @@ extension TypeStyleController: UITableViewDataSource {
   }
 
   func didFavorite(rowAction: UITableViewRowAction, at indexPath: IndexPath) {
-    
+    let transformer = TransformerManager.shared.transformersToDisplay[indexPath.row]
+    TransformerManager.shared.toggleFavorite(transformer: transformer)
+    TransformerManager.shared.updateTransformersToDisplay()
+    refreshUI()
   }
 
 }
@@ -169,12 +161,7 @@ extension TypeStyleController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     inputContainerView.inputTextView.resignFirstResponder()
 
-    var selectedString = ""
-    switch mode {
-    case .styles: selectedString = TransformerManager.shared.styledText(for: input, index: indexPath.row)
-    case .decorations: selectedString = TransformerManager.shared.decoratedText(for: input, index: indexPath.row)
-    }
-
+    let selectedString = output(for: indexPath)
     UIPasteboard.general.string = selectedString
 
     feedbackGenerator.notificationOccurred(.success)
@@ -217,7 +204,7 @@ extension TypeStyleController: UITableViewDragDelegate {
   func tableView(_ tableView: UITableView,
                  itemsForBeginning session: UIDragSession,
                  at indexPath: IndexPath) -> [UIDragItem] {
-    let draggedValue = output(forIndexPath: indexPath).data(using: .utf8)
+    let draggedValue = output(for: indexPath).data(using: .utf8)
 
     let itemProvider = NSItemProvider()
     let typeIdentifier = kUTTypePlainText as String
