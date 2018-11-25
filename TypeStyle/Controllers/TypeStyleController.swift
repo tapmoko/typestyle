@@ -12,7 +12,7 @@ class TypeStyleController: UIViewController {
   let tableView = UITableView()
   let modeSegmentedControl = UISegmentedControl(items: ["Styles", "Decorations"])
   let copiedView = CopiedView()
-  let infoButton = UIButton(type: .infoLight)
+  let aboutButton = UIButton(type: .infoLight)
 
   let generalMargin: CGFloat = 15
 
@@ -27,7 +27,7 @@ class TypeStyleController: UIViewController {
     setUpModeSegmentedControl()
     setUpTableView()
     setUpCopiedView()
-    setUpInfoButton()
+    setUpAboutButton()
   }
 
   func setUpInputContainerView() {
@@ -61,13 +61,13 @@ class TypeStyleController: UIViewController {
     }
   }
 
-  func setUpInfoButton() {
-    infoButton.addTarget(self, action: #selector(didTapInfoButton), for: .touchUpInside)
-    infoButton.tintColor = .appText
+  func setUpAboutButton() {
+    aboutButton.addTarget(self, action: #selector(didTapAboutButton), for: .touchUpInside)
+    aboutButton.tintColor = .appText
 
-    view.addSubview(infoButton)
+    view.addSubview(aboutButton)
 
-    infoButton.snp.makeConstraints { make in
+    aboutButton.snp.makeConstraints { make in
       make.centerY.equalTo(modeSegmentedControl.snp.centerY)
       make.left.equalTo(modeSegmentedControl.snp.right).offset(generalMargin)
       make.right.equalTo(view.safeAreaLayoutGuide.snp.right).offset(-generalMargin)
@@ -117,7 +117,7 @@ class TypeStyleController: UIViewController {
     inputContainerView.inputTextView.becomeFirstResponder()
   }
 
-  @objc func didTapInfoButton() {
+  @objc func didTapAboutButton() {
 
   }
 
