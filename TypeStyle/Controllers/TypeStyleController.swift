@@ -13,6 +13,7 @@ class TypeStyleController: UIViewController {
   let tableView = UITableView()
   let modeSegmentedControl = UISegmentedControl(items: ["Styles", "Decorations"])
   let copiedView = CopiedView()
+  var copiedViewTimer: Timer?
   let aboutButton = UIButton(type: .infoLight)
   let generalMargin: CGFloat = 15
 
@@ -192,16 +193,25 @@ extension TypeStyleController: UITableViewDelegate {
   }
 
   func showCopiedView() {
+    copiedViewTimer?.invalidate()
+    copiedViewTimer = nil
+    copiedView.alpha = 0
     copiedView.isHidden = false
     UIView.animate(withDuration: 0.1, delay: 0, options: [], animations: {
       self.copiedView.alpha = 1
     }, completion: { _ in
-      self.hideCopiedView()
+      self.copiedViewTimer = Timer.scheduledTimer(timeInterval: 0.5,
+                                                  target: self,
+                                                  selector: #selector(self.hideCopiedView),
+                                                  userInfo: nil,
+                                                  repeats: false)
     })
   }
 
-  func hideCopiedView() {
-    UIView.animate(withDuration: 0.1, delay: 0.5, options: [], animations: {
+  @objc func hideCopiedView() {
+    copiedViewTimer?.invalidate()
+    copiedViewTimer = nil
+    UIView.animate(withDuration: 0.1, animations: {
       self.copiedView.alpha = 0
     }, completion: { _ in
       self.copiedView.isHidden = true
