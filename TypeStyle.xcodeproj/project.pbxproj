@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4197FA8F2221D06F000516AA /* CustomTransforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4197FA8E2221D06F000516AA /* CustomTransforms.swift */; };
 		4D70C85087409A3712FCF61D /* Pods_TypeStyle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A1A28C86774E2905973081B /* Pods_TypeStyle.framework */; };
 		B66B54892187C4750038C84A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66B54882187C4750038C84A /* AppDelegate.swift */; };
 		B66B548B2187C4750038C84A /* TypeStyleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66B548A2187C4750038C84A /* TypeStyleController.swift */; };
@@ -28,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		1DEC71703F0F805362174096 /* Pods-TypeStyle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TypeStyle.release.xcconfig"; path = "Pods/Target Support Files/Pods-TypeStyle/Pods-TypeStyle.release.xcconfig"; sourceTree = "<group>"; };
+		4197FA8E2221D06F000516AA /* CustomTransforms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTransforms.swift; sourceTree = "<group>"; };
 		4A1A28C86774E2905973081B /* Pods_TypeStyle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TypeStyle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		56C7FEC02ACCD5C9C57D3012 /* Pods-TypeStyle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TypeStyle.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TypeStyle/Pods-TypeStyle.debug.xcconfig"; sourceTree = "<group>"; };
 		B66B54852187C4750038C84A /* TypeStyle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TypeStyle.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,6 +110,7 @@
 				B69D281D218BCA4600A298A9 /* Factories */,
 				B68C6EAC218A365A007CB17A /* UIColor+Extension.swift */,
 				B6E91DE521AA19B8003214C9 /* Constants.swift */,
+				4197FA8E2221D06F000516AA /* CustomTransforms.swift */,
 				B66B548F2187C4770038C84A /* Assets.xcassets */,
 				B66B54912187C4770038C84A /* LaunchScreen.storyboard */,
 				B66B54942187C4770038C84A /* Info.plist */,
@@ -286,6 +289,7 @@
 				B68C6EAD218A365A007CB17A /* UIColor+Extension.swift in Sources */,
 				B68C6EAF218A3E63007CB17A /* OutputCell.swift in Sources */,
 				B69D280A218A407C00A298A9 /* InputContainerView.swift in Sources */,
+				4197FA8F2221D06F000516AA /* CustomTransforms.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
