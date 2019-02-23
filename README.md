@@ -2,6 +2,8 @@
 
 [TypeStyle](https://typestyle.app/) is a handy app for iPhone and iPad that generates text using different styles and decorations. It is a native Swift iOS app.
 
+![TypeStyle app screenshots on iPhone X](media/iphone-x-screenshots.png)
+
 [![Download on the App Store](media/app-store-badge.svg)](https://itunes.apple.com/us/app/typestyle/id1441019779?ls=1&mt=8)
 
 ## Features
