@@ -77,6 +77,7 @@ struct StyleFactory {
                   outputBase: "ＡＢＣＤＥＦＧＨＩＪＫＬＭＮＯＰＱＲＳＴＵＶＷＸＹＺａｂｃｄｅｆｇｈｉｊｋｌｍｎｏｐｑｒｓｔｕｖｗｘｙｚ１２３４５６７８９０"),
       Transformer(name: "Tiny",
                   outputBase: "ABCDEFGHIJKLMNOPQRSTUVWXYZᴀʙᴄᴅᴇғɢʜɪᴊᴋʟᴍɴᴏᴘϙʀꜱᴛᴜᴠᴡxʏᴢ1234567890"),
+      Transformer(name: "Mocking SpongeBob", transform: CustomTransforms.mockingSpongeBob)
     ]
   }
 
