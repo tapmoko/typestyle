@@ -30,5 +30,10 @@ struct Transformer {
       return "\(before) \(input) \(after)"
     }
   }
+  
+  init(name: String, transform: @escaping (String) -> String) {
+    self.name = name
+    self.transform = transform
+  }
 
 }
