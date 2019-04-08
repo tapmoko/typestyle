@@ -198,6 +198,7 @@
 				TargetAttributes = {
 					B66B54842187C4750038C84A = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -238,7 +239,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-TypeStyle/Pods-TypeStyle-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-TypeStyle/Pods-TypeStyle-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -247,7 +248,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TypeStyle/Pods-TypeStyle-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TypeStyle/Pods-TypeStyle-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		34D3A73CC42413AF501E22E5 /* [CP] Check Pods Manifest.lock */ = {
@@ -437,7 +438,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ebelinski.TypeStyle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -456,7 +457,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ebelinski.TypeStyle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
