@@ -24,6 +24,8 @@ class TypeStyleController: UIViewController {
 
     tableView.register(OutputCell.self, forCellReuseIdentifier: OutputCell.identifier)
 
+    view.backgroundColor = .appBackground
+
     setUpInputContainerView()
     setUpModeSegmentedControl()
     setUpTableView()
@@ -79,7 +81,7 @@ class TypeStyleController: UIViewController {
     tableView.dataSource = self
     tableView.delegate = self
     tableView.dragDelegate = self
-    tableView.backgroundColor = .appBackground
+    tableView.backgroundColor = .clear
     tableView.separatorStyle = .none
 
     view.addSubview(tableView)

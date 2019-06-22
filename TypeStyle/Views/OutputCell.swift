@@ -11,7 +11,7 @@ class OutputCell: UITableViewCell {
   override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
 
-    backgroundColor = .appBackground
+    backgroundColor = .clear
 
     let selectedView = UIView()
     selectedView.backgroundColor = .appSelected
