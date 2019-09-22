@@ -21,7 +21,6 @@ class AboutViewController: UITableViewController {
     navigationController?.navigationBar.barTintColor = .appDarkBackground
     navigationController?.navigationBar.tintColor = .appText
     navigationController?.navigationBar.barStyle = .black
-    navigationController?.navigationBar.prefersLargeTitles = true
 
     // Set navigation bar contents
 
