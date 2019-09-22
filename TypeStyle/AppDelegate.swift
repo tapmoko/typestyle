@@ -10,7 +10,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     window = UIWindow(frame: UIScreen.main.bounds)
     window?.rootViewController = TypeStyleController()
     window?.makeKeyAndVisible()
-    window?.backgroundColor = .appBackground
 
     return true
   }
