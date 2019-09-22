@@ -19,7 +19,6 @@ class AboutViewController: UITableViewController {
 
     // Set navigation bar colors and style
     navigationController?.navigationBar.barTintColor = .appDarkBackground
-    navigationController?.navigationBar.isTranslucent = false
     navigationController?.navigationBar.tintColor = .appText
     navigationController?.navigationBar.barStyle = .black
     navigationController?.navigationBar.prefersLargeTitles = true
