@@ -9,7 +9,7 @@
 ## Features
 
 * Fun styles like 𝔗𝔥𝔦𝔰, 𝕋𝕙𝕚𝕤, and even sıɥʇ
-* Expressive decorationsl like ¸,ø¤º°°º¤ø,¸ This ¸,ø¤º°°º¤ø,¸
+* Expressive decorations like ¸,ø¤º°°º¤ø,¸ This ¸,ø¤º°°º¤ø,¸
 * Favorite your top styles to pin them to the top
 * One-click copy to your clipboard
 * iPad [Drag and Drop](https://developer.apple.com/ios/drag-and-drop/) support
