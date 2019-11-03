@@ -10,6 +10,7 @@
 		4115950D236E7BE40049509F /* TypeStyleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4115950C236E7BE40049509F /* TypeStyleTests.swift */; };
 		4197FA8F2221D06F000516AA /* CustomTransforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4197FA8E2221D06F000516AA /* CustomTransforms.swift */; };
 		4D70C85087409A3712FCF61D /* Pods_TypeStyle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A1A28C86774E2905973081B /* Pods_TypeStyle.framework */; };
+		71C7A17E506A2BFBCF81C52A /* libPods-TypeStyleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B6AFB6D6B88B41891DB7E565 /* libPods-TypeStyleTests.a */; };
 		B66B54892187C4750038C84A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66B54882187C4750038C84A /* AppDelegate.swift */; };
 		B66B548B2187C4750038C84A /* TypeStyleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66B548A2187C4750038C84A /* TypeStyleController.swift */; };
 		B66B54902187C4770038C84A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B66B548F2187C4770038C84A /* Assets.xcassets */; };
@@ -47,6 +48,7 @@
 		4197FA8E2221D06F000516AA /* CustomTransforms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTransforms.swift; sourceTree = "<group>"; };
 		4A1A28C86774E2905973081B /* Pods_TypeStyle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TypeStyle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		56C7FEC02ACCD5C9C57D3012 /* Pods-TypeStyle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TypeStyle.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TypeStyle/Pods-TypeStyle.debug.xcconfig"; sourceTree = "<group>"; };
+		5F7B64E86731EDC0A52CD767 /* Pods-TypeStyleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TypeStyleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TypeStyleTests/Pods-TypeStyleTests.release.xcconfig"; sourceTree = "<group>"; };
 		B66B54852187C4750038C84A /* TypeStyle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TypeStyle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B66B54882187C4750038C84A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B66B548A2187C4750038C84A /* TypeStyleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeStyleController.swift; sourceTree = "<group>"; };
@@ -61,10 +63,12 @@
 		B69D2819218BC95200A298A9 /* StyleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StyleFactory.swift; path = TypeStyle/Factories/StyleFactory.swift; sourceTree = SOURCE_ROOT; };
 		B69D281B218BC96E00A298A9 /* DecorationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecorationFactory.swift; sourceTree = "<group>"; };
 		B69D281E218BD2E800A298A9 /* Transformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transformer.swift; sourceTree = "<group>"; };
+		B6AFB6D6B88B41891DB7E565 /* libPods-TypeStyleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TypeStyleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6E91DE521AA19B8003214C9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B6E91DE721AA2FA7003214C9 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		B6E91DE921AA32CD003214C9 /* AboutLabelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutLabelTableViewCell.swift; sourceTree = "<group>"; };
 		B6E91DEB21AA3542003214C9 /* AboutButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutButtonTableViewCell.swift; sourceTree = "<group>"; };
+		BC6564AF17F2ED41EAFAD1AB /* Pods-TypeStyleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TypeStyleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TypeStyleTests/Pods-TypeStyleTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71C7A17E506A2BFBCF81C52A /* libPods-TypeStyleTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +96,8 @@
 			children = (
 				56C7FEC02ACCD5C9C57D3012 /* Pods-TypeStyle.debug.xcconfig */,
 				1DEC71703F0F805362174096 /* Pods-TypeStyle.release.xcconfig */,
+				BC6564AF17F2ED41EAFAD1AB /* Pods-TypeStyleTests.debug.xcconfig */,
+				5F7B64E86731EDC0A52CD767 /* Pods-TypeStyleTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -108,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				4A1A28C86774E2905973081B /* Pods_TypeStyle.framework */,
+				B6AFB6D6B88B41891DB7E565 /* libPods-TypeStyleTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -205,6 +213,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 41159513236E7BE40049509F /* Build configuration list for PBXNativeTarget "TypeStyleTests" */;
 			buildPhases = (
+				D8CB9006633CF8C671E20923 /* [CP] Check Pods Manifest.lock */,
 				41159506236E7BE40049509F /* Sources */,
 				41159507236E7BE40049509F /* Frameworks */,
 				41159508236E7BE40049509F /* Resources */,
@@ -332,6 +341,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D8CB9006633CF8C671E20923 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TypeStyleTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -389,6 +420,7 @@
 /* Begin XCBuildConfiguration section */
 		41159511236E7BE40049509F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC6564AF17F2ED41EAFAD1AB /* Pods-TypeStyleTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -410,6 +442,7 @@
 		};
 		41159512236E7BE40049509F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F7B64E86731EDC0A52CD767 /* Pods-TypeStyleTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;

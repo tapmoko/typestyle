@@ -8,3 +8,12 @@ target 'TypeStyle' do
   pod 'SnapKit'
 
 end
+
+def testing_pods
+  pod 'Quick'
+  pod 'Nimble'
+end
+
+target 'TypeStyleTests' do
+  testing_pods
+end
