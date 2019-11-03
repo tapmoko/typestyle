@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4115950D236E7BE40049509F /* TypeStyleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4115950C236E7BE40049509F /* TypeStyleTests.swift */; };
 		41159515236E7D860049509F /* StyleFactorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41159514236E7D860049509F /* StyleFactorySpec.swift */; };
 		41159516236E7F000049509F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66B54882187C4750038C84A /* AppDelegate.swift */; };
 		41159517236E7F000049509F /* Transformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69D281E218BD2E800A298A9 /* Transformer.swift */; };
@@ -59,7 +58,6 @@
 /* Begin PBXFileReference section */
 		1DEC71703F0F805362174096 /* Pods-TypeStyle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TypeStyle.release.xcconfig"; path = "Pods/Target Support Files/Pods-TypeStyle/Pods-TypeStyle.release.xcconfig"; sourceTree = "<group>"; };
 		4115950A236E7BE40049509F /* TypeStyleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TypeStyleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4115950C236E7BE40049509F /* TypeStyleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeStyleTests.swift; sourceTree = "<group>"; };
 		4115950E236E7BE40049509F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		41159514236E7D860049509F /* StyleFactorySpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleFactorySpec.swift; sourceTree = "<group>"; };
 		41588F6A2357CBC6004E78FD /* TypeStyle.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TypeStyle.entitlements; sourceTree = "<group>"; };
@@ -123,7 +121,6 @@
 		4115950B236E7BE40049509F /* TypeStyleTests */ = {
 			isa = PBXGroup;
 			children = (
-				4115950C236E7BE40049509F /* TypeStyleTests.swift */,
 				41159514236E7D860049509F /* StyleFactorySpec.swift */,
 				4115950E236E7BE40049509F /* Info.plist */,
 			);
@@ -398,7 +395,6 @@
 				4115951A236E7F000049509F /* OutputCell.swift in Sources */,
 				4115951F236E7F000049509F /* TransformerManager.swift in Sources */,
 				41159523236E7F000049509F /* Constants.swift in Sources */,
-				4115950D236E7BE40049509F /* TypeStyleTests.swift in Sources */,
 				41159520236E7F000049509F /* StyleFactory.swift in Sources */,
 				41159522236E7F000049509F /* UIColor+Extension.swift in Sources */,
 				41159515236E7D860049509F /* StyleFactorySpec.swift in Sources */,
