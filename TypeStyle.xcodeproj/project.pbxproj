@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4115950D236E7BE40049509F /* TypeStyleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4115950C236E7BE40049509F /* TypeStyleTests.swift */; };
 		4197FA8F2221D06F000516AA /* CustomTransforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4197FA8E2221D06F000516AA /* CustomTransforms.swift */; };
 		4D70C85087409A3712FCF61D /* Pods_TypeStyle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A1A28C86774E2905973081B /* Pods_TypeStyle.framework */; };
 		B66B54892187C4750038C84A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66B54882187C4750038C84A /* AppDelegate.swift */; };
@@ -27,8 +28,21 @@
 		B6E91DEC21AA3542003214C9 /* AboutButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E91DEB21AA3542003214C9 /* AboutButtonTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		4115950F236E7BE40049509F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B66B547D2187C4750038C84A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B66B54842187C4750038C84A;
+			remoteInfo = TypeStyle;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		1DEC71703F0F805362174096 /* Pods-TypeStyle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TypeStyle.release.xcconfig"; path = "Pods/Target Support Files/Pods-TypeStyle/Pods-TypeStyle.release.xcconfig"; sourceTree = "<group>"; };
+		4115950A236E7BE40049509F /* TypeStyleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TypeStyleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4115950C236E7BE40049509F /* TypeStyleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeStyleTests.swift; sourceTree = "<group>"; };
+		4115950E236E7BE40049509F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		41588F6A2357CBC6004E78FD /* TypeStyle.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TypeStyle.entitlements; sourceTree = "<group>"; };
 		4197FA8E2221D06F000516AA /* CustomTransforms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTransforms.swift; sourceTree = "<group>"; };
 		4A1A28C86774E2905973081B /* Pods_TypeStyle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TypeStyle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,6 +68,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		41159507236E7BE40049509F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B66B54822187C4750038C84A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -74,6 +95,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		4115950B236E7BE40049509F /* TypeStyleTests */ = {
+			isa = PBXGroup;
+			children = (
+				4115950C236E7BE40049509F /* TypeStyleTests.swift */,
+				4115950E236E7BE40049509F /* Info.plist */,
+			);
+			path = TypeStyleTests;
+			sourceTree = "<group>";
+		};
 		5F96C59C1E1C00B6869F66D8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				B66B54872187C4750038C84A /* TypeStyle */,
+				4115950B236E7BE40049509F /* TypeStyleTests */,
 				B66B54862187C4750038C84A /* Products */,
 				25724A09B1A8F9E6C723C2B6 /* Pods */,
 				5F96C59C1E1C00B6869F66D8 /* Frameworks */,
@@ -96,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				B66B54852187C4750038C84A /* TypeStyle.app */,
+				4115950A236E7BE40049509F /* TypeStyleTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -169,6 +201,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		41159509236E7BE40049509F /* TypeStyleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 41159513236E7BE40049509F /* Build configuration list for PBXNativeTarget "TypeStyleTests" */;
+			buildPhases = (
+				41159506236E7BE40049509F /* Sources */,
+				41159507236E7BE40049509F /* Frameworks */,
+				41159508236E7BE40049509F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				41159510236E7BE40049509F /* PBXTargetDependency */,
+			);
+			name = TypeStyleTests;
+			productName = TypeStyleTests;
+			productReference = 4115950A236E7BE40049509F /* TypeStyleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		B66B54842187C4750038C84A /* TypeStyle */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B66B54972187C4770038C84A /* Build configuration list for PBXNativeTarget "TypeStyle" */;
@@ -194,10 +244,14 @@
 		B66B547D2187C4750038C84A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1000;
+				LastSwiftUpdateCheck = 1120;
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Eugeniu Belinski";
 				TargetAttributes = {
+					41159509236E7BE40049509F = {
+						CreatedOnToolsVersion = 11.2;
+						TestTargetID = B66B54842187C4750038C84A;
+					};
 					B66B54842187C4750038C84A = {
 						CreatedOnToolsVersion = 10.0;
 						LastSwiftMigration = 1020;
@@ -218,11 +272,19 @@
 			projectRoot = "";
 			targets = (
 				B66B54842187C4750038C84A /* TypeStyle */,
+				41159509236E7BE40049509F /* TypeStyleTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		41159508236E7BE40049509F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B66B54832187C4750038C84A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -273,6 +335,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		41159506236E7BE40049509F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4115950D236E7BE40049509F /* TypeStyleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B66B54812187C4750038C84A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -297,6 +367,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		41159510236E7BE40049509F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B66B54842187C4750038C84A /* TypeStyle */;
+			targetProxy = 4115950F236E7BE40049509F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		B66B54912187C4770038C84A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -309,6 +387,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		41159511236E7BE40049509F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H7ATB2ZBVD;
+				INFOPLIST_FILE = TypeStyleTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tapmoko.TypeStyleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TypeStyle.app/TypeStyle";
+			};
+			name = Debug;
+		};
+		41159512236E7BE40049509F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H7ATB2ZBVD;
+				INFOPLIST_FILE = TypeStyleTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tapmoko.TypeStyleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TypeStyle.app/TypeStyle";
+			};
+			name = Release;
+		};
 		B66B54952187C4770038C84A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -478,6 +598,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		41159513236E7BE40049509F /* Build configuration list for PBXNativeTarget "TypeStyleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				41159511236E7BE40049509F /* Debug */,
+				41159512236E7BE40049509F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		B66B54802187C4750038C84A /* Build configuration list for PBXProject "TypeStyle" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
