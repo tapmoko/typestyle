@@ -1,8 +1,8 @@
 import UIKit
 
-class OutputCell: UITableViewCell {
+class OutputTableViewCell: UITableViewCell {
 
-  static let identifier = "OutputCell"
+  static let identifier = "OutputTableViewCell"
 
   let outputLabel = UILabel()
   let favoriteLabel = UILabel()

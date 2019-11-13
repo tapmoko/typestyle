@@ -22,7 +22,7 @@ class TypeStyleViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    tableView.register(OutputCell.self, forCellReuseIdentifier: OutputCell.identifier)
+    tableView.register(OutputTableViewCell.self, forCellReuseIdentifier: OutputTableViewCell.identifier)
 
     view.backgroundColor = .appBackground
 
@@ -155,7 +155,7 @@ extension TypeStyleViewController: UITableViewDataSource {
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: OutputCell.identifier) as! OutputCell
+    let cell = tableView.dequeueReusableCell(withIdentifier: OutputTableViewCell.identifier) as! OutputTableViewCell
     cell.outputLabel.text = output(for: indexPath)
     cell.favoriteLabel.text = transformerManager.isFavorited(at: indexPath.row) ? "\u{2661}\u{0000FE0E}" : ""
     return cell
