@@ -15,7 +15,7 @@
 		4115951A236E7F000049509F /* OutputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68C6EAE218A3E63007CB17A /* OutputCell.swift */; };
 		4115951B236E7F000049509F /* AboutLabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E91DE921AA32CD003214C9 /* AboutLabelTableViewCell.swift */; };
 		4115951C236E7F000049509F /* AboutButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E91DEB21AA3542003214C9 /* AboutButtonTableViewCell.swift */; };
-		4115951D236E7F000049509F /* TypeStyleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66B548A2187C4750038C84A /* TypeStyleController.swift */; };
+		4115951D236E7F000049509F /* TypeStyleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66B548A2187C4750038C84A /* TypeStyleViewController.swift */; };
 		4115951E236E7F000049509F /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E91DE721AA2FA7003214C9 /* AboutViewController.swift */; };
 		4115951F236E7F000049509F /* TransformerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68C6EAA218A3493007CB17A /* TransformerManager.swift */; };
 		41159520236E7F000049509F /* StyleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69D2819218BC95200A298A9 /* StyleFactory.swift */; };
@@ -28,7 +28,7 @@
 		4D70C85087409A3712FCF61D /* Pods_TypeStyle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A1A28C86774E2905973081B /* Pods_TypeStyle.framework */; };
 		71C7A17E506A2BFBCF81C52A /* libPods-TypeStyleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B6AFB6D6B88B41891DB7E565 /* libPods-TypeStyleTests.a */; };
 		B66B54892187C4750038C84A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66B54882187C4750038C84A /* AppDelegate.swift */; };
-		B66B548B2187C4750038C84A /* TypeStyleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66B548A2187C4750038C84A /* TypeStyleController.swift */; };
+		B66B548B2187C4750038C84A /* TypeStyleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66B548A2187C4750038C84A /* TypeStyleViewController.swift */; };
 		B66B54902187C4770038C84A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B66B548F2187C4770038C84A /* Assets.xcassets */; };
 		B66B54932187C4770038C84A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B66B54912187C4770038C84A /* LaunchScreen.storyboard */; };
 		B68C6EAB218A3493007CB17A /* TransformerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68C6EAA218A3493007CB17A /* TransformerManager.swift */; };
@@ -67,7 +67,7 @@
 		5F7B64E86731EDC0A52CD767 /* Pods-TypeStyleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TypeStyleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TypeStyleTests/Pods-TypeStyleTests.release.xcconfig"; sourceTree = "<group>"; };
 		B66B54852187C4750038C84A /* TypeStyle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TypeStyle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B66B54882187C4750038C84A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B66B548A2187C4750038C84A /* TypeStyleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeStyleController.swift; sourceTree = "<group>"; };
+		B66B548A2187C4750038C84A /* TypeStyleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeStyleViewController.swift; sourceTree = "<group>"; };
 		B66B548F2187C4770038C84A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B66B54922187C4770038C84A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B66B54942187C4770038C84A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -199,7 +199,7 @@
 		B69D280F218A7A4800A298A9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				B66B548A2187C4750038C84A /* TypeStyleController.swift */,
+				B66B548A2187C4750038C84A /* TypeStyleViewController.swift */,
 				B6E91DE721AA2FA7003214C9 /* AboutViewController.swift */,
 			);
 			path = Controllers;
@@ -388,7 +388,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				41159519236E7F000049509F /* CopiedView.swift in Sources */,
-				4115951D236E7F000049509F /* TypeStyleController.swift in Sources */,
+				4115951D236E7F000049509F /* TypeStyleViewController.swift in Sources */,
 				4115951E236E7F000049509F /* AboutViewController.swift in Sources */,
 				41159516236E7F000049509F /* AppDelegate.swift in Sources */,
 				41159521236E7F000049509F /* DecorationFactory.swift in Sources */,
@@ -410,7 +410,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B66B548B2187C4750038C84A /* TypeStyleController.swift in Sources */,
+				B66B548B2187C4750038C84A /* TypeStyleViewController.swift in Sources */,
 				B6E91DE621AA19B8003214C9 /* Constants.swift in Sources */,
 				B66B54892187C4750038C84A /* AppDelegate.swift in Sources */,
 				B69D2813218A8ACD00A298A9 /* CopiedView.swift in Sources */,
