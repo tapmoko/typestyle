@@ -57,8 +57,8 @@ class CopiedView: UIView {
     copiedLabel.snp.makeConstraints { make in
       make.centerX.equalToSuperview()
       make.centerY.equalToSuperview().offset(15)
-      make.left.equalToSuperview().offset(copiedLabelPadding)
-      make.right.equalToSuperview().offset(-copiedLabelPadding)
+      make.leading.equalToSuperview().offset(copiedLabelPadding)
+      make.trailing.equalToSuperview().offset(-copiedLabelPadding)
     }
   }
 

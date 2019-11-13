@@ -41,8 +41,8 @@ class TypeStyleViewController: UIViewController {
 
     inputContainerView.snp.makeConstraints { make in
       make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
-      make.left.equalTo(view.safeAreaLayoutGuide.snp.left)
-      make.right.equalTo(view.safeAreaLayoutGuide.snp.right)
+      make.leading.equalTo(view.safeAreaLayoutGuide.snp.leading)
+      make.trailing.equalTo(view.safeAreaLayoutGuide.snp.trailing)
     }
   }
 
@@ -59,7 +59,7 @@ class TypeStyleViewController: UIViewController {
 
     modeSegmentedControl.snp.makeConstraints { make in
       make.centerX.equalToSuperview()
-      make.left.greaterThanOrEqualTo(view.safeAreaLayoutGuide.snp.left).offset(generalMargin)
+      make.leading.greaterThanOrEqualTo(view.safeAreaLayoutGuide.snp.leading).offset(generalMargin)
       make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-generalMargin)
     }
   }
@@ -72,8 +72,8 @@ class TypeStyleViewController: UIViewController {
 
     aboutButton.snp.makeConstraints { make in
       make.centerY.equalTo(modeSegmentedControl.snp.centerY)
-      make.left.equalTo(modeSegmentedControl.snp.right).offset(generalMargin)
-      make.right.equalTo(view.safeAreaLayoutGuide.snp.right).offset(-generalMargin)
+      make.leading.equalTo(modeSegmentedControl.snp.trailing).offset(generalMargin)
+      make.trailing.equalTo(view.safeAreaLayoutGuide.snp.trailing).offset(-generalMargin)
     }
   }
 
@@ -88,8 +88,8 @@ class TypeStyleViewController: UIViewController {
 
     tableView.snp.makeConstraints { make in
       make.top.equalTo(inputContainerView.snp.bottom)
-      make.left.equalTo(view.safeAreaLayoutGuide.snp.left)
-      make.right.equalTo(view.safeAreaLayoutGuide.snp.right)
+      make.leading.equalTo(view.safeAreaLayoutGuide.snp.leading)
+      make.trailing.equalTo(view.safeAreaLayoutGuide.snp.trailing)
       make.bottom.equalTo(modeSegmentedControl.snp.top).offset(-generalMargin)
     }
   }

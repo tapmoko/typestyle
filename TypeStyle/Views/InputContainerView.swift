@@ -36,8 +36,8 @@ class InputContainerView: UIView {
 
     inputTextViewContainer.snp.makeConstraints { make in
       make.top.equalToSuperview().offset(inputTextViewMargin)
-      make.left.equalToSuperview().offset(inputTextViewMargin)
-      make.right.equalToSuperview().offset(-inputTextViewMargin)
+      make.leading.equalToSuperview().offset(inputTextViewMargin)
+      make.trailing.equalToSuperview().offset(-inputTextViewMargin)
       make.bottom.equalToSuperview().offset(-inputTextViewMargin)
     }
   }
@@ -53,7 +53,7 @@ class InputContainerView: UIView {
 
     clearButton.snp.makeConstraints { make in
       make.centerY.equalToSuperview()
-      make.right.equalToSuperview().offset(-inputTextViewPadding)
+      make.trailing.equalToSuperview().offset(-inputTextViewPadding)
     }
   }
 
@@ -85,9 +85,9 @@ class InputContainerView: UIView {
 
     inputTextView.snp.makeConstraints { make in
       make.top.equalToSuperview()
-      make.left.equalToSuperview()
+      make.leading.equalToSuperview()
       make.bottom.equalToSuperview()
-      make.right.equalTo(clearButton.snp.left)
+      make.trailing.equalTo(clearButton.snp.leading)
     }
   }
 

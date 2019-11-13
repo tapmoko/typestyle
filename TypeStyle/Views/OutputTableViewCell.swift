@@ -35,7 +35,7 @@ class OutputTableViewCell: UITableViewCell {
 
     outputLabel.snp.makeConstraints { make in
       make.top.equalToSuperview().offset(padding)
-      make.left.equalToSuperview().offset(padding)
+      make.leading.equalToSuperview().offset(padding)
       make.bottom.equalToSuperview().offset(-padding)
     }
   }
@@ -51,8 +51,8 @@ class OutputTableViewCell: UITableViewCell {
 
     favoriteLabel.snp.makeConstraints { make in
       make.top.equalToSuperview().offset(padding)
-      make.left.greaterThanOrEqualTo(outputLabel.snp.right).offset(padding)
-      make.right.equalToSuperview().offset(-padding)
+      make.leading.greaterThanOrEqualTo(outputLabel.snp.trailing).offset(padding)
+      make.trailing.equalToSuperview().offset(-padding)
       make.bottom.equalToSuperview().offset(-padding)
     }
   }
