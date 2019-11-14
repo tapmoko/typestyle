@@ -7,7 +7,6 @@ struct TransformerManager {
     case decorations
   }
 
-  let styleInputBase = StyleFactory.inputBase()
   let styles = StyleFactory.allStyles()
   let decorations = DecorationFactory.allDecorations()
   
