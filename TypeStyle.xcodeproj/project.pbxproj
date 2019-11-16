@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -24,6 +24,7 @@
 		41159523236E7F000049509F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E91DE521AA19B8003214C9 /* Constants.swift */; };
 		41159524236E7F000049509F /* CustomTransforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4197FA8E2221D06F000516AA /* CustomTransforms.swift */; };
 		41159525236E802F0049509F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B66B54912187C4770038C84A /* LaunchScreen.storyboard */; };
+		4141902923803FC5009D3225 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4141902823803FC5009D3225 /* SnapKit */; };
 		4197FA8F2221D06F000516AA /* CustomTransforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4197FA8E2221D06F000516AA /* CustomTransforms.swift */; };
 		4D70C85087409A3712FCF61D /* Pods_TypeStyle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A1A28C86774E2905973081B /* Pods_TypeStyle.framework */; };
 		71C7A17E506A2BFBCF81C52A /* libPods-TypeStyleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B6AFB6D6B88B41891DB7E565 /* libPods-TypeStyleTests.a */; };
@@ -101,6 +102,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D70C85087409A3712FCF61D /* Pods_TypeStyle.framework in Frameworks */,
+				4141902923803FC5009D3225 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,13 +254,15 @@
 				B66B54812187C4750038C84A /* Sources */,
 				B66B54822187C4750038C84A /* Frameworks */,
 				B66B54832187C4750038C84A /* Resources */,
-				1BD7A4E8CE374EE97A2A0E5B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = TypeStyle;
+			packageProductDependencies = (
+				4141902823803FC5009D3225 /* SnapKit */,
+			);
 			productName = TypeStyle;
 			productReference = B66B54852187C4750038C84A /* TypeStyle.app */;
 			productType = "com.apple.product-type.application";
@@ -292,6 +296,9 @@
 				Base,
 			);
 			mainGroup = B66B547C2187C4750038C84A;
+			packageReferences = (
+				4141902723803FC5009D3225 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = B66B54862187C4750038C84A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -323,23 +330,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1BD7A4E8CE374EE97A2A0E5B /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TypeStyle/Pods-TypeStyle-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TypeStyle/Pods-TypeStyle-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TypeStyle/Pods-TypeStyle-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		34D3A73CC42413AF501E22E5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -691,6 +681,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4141902723803FC5009D3225 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4141902823803FC5009D3225 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4141902723803FC5009D3225 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B66B547D2187C4750038C84A /* Project object */;
 }

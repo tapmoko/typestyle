@@ -2,7 +2,6 @@
 platform :ios, '12.0'
 
 def universal_pods
-  pod 'SnapKit'
 end
 
 def testing_pods
