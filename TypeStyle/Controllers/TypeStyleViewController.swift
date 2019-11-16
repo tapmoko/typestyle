@@ -22,8 +22,6 @@ class TypeStyleViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    tableView.register(OutputTableViewCell.self, forCellReuseIdentifier: OutputTableViewCell.identifier)
-
     view.backgroundColor = .appBackground
 
     setUpInputContainerView()
@@ -78,6 +76,8 @@ class TypeStyleViewController: UIViewController {
   }
 
   func setUpTableView() {
+    tableView.register(OutputTableViewCell.self, forCellReuseIdentifier: OutputTableViewCell.identifier)
+
     tableView.dataSource = self
     tableView.delegate = self
     tableView.dragDelegate = self
