@@ -70,7 +70,7 @@ struct StyleFactory {
       Transformer(name: "Kanjify",
                   outputBase: "丹日亡句ヨ乍呂廾工勹片し冊几回尸甲尺己卞凵レ山メと乙丹日亡句ヨ乍呂廾工勹片し冊几回尸甲尺己卞凵レ山メと乙亅己ヨ牙与石丁曰彑"),
       Transformer(name: "Emoji text",
-                  outputBase: "🅰🅱🌜🌛🎗🎏🌀♓🎐🎷🎋👢〽️🎵⚽🅿️🍳🌱💲🌴⛎✅🔱❎🍸💤🅰🅱🌜🌛🎗🎏🌀♓🎐🎷🎋👢〽️🎵⚽🅿️🍳🌱💲🌴⛎✅🔱❎🍸💤1234567890"),
+                  outputBase: "🅰🅱🌜🌛🎗🎏🌀♓🎐🎷🎋👢〽️🎵⚽🅿️🍳🌱💲🌴⛎✅🔱❎🍸💤🅰🅱🌜🌛🎗🎏🌀♓🎐🎷🎋👢〽️🎵⚽🅿️🍳🌱💲🌴⛎✅🔱❎🍸💤1️⃣2️⃣3️⃣4️⃣5️⃣6️⃣7️⃣8️⃣9️⃣0️⃣"),
       Transformer(name: "H4k3r",
                   outputBase: "48(D3F9H!JK1MN0PQR57UVWXY248(d3f9h!jk1mn0pqr57uvwxy21234567890"),
       Transformer(name: "Thin",
