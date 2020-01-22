@@ -71,7 +71,7 @@ class InputContainerView: UIView {
     inputTextView.backgroundColor = .appDarkBackground
 
     // Font
-    inputTextView.font = UIFont.preferredFont(forTextStyle: .title2)
+    setTextSize(.title2)
     inputTextView.adjustsFontForContentSizeCategory = true
 
     // Shape
@@ -89,6 +89,10 @@ class InputContainerView: UIView {
       make.bottom.equalToSuperview()
       make.trailing.equalTo(clearButton.snp.leading)
     }
+  }
+
+  func setTextSize(_ size: UIFont.TextStyle) {
+    inputTextView.font = UIFont.preferredFont(forTextStyle: size)
   }
 
 }

@@ -130,6 +130,14 @@ class TypeStyleViewController: UIViewController {
     input = inputContainerView.inputTextView.text ?? ""
     inputContainerView.clearButton.isHidden = input.isEmpty
     tableView.reloadData()
+
+    if input.count > 200 {
+      inputContainerView.setTextSize(.footnote)
+    } else if input.count > 100 {
+      inputContainerView.setTextSize(.body)
+    } else {
+      inputContainerView.setTextSize(.title2)
+    }
   }
 
   @objc func modeDidChange() {
