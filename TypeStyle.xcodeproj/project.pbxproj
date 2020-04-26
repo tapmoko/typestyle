@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4104614124552D7E0002D713 /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = 4104614024552D7E0002D713 /* Nimble */; };
 		41159515236E7D860049509F /* StyleFactorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41159514236E7D860049509F /* StyleFactorySpec.swift */; };
 		41159516236E7F000049509F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66B54882187C4750038C84A /* AppDelegate.swift */; };
 		41159517236E7F000049509F /* Transformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69D281E218BD2E800A298A9 /* Transformer.swift */; };
@@ -24,8 +25,9 @@
 		41159523236E7F000049509F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E91DE521AA19B8003214C9 /* Constants.swift */; };
 		41159524236E7F000049509F /* CustomTransforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4197FA8E2221D06F000516AA /* CustomTransforms.swift */; };
 		41159525236E802F0049509F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B66B54912187C4770038C84A /* LaunchScreen.storyboard */; };
-		4141902923803FC5009D3225 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 4141902823803FC5009D3225 /* SwiftPackageProductDependency */; };
+		4141902923803FC5009D3225 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4141902823803FC5009D3225 /* SnapKit */; };
 		4197FA8F2221D06F000516AA /* CustomTransforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4197FA8E2221D06F000516AA /* CustomTransforms.swift */; };
+		41D1971624552E8500A46EFB /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = 41D1971524552E8500A46EFB /* Quick */; };
 		B66B54892187C4750038C84A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66B54882187C4750038C84A /* AppDelegate.swift */; };
 		B66B548B2187C4750038C84A /* TypeStyleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66B548A2187C4750038C84A /* TypeStyleViewController.swift */; };
 		B66B54902187C4770038C84A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B66B548F2187C4770038C84A /* Assets.xcassets */; };
@@ -85,6 +87,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41D1971624552E8500A46EFB /* Quick in Frameworks */,
+				4104614124552D7E0002D713 /* Nimble in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,7 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4141902923803FC5009D3225 /* BuildFile in Frameworks */,
+				4141902923803FC5009D3225 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +213,10 @@
 				41159510236E7BE40049509F /* PBXTargetDependency */,
 			);
 			name = TypeStyleTests;
+			packageProductDependencies = (
+				4104614024552D7E0002D713 /* Nimble */,
+				41D1971524552E8500A46EFB /* Quick */,
+			);
 			productName = TypeStyleTests;
 			productReference = 4115950A236E7BE40049509F /* TypeStyleTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -227,7 +235,7 @@
 			);
 			name = TypeStyle;
 			packageProductDependencies = (
-				4141902823803FC5009D3225 /* SwiftPackageProductDependency */,
+				4141902823803FC5009D3225 /* SnapKit */,
 			);
 			productName = TypeStyle;
 			productReference = B66B54852187C4750038C84A /* TypeStyle.app */;
@@ -263,7 +271,9 @@
 			);
 			mainGroup = B66B547C2187C4750038C84A;
 			packageReferences = (
-				4141902723803FC5009D3225 /* RemoteSwiftPackageReference */,
+				4141902723803FC5009D3225 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				4104613F24552D7E0002D713 /* XCRemoteSwiftPackageReference "Nimble" */,
+				41D1971424552E8500A46EFB /* XCRemoteSwiftPackageReference "Quick" */,
 			);
 			productRefGroup = B66B54862187C4750038C84A /* Products */;
 			projectDirPath = "";
@@ -602,7 +612,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		4141902723803FC5009D3225 /* RemoteSwiftPackageReference */ = {
+		4104613F24552D7E0002D713 /* XCRemoteSwiftPackageReference "Nimble" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Quick/Nimble";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.7;
+			};
+		};
+		4141902723803FC5009D3225 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
 			requirement = {
@@ -610,13 +628,31 @@
 				minimumVersion = 5.0.1;
 			};
 		};
+		41D1971424552E8500A46EFB /* XCRemoteSwiftPackageReference "Quick" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Quick/Quick";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		4141902823803FC5009D3225 /* SwiftPackageProductDependency */ = {
+		4104614024552D7E0002D713 /* Nimble */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 4141902723803FC5009D3225 /* RemoteSwiftPackageReference */;
+			package = 4104613F24552D7E0002D713 /* XCRemoteSwiftPackageReference "Nimble" */;
+			productName = Nimble;
+		};
+		4141902823803FC5009D3225 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4141902723803FC5009D3225 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		41D1971524552E8500A46EFB /* Quick */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 41D1971424552E8500A46EFB /* XCRemoteSwiftPackageReference "Quick" */;
+			productName = Quick;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
