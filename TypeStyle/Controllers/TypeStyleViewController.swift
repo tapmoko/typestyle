@@ -169,19 +169,20 @@ extension TypeStyleViewController: UITableViewDataSource {
     return cell
   }
 
-  func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-    let title = transformerManager.isFavorited(at: indexPath.row) ? "Unfavorite" : "Favorite"
-    let favoriteAction = UITableViewRowAction(style: .normal, title: title, handler: didFavorite)
+  func tableView(_ tableView: UITableView,
+                 trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+    let favoriteTitle = transformerManager.isFavorited(at: indexPath.row) ? "Unfavorite" : "Favorite"
+    let favoriteAction = UIContextualAction(style: .normal, title: favoriteTitle) {
+      (contextualAction, view, boolValue) in
+
+      let transformer = self.transformerManager.transformersToDisplay[indexPath.row]
+      self.transformerManager.toggleFavorite(transformer: transformer)
+      self.transformerManager.updateTransformersToDisplay()
+      self.refreshUI()
+    }
     favoriteAction.backgroundColor = .appDarkBackground
 
-    return [favoriteAction]
-  }
-
-  func didFavorite(rowAction: UITableViewRowAction, at indexPath: IndexPath) {
-    let transformer = transformerManager.transformersToDisplay[indexPath.row]
-    transformerManager.toggleFavorite(transformer: transformer)
-    transformerManager.updateTransformersToDisplay()
-    refreshUI()
+    return UISwipeActionsConfiguration(actions: [favoriteAction])
   }
 
 }
