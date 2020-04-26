@@ -199,7 +199,7 @@ class TypeStyleViewController: UIViewController {
 
   func output(for indexPath: IndexPath) -> String {
     return transformerManager.transformedText(for: (viewMode == .generate) ? input : nil,
-                                              index: indexPath.row)
+                                              indexPath: indexPath)
   }
 
 }
@@ -208,19 +208,30 @@ class TypeStyleViewController: UIViewController {
 
 extension TypeStyleViewController: UITableViewDataSource {
 
+  func numberOfSections(in tableView: UITableView) -> Int {
+    return transformerManager.transformerGroupingsToDisplay.count
+  }
+
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     // Don't show output cells if we are in generate mode and input is empty
     if viewMode == .generate && input.isEmpty {
       return 0
     }
 
-    return transformerManager.transformersToDisplay.count
+    return transformerManager.transformerGroupingsToDisplay[section].transformers.count
+  }
+
+  func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    switch transformerManager.mode {
+    case .styles, .decorations: return nil
+    case .emoticons: return transformerManager.transformerGroupingsToDisplay[section].groupName
+    }
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: OutputTableViewCell.identifier) as! OutputTableViewCell
     cell.outputLabel.text = output(for: indexPath)
-    cell.favoriteImageView.image = transformerManager.isFavorited(at: indexPath.row)
+    cell.favoriteImageView.image = transformerManager.isFavorited(at: indexPath)
       ? UIImage(systemName: "heart")?.withRenderingMode(.alwaysTemplate)
       : nil
     return cell
@@ -228,11 +239,11 @@ extension TypeStyleViewController: UITableViewDataSource {
 
   func tableView(_ tableView: UITableView,
                  trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-    let favoriteTitle = transformerManager.isFavorited(at: indexPath.row) ? "Unfavorite" : "Favorite"
+    let favoriteTitle = transformerManager.isFavorited(at: indexPath) ? "Unfavorite" : "Favorite"
     let favoriteAction = UIContextualAction(style: .normal, title: favoriteTitle) {
       (contextualAction, view, boolValue) in
 
-      let transformer = self.transformerManager.transformersToDisplay[indexPath.row]
+      let transformer = self.transformerManager.transformerGroupingsToDisplay[indexPath.section].transformers[indexPath.row]
       self.transformerManager.toggleFavorite(transformer: transformer)
       self.transformerManager.updateTransformersToDisplay()
       self.refreshUI()

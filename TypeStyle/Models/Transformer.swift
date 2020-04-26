@@ -2,6 +2,8 @@ import Foundation
 
 struct Transformer {
 
+  typealias Grouping = (groupName: String, transformers: [Transformer])
+
   let name: String
   let transform: (String) -> String
 

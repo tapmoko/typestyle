@@ -6,8 +6,8 @@ struct StyleFactory {
     return "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890"
   }
 
-  static func allStyles() -> [Transformer] {
-    return [
+  static func allStyles() -> [Transformer.Grouping] {
+    return [(groupName: "All Styles", transformers: [
       Transformer(name: "Monospace",
                   outputBase: "𝙰𝙱𝙲𝙳𝙴𝙵𝙶𝙷𝙸𝙹𝙺𝙻𝙼𝙽𝙾𝙿𝚀𝚁𝚂𝚃𝚄𝚅𝚆𝚇𝚈𝚉𝚊𝚋𝚌𝚍𝚎𝚏𝚐𝚑𝚒𝚓𝚔𝚕𝚖𝚗𝚘𝚙𝚚𝚛𝚜𝚝𝚞𝚟𝚠𝚡𝚢𝚣𝟷𝟸𝟹𝟺𝟻𝟼𝟽𝟾𝟿𝟶"),
       Transformer(name: "Reverse",
@@ -82,7 +82,7 @@ struct StyleFactory {
       Transformer(name: "Strikethrough",
                   outputBase: "A̶B̶C̶D̶E̶F̶G̶H̶I̶J̶K̶L̶M̶N̶O̶P̶Q̶R̶S̶T̶U̶V̶W̶X̶Y̶Z̶a̶b̶c̶d̶e̶f̶g̶h̶i̶j̶k̶l̶m̶n̶o̶p̶q̶r̶s̶t̶u̶v̶w̶x̶y̶z̶1̶2̶3̶4̶5̶6̶7̶8̶9̶0̶"),
       Transformer(name: "Mocking SpongeBob", transform: CustomTransforms.mockingSpongeBob)
-    ]
+    ])]
   }
 
 }

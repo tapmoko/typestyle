@@ -2,8 +2,8 @@ import Foundation
 
 struct EmoticonFactory {
 
-  static func allEmoticons() -> [Transformer] {
-    return [
+  static func allEmoticons() -> [Transformer.Grouping] {
+    return [(groupName: "All Emoticons", transformers: [
       Transformer(name: "Angry 1", output: "ಠ_ಠ"),
       Transformer(name: "Angry 2", output: "⋋_⋌"),
       Transformer(name: "Angry 3", output: "눈_눈"),
@@ -2216,7 +2216,7 @@ struct EmoticonFactory {
       Transformer(name: "Wink 28", output: "(o'ｕ≦o)"),
       Transformer(name: "Wink 29", output: "(*ゝω・)ﾉ"),
       Transformer(name: "Wink 30", output: "(ﾟﾛ^o)o"),
-    ]
+    ])]
   }
 
 }

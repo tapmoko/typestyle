@@ -2,8 +2,8 @@ import Foundation
 
 struct DecorationFactory {
 
-  static func allDecorations() -> [Transformer] {
-    return [
+  static func allDecorations() -> [Transformer.Grouping] {
+  return [(groupName: "All Decorations", transformers: [
       Transformer(name: "Decoration 1", before: "`•.,¸¸,.•´¯", after: "¯`•.,¸¸,.•´"),
       Transformer(name: "Decoration 2", before: "¸,ø¤º°`°º¤ø,¸", after: "¸,ø¤º°`°º¤ø,¸"),
       Transformer(name: "Decoration 3", before: "★·.·´¯`·.·★", after: "★·.·´¯`·.·★"),
@@ -67,7 +67,7 @@ struct DecorationFactory {
       Transformer(name: "Decoration 61", before: "ヘ( ^o^)ノ", after: "＼(^_^ )"),
       Transformer(name: "Decoration 62", before: "(~˘▾˘)~", after: "~(˘▾˘~)"),
       Transformer(name: "Decoration 63", before: "└(^o^ )", after: "( ^o^)┘")
-    ]
+    ])]
   }
 
 }

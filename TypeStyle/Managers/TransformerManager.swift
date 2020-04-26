@@ -10,31 +10,40 @@ struct TransformerManager {
 
   let mode: Mode
 
-  let transformers: [Transformer]
-  var transformersToDisplay: [Transformer] = []
-  var filteredTransformersToDisplay: [Transformer] = []
+  let transformerGroupings: [Transformer.Grouping]
+  var transformerGroupingsToDisplay: [Transformer.Grouping] = []
+  var filteredTransformerGroupingsToDisplay: [Transformer.Grouping] = []
 
   init(mode: Mode) {
     self.mode = mode
 
     switch mode {
-    case .styles: self.transformers = StyleFactory.allStyles()
-    case .decorations: self.transformers = DecorationFactory.allDecorations()
-    case .emoticons: self.transformers = EmoticonFactory.allEmoticons()
+    case .styles: self.transformerGroupings = StyleFactory.allStyles()
+    case .decorations: self.transformerGroupings = DecorationFactory.allDecorations()
+    case .emoticons: self.transformerGroupings = EmoticonFactory.allEmoticons()
     }
 
     updateTransformersToDisplay()
   }
 
   mutating func updateTransformersToDisplay() {
-    let favorited = transformers.filter { isFavorited(transformer: $0) }
-    let unfavorited = transformers.filter { !isFavorited(transformer: $0) }
-    transformersToDisplay = favorited + unfavorited
+    let favorited: [Transformer.Grouping] = [(
+      groupName: "Favorites",
+      transformers: transformerGroupings.flatMap {
+        $0.transformers.filter { isFavorited(transformer: $0) }
+      }
+    )]
+
+    let unfavorited: [Transformer.Grouping] = transformerGroupings.map {
+      (groupName: $0.groupName, transformers: $0.transformers.filter { !isFavorited(transformer: $0) })
+    }
+
+    transformerGroupingsToDisplay = favorited + unfavorited
   }
 
-  func transformedText(for text: String?, index: Int) -> String {
+  func transformedText(for text: String?, indexPath: IndexPath) -> String {
     // If no text is provided, we use the name of the transformer.
-    return transformersToDisplay[index].transform(text ?? transformersToDisplay[index].name)
+    return transformerGroupingsToDisplay[indexPath.section].transformers[indexPath.row].transform(text ?? transformerGroupingsToDisplay[indexPath.section].transformers[indexPath.row].name)
   }
 
 }
@@ -43,8 +52,8 @@ struct TransformerManager {
 
 extension TransformerManager {
 
-  func isFavorited(at index: Int) -> Bool {
-    return isFavorited(transformer: transformersToDisplay[index])
+  func isFavorited(at indexPath: IndexPath) -> Bool {
+    return isFavorited(transformer: transformerGroupingsToDisplay[indexPath.section].transformers[indexPath.row])
   }
 
   func isFavorited(transformer: Transformer) -> Bool {
