@@ -22,7 +22,6 @@ class TypeStyleViewController: UIViewController {
   let modeSegmentedControl = UISegmentedControl(items: ["Generate", "Browse"])
   let actionConfirmationView = ActionConfirmationView()
   var actionConfirmationViewTimer: Timer?
-  let aboutButton = UIButton(type: .infoLight)
   let generalMargin: CGFloat = 15
 
   var viewMode: ViewMode = .generate
