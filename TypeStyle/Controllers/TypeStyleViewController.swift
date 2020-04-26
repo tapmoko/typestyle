@@ -9,6 +9,8 @@ class TypeStyleViewController: UIViewController {
     case browse
   }
 
+  // MARK: - Properties
+
   override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
   let feedbackGenerator = UINotificationFeedbackGenerator()
   var transformerManager: TransformerManager
@@ -19,12 +21,19 @@ class TypeStyleViewController: UIViewController {
   }
 
   let tableView = UITableView()
+
   let modeSegmentedControl = UISegmentedControl(items: ["Generate", "Browse"])
+
   let actionConfirmationView = ActionConfirmationView()
   var actionConfirmationViewTimer: Timer?
+
   let generalMargin: CGFloat = 15
 
   var viewMode: ViewMode = .generate
+
+  var input = ""
+
+  // MARK: - Initialization
 
   init(transformerMode: TransformerManager.Mode) {
     transformerManager = TransformerManager(mode: transformerMode)
@@ -35,7 +44,7 @@ class TypeStyleViewController: UIViewController {
     fatalError("init(coder:) has not been implemented")
   }
 
-  var input = ""
+  // MARK: - View setup
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -132,6 +141,8 @@ class TypeStyleViewController: UIViewController {
     (UIApplication.shared.delegate as? AppDelegate)?.didAutomaticallyShowKeyboardOnce = true
   }
 
+  // MARK: - Instance methods
+
   @objc func didTapClearButton() {
     inputContainerView.inputTextView.resignFirstResponder()
     inputContainerView.inputTextView.text = nil
@@ -183,7 +194,8 @@ class TypeStyleViewController: UIViewController {
   }
 
   func output(for indexPath: IndexPath) -> String {
-    return transformerManager.transformedText(for: input, index: indexPath.row)
+    return transformerManager.transformedText(for: (viewMode == .generate) ? input : nil,
+                                              index: indexPath.row)
   }
 
 }
@@ -193,7 +205,11 @@ class TypeStyleViewController: UIViewController {
 extension TypeStyleViewController: UITableViewDataSource {
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    if input.isEmpty { return 0 } // Don't show output cells if input is empty
+    // Don't show output cells if we are in generate mode and input is empty
+    if viewMode == .generate && input.isEmpty {
+      return 0
+    }
+
     return transformerManager.transformersToDisplay.count
   }
 

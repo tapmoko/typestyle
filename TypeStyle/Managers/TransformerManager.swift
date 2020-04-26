@@ -33,8 +33,9 @@ struct TransformerManager {
     transformersToDisplay = favorited + unfavorited
   }
 
-  func transformedText(for text: String, index: Int) -> String {
-    return transformersToDisplay[index].transform(text)
+  func transformedText(for text: String?, index: Int) -> String {
+    // If no text is provided, we use the name of the transformer.
+    return transformersToDisplay[index].transform(text ?? transformersToDisplay[index].name)
   }
 
 }
