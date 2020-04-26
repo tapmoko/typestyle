@@ -42,7 +42,7 @@ class CopiedView: UIView {
 
     checkmarkLabel.snp.makeConstraints { make in
       make.centerX.equalToSuperview()
-      make.centerY.equalToSuperview().inset(10)
+      make.centerY.equalToSuperview().offset(-10)
     }
   }
 
@@ -56,7 +56,7 @@ class CopiedView: UIView {
 
     copiedLabel.snp.makeConstraints { make in
       make.centerX.equalToSuperview()
-      make.centerY.equalToSuperview().inset(15)
+      make.centerY.equalToSuperview().offset(15)
       make.leading.equalToSuperview().inset(copiedLabelPadding)
       make.trailing.equalToSuperview().inset(copiedLabelPadding)
     }
