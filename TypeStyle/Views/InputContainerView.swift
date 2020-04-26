@@ -35,10 +35,7 @@ class InputContainerView: UIView {
     addSubview(inputTextViewContainer)
 
     inputTextViewContainer.snp.makeConstraints { make in
-      make.top.equalToSuperview().inset(inputTextViewMargin)
-      make.leading.equalToSuperview().inset(inputTextViewMargin)
-      make.trailing.equalToSuperview().inset(inputTextViewMargin)
-      make.bottom.equalToSuperview().inset(inputTextViewMargin)
+      make.edges.equalToSuperview().inset(inputTextViewMargin)
     }
   }
 
