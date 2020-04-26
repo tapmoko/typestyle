@@ -37,6 +37,10 @@ class TypeStyleViewController: UIViewController {
 
   init(transformerMode: TransformerManager.Mode) {
     transformerManager = TransformerManager(mode: transformerMode)
+
+    // Browsing is the only view mode for emoticons
+    if transformerMode == .emoticons { viewMode = .browse }
+
     super.init(nibName: nil, bundle: nil)
   }
 
