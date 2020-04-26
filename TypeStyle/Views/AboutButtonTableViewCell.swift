@@ -49,9 +49,9 @@ class AboutButtonTableViewCell: UITableViewCell {
 
     button.snp.makeConstraints { make in
       make.centerX.equalToSuperview()
-      make.top.equalToSuperview().offset(padding / 2)
-      make.width.lessThanOrEqualToSuperview().offset(-padding * 2)
-      make.bottom.equalToSuperview().offset(-padding / 2)
+      make.top.equalToSuperview().inset(padding / 2)
+      make.width.lessThanOrEqualToSuperview().inset(padding * 2)
+      make.bottom.equalToSuperview().inset(padding / 2)
     }
   }
 

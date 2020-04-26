@@ -31,10 +31,10 @@ class AboutLabelTableViewCell: UITableViewCell {
     addSubview(label)
 
     label.snp.makeConstraints { make in
-      make.top.equalToSuperview().offset(padding / 2)
-      make.leading.equalToSuperview().offset(padding)
-      make.trailing.equalToSuperview().offset(-padding)
-      make.bottom.equalToSuperview().offset(-padding / 2)
+      make.top.equalToSuperview().inset(padding / 2)
+      make.leading.equalToSuperview().inset(padding)
+      make.trailing.equalToSuperview().inset(padding)
+      make.bottom.equalToSuperview().inset(padding / 2)
     }
   }
 
