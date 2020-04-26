@@ -134,7 +134,8 @@ class TypeStyleViewController: UIViewController {
   }
 
   @objc func didTapClearButton() {
-    inputContainerView.inputTextView.text = ""
+    inputContainerView.inputTextView.resignFirstResponder()
+    inputContainerView.inputTextView.text = nil
     refreshUI()
     inputContainerView.inputTextView.becomeFirstResponder()
   }
