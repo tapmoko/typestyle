@@ -8,28 +8,27 @@ struct TransformerManager {
     case emoticons
   }
 
-  let styles = StyleFactory.allStyles()
-  let decorations = DecorationFactory.allDecorations()
-  let emoticons = EmoticonFactory.allEmoticons()
-  
   let mode: Mode
-  var transformersToDisplay = StyleFactory.allStyles()
+
+  let transformers: [Transformer]
+  var transformersToDisplay: [Transformer] = []
+  var filteredTransformersToDisplay: [Transformer] = []
 
   init(mode: Mode) {
     self.mode = mode
+
+    switch mode {
+    case .styles: self.transformers = StyleFactory.allStyles()
+    case .decorations: self.transformers = DecorationFactory.allDecorations()
+    case .emoticons: self.transformers = EmoticonFactory.allEmoticons()
+    }
+
     updateTransformersToDisplay()
   }
 
   mutating func updateTransformersToDisplay() {
-    let unsorted: [Transformer]
-    switch mode {
-    case .styles: unsorted = styles
-    case .decorations: unsorted = decorations
-    case .emoticons: unsorted = emoticons
-    }
-
-    let favorited = unsorted.filter { isFavorited(transformer: $0) }
-    let unfavorited = unsorted.filter { !isFavorited(transformer: $0) }
+    let favorited = transformers.filter { isFavorited(transformer: $0) }
+    let unfavorited = transformers.filter { !isFavorited(transformer: $0) }
     transformersToDisplay = favorited + unfavorited
   }
 
