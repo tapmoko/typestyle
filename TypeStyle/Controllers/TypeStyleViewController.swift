@@ -15,7 +15,7 @@ class TypeStyleViewController: UIViewController {
 
   let inputContainerView = InputContainerView()
   var inputPlaceholder: String {
-    (viewMode == .generate) ? "Enter your text..." : "Search..."
+    (viewMode == .generate) ? "Your text..." : "Search..."
   }
 
   let tableView = UITableView()
@@ -51,7 +51,6 @@ class TypeStyleViewController: UIViewController {
 
   func setUpInputContainerView() {
     inputContainerView.inputTextView.delegate = self
-    inputContainerView.inputTextView.text = inputPlaceholder
     inputContainerView.inputTextView.textColor = .appFadedText
 
     inputContainerView.clearButton.addTarget(self, action: #selector(didTapClearButton), for: .touchUpInside)
@@ -125,7 +124,10 @@ class TypeStyleViewController: UIViewController {
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
 
-    if (UIApplication.shared.delegate as? AppDelegate)?.didAutomaticallyShowKeyboardOnce ?? false { return }
+    if (UIApplication.shared.delegate as? AppDelegate)?.didAutomaticallyShowKeyboardOnce ?? false {
+      showInputPlaceholder()
+      return
+    }
 
     inputContainerView.inputTextView.becomeFirstResponder()
     (UIApplication.shared.delegate as? AppDelegate)?.didAutomaticallyShowKeyboardOnce = true
@@ -138,9 +140,18 @@ class TypeStyleViewController: UIViewController {
   }
 
   func refreshUI() {
-    input = inputContainerView.inputTextView.text ?? ""
-    inputContainerView.clearButton.isHidden = input.isEmpty
+    if inputContainerView.inputTextView.textColor == .appFadedText {
+      input = ""
+    } else {
+      input = inputContainerView.inputTextView.text ?? ""
+    }
+
+    inputContainerView.clearButton.isHidden = input.isEmpty || (inputContainerView.inputTextView.textColor == .appFadedText)
     tableView.reloadData()
+
+    if input.isEmpty {
+      showInputPlaceholder()
+    }
 
     if input.count > 200 {
       inputContainerView.setTextSize(.footnote)
@@ -151,10 +162,21 @@ class TypeStyleViewController: UIViewController {
     }
   }
 
+  func showInputPlaceholder() {
+    inputContainerView.inputTextView.text = inputPlaceholder
+    inputContainerView.inputTextView.textColor = .appFadedText
+  }
+
+  func hideInputPlaceholder() {
+    inputContainerView.inputTextView.text = nil
+    inputContainerView.inputTextView.textColor = .appText
+  }
+
   @objc func modeDidChange() {
+    inputContainerView.inputTextView.text = nil
     switch modeSegmentedControl.selectedSegmentIndex {
-    case 0: viewMode = .browse
-    case 1: viewMode = .generate
+    case 0: viewMode = .generate
+    case 1: viewMode = .browse
     default: break
     }
     refreshUI()
@@ -254,8 +276,7 @@ extension TypeStyleViewController: UITextViewDelegate {
 
   func textViewDidBeginEditing(_ textView: UITextView) {
     if textView.textColor == .appFadedText {
-      textView.text = nil
-      textView.textColor = .appText
+      hideInputPlaceholder()
     }
   }
 
@@ -265,8 +286,7 @@ extension TypeStyleViewController: UITextViewDelegate {
 
   func textViewDidEndEditing(_ textView: UITextView) {
     if textView.text.isEmpty {
-        textView.text = inputPlaceholder
-        textView.textColor = .appFadedText
+      showInputPlaceholder()
     }
 
     refreshUI()
