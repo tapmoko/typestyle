@@ -20,8 +20,8 @@ class TypeStyleViewController: UIViewController {
 
   let tableView = UITableView()
   let modeSegmentedControl = UISegmentedControl(items: ["Generate", "Browse"])
-  let copiedView = CopiedView()
-  var copiedViewTimer: Timer?
+  let actionConfirmationView = ActionConfirmationView()
+  var actionConfirmationViewTimer: Timer?
   let aboutButton = UIButton(type: .infoLight)
   let generalMargin: CGFloat = 15
 
@@ -46,7 +46,7 @@ class TypeStyleViewController: UIViewController {
     setUpInputContainerView()
     setUpModeSegmentedControl()
     setUpTableView()
-    setUpCopiedView()
+    setUpActionConfirmationView()
   }
 
   func setUpInputContainerView() {
@@ -110,15 +110,15 @@ class TypeStyleViewController: UIViewController {
     }
   }
 
-  func setUpCopiedView() {
-    view.addSubview(copiedView)
+  func setUpActionConfirmationView() {
+    view.addSubview(actionConfirmationView)
 
-    copiedView.snp.makeConstraints { make in
+    actionConfirmationView.snp.makeConstraints { make in
       make.center.equalToSuperview()
     }
 
-    copiedView.isHidden = true
-    copiedView.alpha = 0
+    actionConfirmationView.isHidden = true
+    actionConfirmationView.alpha = 0
   }
 
   override func viewDidAppear(_ animated: Bool) {
@@ -240,32 +240,32 @@ extension TypeStyleViewController: UITableViewDelegate {
     UIPasteboard.general.string = selectedString
 
     feedbackGenerator.notificationOccurred(.success)
-    showCopiedView()
+    showActionConfirmationView()
   }
 
-  func showCopiedView() {
-    copiedViewTimer?.invalidate()
-    copiedViewTimer = nil
-    copiedView.alpha = 0
-    copiedView.isHidden = false
+  func showActionConfirmationView() {
+    actionConfirmationViewTimer?.invalidate()
+    actionConfirmationViewTimer = nil
+    actionConfirmationView.alpha = 0
+    actionConfirmationView.isHidden = false
     UIView.animate(withDuration: 0.1, delay: 0, options: [], animations: {
-      self.copiedView.alpha = 1
+      self.actionConfirmationView.alpha = 1
     }, completion: { _ in
-      self.copiedViewTimer = Timer.scheduledTimer(timeInterval: 0.5,
+      self.actionConfirmationViewTimer = Timer.scheduledTimer(timeInterval: 0.5,
                                                   target: self,
-                                                  selector: #selector(self.hideCopiedView),
+                                                  selector: #selector(self.hideActionConfirmationView),
                                                   userInfo: nil,
                                                   repeats: false)
     })
   }
 
-  @objc func hideCopiedView() {
-    copiedViewTimer?.invalidate()
-    copiedViewTimer = nil
+  @objc func hideActionConfirmationView() {
+    actionConfirmationViewTimer?.invalidate()
+    actionConfirmationViewTimer = nil
     UIView.animate(withDuration: 0.1, animations: {
-      self.copiedView.alpha = 0
+      self.actionConfirmationView.alpha = 0
     }, completion: { _ in
-      self.copiedView.isHidden = true
+      self.actionConfirmationView.isHidden = true
     })
   }
 
