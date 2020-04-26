@@ -14,6 +14,10 @@ class TypeStyleViewController: UIViewController {
   var transformerManager: TransformerManager
 
   let inputContainerView = InputContainerView()
+  var inputPlaceholder: String {
+    (viewMode == .generate) ? "Enter your text..." : "Search..."
+  }
+
   let tableView = UITableView()
   let modeSegmentedControl = UISegmentedControl(items: ["Generate", "Browse"])
   let copiedView = CopiedView()
@@ -21,7 +25,7 @@ class TypeStyleViewController: UIViewController {
   let aboutButton = UIButton(type: .infoLight)
   let generalMargin: CGFloat = 15
 
-  var viewMode: ViewMode = .browse
+  var viewMode: ViewMode = .generate
 
   init(transformerMode: TransformerManager.Mode) {
     transformerManager = TransformerManager(mode: transformerMode)
@@ -47,6 +51,9 @@ class TypeStyleViewController: UIViewController {
 
   func setUpInputContainerView() {
     inputContainerView.inputTextView.delegate = self
+    inputContainerView.inputTextView.text = inputPlaceholder
+    inputContainerView.inputTextView.textColor = .appFadedText
+
     inputContainerView.clearButton.addTarget(self, action: #selector(didTapClearButton), for: .touchUpInside)
 
     view.addSubview(inputContainerView)
@@ -159,6 +166,8 @@ class TypeStyleViewController: UIViewController {
 
 }
 
+// MARK: - UITableViewDataSource
+
 extension TypeStyleViewController: UITableViewDataSource {
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -192,6 +201,8 @@ extension TypeStyleViewController: UITableViewDataSource {
   }
 
 }
+
+// MARK: - UITableViewDelegate
 
 extension TypeStyleViewController: UITableViewDelegate {
 
@@ -237,17 +248,33 @@ extension TypeStyleViewController: UITableViewDelegate {
 
 }
 
+// MARK: - UITextViewDelegate
+
 extension TypeStyleViewController: UITextViewDelegate {
+
+  func textViewDidBeginEditing(_ textView: UITextView) {
+    if textView.textColor == .appFadedText {
+      textView.text = nil
+      textView.textColor = .appText
+    }
+  }
 
   func textViewDidChange(_ textView: UITextView) {
     refreshUI()
   }
 
   func textViewDidEndEditing(_ textView: UITextView) {
+    if textView.text.isEmpty {
+        textView.text = inputPlaceholder
+        textView.textColor = .appFadedText
+    }
+
     refreshUI()
   }
 
 }
+
+// MARK: - UITableViewDragDelegate
 
 extension TypeStyleViewController: UITableViewDragDelegate {
 
