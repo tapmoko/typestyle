@@ -30,6 +30,8 @@
 		41D1971624552E8500A46EFB /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = 41D1971524552E8500A46EFB /* Quick */; };
 		41D25C7E24553FFA0091F6AB /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D25C7D24553FFA0091F6AB /* MainTabBarController.swift */; };
 		41D25C802455BEB20091F6AB /* EmoticonFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D25C7F2455BEB20091F6AB /* EmoticonFactory.swift */; };
+		41D25C81245654EF0091F6AB /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D25C7D24553FFA0091F6AB /* MainTabBarController.swift */; };
+		41D25C82245654F60091F6AB /* EmoticonFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D25C7F2455BEB20091F6AB /* EmoticonFactory.swift */; };
 		B66B54892187C4750038C84A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66B54882187C4750038C84A /* AppDelegate.swift */; };
 		B66B548B2187C4750038C84A /* TypeStyleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66B548A2187C4750038C84A /* TypeStyleViewController.swift */; };
 		B66B54902187C4770038C84A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B66B548F2187C4770038C84A /* Assets.xcassets */; };
@@ -326,12 +328,14 @@
 				41159523236E7F000049509F /* Constants.swift in Sources */,
 				41159520236E7F000049509F /* StyleFactory.swift in Sources */,
 				41159522236E7F000049509F /* UIColor+Extension.swift in Sources */,
+				41D25C82245654F60091F6AB /* EmoticonFactory.swift in Sources */,
 				41159515236E7D860049509F /* StyleFactorySpec.swift in Sources */,
 				4115951C236E7F000049509F /* AboutButtonTableViewCell.swift in Sources */,
 				41159517236E7F000049509F /* Transformer.swift in Sources */,
 				4115951B236E7F000049509F /* AboutLabelTableViewCell.swift in Sources */,
 				41159518236E7F000049509F /* InputContainerView.swift in Sources */,
 				41159524236E7F000049509F /* CustomTransforms.swift in Sources */,
+				41D25C81245654EF0091F6AB /* MainTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
