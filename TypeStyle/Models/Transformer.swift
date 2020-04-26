@@ -36,4 +36,7 @@ struct Transformer {
     self.transform = transform
   }
 
+  init(name: String, output: String) {
+    self.init(name: name, transform: { _ in output })
+  }
 }
