@@ -5,7 +5,7 @@ class OutputTableViewCell: UITableViewCell {
   static let identifier = "OutputTableViewCell"
 
   let outputLabel = UILabel()
-  let favoriteLabel = UILabel()
+  let favoriteImageView = UIImageView()
   let padding: CGFloat = 10
 
   override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -18,7 +18,7 @@ class OutputTableViewCell: UITableViewCell {
     selectedBackgroundView = selectedView
 
     setUpOutputLabel()
-    setUpFavoriteLabel()
+    setUpFavoriteImageView()
   }
 
   required init?(coder aDecoder: NSCoder) {
@@ -40,20 +40,19 @@ class OutputTableViewCell: UITableViewCell {
     }
   }
 
-  func setUpFavoriteLabel() {
-    favoriteLabel.textColor = .appText
-    favoriteLabel.font = UIFont.preferredFont(forTextStyle: .body)
-    favoriteLabel.adjustsFontForContentSizeCategory = true
-    favoriteLabel.textAlignment = .right
-    favoriteLabel.setContentCompressionResistancePriority(UILayoutPriority(rawValue: 10000), for: .horizontal)
+  func setUpFavoriteImageView() {
+    favoriteImageView.tintColor = .appText
+    favoriteImageView.setContentCompressionResistancePriority(UILayoutPriority(rawValue: 10000), for: .horizontal)
 
-    addSubview(favoriteLabel)
+    addSubview(favoriteImageView)
 
-    favoriteLabel.snp.makeConstraints { make in
+    favoriteImageView.snp.makeConstraints { make in
       make.top.equalToSuperview().inset(padding)
       make.leading.greaterThanOrEqualTo(outputLabel.snp.trailing).inset(padding)
       make.trailing.equalToSuperview().inset(padding)
       make.bottom.equalToSuperview().inset(padding)
+      make.width.equalTo(25)
+      make.height.equalTo(25)
     }
   }
 

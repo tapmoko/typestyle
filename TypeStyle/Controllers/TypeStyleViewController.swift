@@ -165,7 +165,9 @@ extension TypeStyleViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: OutputTableViewCell.identifier) as! OutputTableViewCell
     cell.outputLabel.text = output(for: indexPath)
-    cell.favoriteLabel.text = transformerManager.isFavorited(at: indexPath.row) ? "\u{2661}\u{0000FE0E}" : ""
+    cell.favoriteImageView.image = transformerManager.isFavorited(at: indexPath.row)
+      ? UIImage(systemName: "heart")?.withRenderingMode(.alwaysTemplate)
+      : nil
     return cell
   }
 
