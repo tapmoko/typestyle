@@ -5,25 +5,29 @@ struct TransformerManager {
   enum Mode {
     case styles
     case decorations
+    case emoticons
   }
 
   let styles = StyleFactory.allStyles()
   let decorations = DecorationFactory.allDecorations()
+  let emoticons = EmoticonFactory.allEmoticons()
   
-  var mode: Mode = .styles
+  let mode: Mode
   var transformersToDisplay = StyleFactory.allStyles()
 
-  init() {
-    updateTransformersToDisplay()
-  }
-
-  mutating func set(mode: Mode) {
+  init(mode: Mode) {
     self.mode = mode
     updateTransformersToDisplay()
   }
 
   mutating func updateTransformersToDisplay() {
-    let unsorted = (mode == .styles) ? styles : decorations
+    let unsorted: [Transformer]
+    switch mode {
+    case .styles: unsorted = styles
+    case .decorations: unsorted = decorations
+    case .emoticons: unsorted = emoticons
+    }
+
     let favorited = unsorted.filter { isFavorited(transformer: $0) }
     let unfavorited = unsorted.filter { !isFavorited(transformer: $0) }
     transformersToDisplay = favorited + unfavorited

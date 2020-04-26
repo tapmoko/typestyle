@@ -11,10 +11,13 @@ class MainTabBarController: UITabBarController {
     let decorationsVC = TypeStyleViewController(transformerMode: .decorations)
     decorationsVC.tabBarItem = UITabBarItem(title: "Decorations", image: UIImage(systemName: "wand.and.stars"), tag: 1)
 
-    let aboutVC = AboutViewController()
-    aboutVC.tabBarItem = UITabBarItem(title: "About", image: UIImage(systemName: "info.circle"), tag: 2)
+    let emoticonsVC = TypeStyleViewController(transformerMode: .emoticons)
+    emoticonsVC.tabBarItem = UITabBarItem(title: "Emoticons", image: UIImage(systemName: "smiley"), tag: 2)
 
-    viewControllers = [stylesVC, decorationsVC, aboutVC]
+    let aboutVC = AboutViewController()
+    aboutVC.tabBarItem = UITabBarItem(title: "About", image: UIImage(systemName: "info.circle"), tag: 3)
+
+    viewControllers = [stylesVC, decorationsVC, emoticonsVC, aboutVC]
     view.tintColor = .appText
   }
 

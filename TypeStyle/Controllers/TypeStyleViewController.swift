@@ -4,14 +4,9 @@ import CoreServices
 
 class TypeStyleViewController: UIViewController {
 
-  enum TransformerMode {
-    case styles
-    case decorations
-  }
-
   override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
   let feedbackGenerator = UINotificationFeedbackGenerator()
-  var transformerManager = TransformerManager()
+  var transformerManager: TransformerManager
 
   let inputContainerView = InputContainerView()
   let tableView = UITableView()
@@ -21,10 +16,8 @@ class TypeStyleViewController: UIViewController {
   let aboutButton = UIButton(type: .infoLight)
   let generalMargin: CGFloat = 15
 
-  let transformerMode: TransformerMode
-
-  init(transformerMode: TransformerMode) {
-    self.transformerMode = transformerMode
+  init(transformerMode: TransformerManager.Mode) {
+    transformerManager = TransformerManager(mode: transformerMode)
     super.init(nibName: nil, bundle: nil)
   }
 
@@ -136,11 +129,11 @@ class TypeStyleViewController: UIViewController {
   }
 
   @objc func modeDidChange() {
-    switch modeSegmentedControl.selectedSegmentIndex {
-    case 0: transformerManager.set(mode: .styles)
-    case 1: transformerManager.set(mode: .decorations)
-    default: break
-    }
+//    switch modeSegmentedControl.selectedSegmentIndex {
+//    case 0: transformerManager.set(mode: .styles)
+//    case 1: transformerManager.set(mode: .decorations)
+//    default: break
+//    }
     refreshUI()
   }
 
