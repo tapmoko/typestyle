@@ -4,17 +4,24 @@ import CoreServices
 
 class TypeStyleViewController: UIViewController {
 
+  enum ViewMode {
+    case generate
+    case browse
+  }
+
   override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
   let feedbackGenerator = UINotificationFeedbackGenerator()
   var transformerManager: TransformerManager
 
   let inputContainerView = InputContainerView()
   let tableView = UITableView()
-  let modeSegmentedControl = UISegmentedControl(items: ["Styles", "Decorations"])
+  let modeSegmentedControl = UISegmentedControl(items: ["Generate", "Browse"])
   let copiedView = CopiedView()
   var copiedViewTimer: Timer?
   let aboutButton = UIButton(type: .infoLight)
   let generalMargin: CGFloat = 15
+
+  var viewMode: ViewMode = .browse
 
   init(transformerMode: TransformerManager.Mode) {
     transformerManager = TransformerManager(mode: transformerMode)
@@ -138,11 +145,11 @@ class TypeStyleViewController: UIViewController {
   }
 
   @objc func modeDidChange() {
-//    switch modeSegmentedControl.selectedSegmentIndex {
-//    case 0: transformerManager.set(mode: .styles)
-//    case 1: transformerManager.set(mode: .decorations)
-//    default: break
-//    }
+    switch modeSegmentedControl.selectedSegmentIndex {
+    case 0: viewMode = .browse
+    case 1: viewMode = .generate
+    default: break
+    }
     refreshUI()
   }
 
