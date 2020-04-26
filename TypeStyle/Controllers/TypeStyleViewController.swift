@@ -4,6 +4,11 @@ import CoreServices
 
 class TypeStyleViewController: UIViewController {
 
+  enum TransformerMode {
+    case styles
+    case decorations
+  }
+
   override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
   let feedbackGenerator = UINotificationFeedbackGenerator()
   var transformerManager = TransformerManager()
@@ -15,6 +20,17 @@ class TypeStyleViewController: UIViewController {
   var copiedViewTimer: Timer?
   let aboutButton = UIButton(type: .infoLight)
   let generalMargin: CGFloat = 15
+
+  let transformerMode: TransformerMode
+
+  init(transformerMode: TransformerMode) {
+    self.transformerMode = transformerMode
+    super.init(nibName: nil, bundle: nil)
+  }
+
+  required init?(coder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
 
   var input = ""
 
