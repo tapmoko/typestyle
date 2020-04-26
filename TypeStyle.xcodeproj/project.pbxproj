@@ -28,6 +28,7 @@
 		4141902923803FC5009D3225 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4141902823803FC5009D3225 /* SnapKit */; };
 		4197FA8F2221D06F000516AA /* CustomTransforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4197FA8E2221D06F000516AA /* CustomTransforms.swift */; };
 		41D1971624552E8500A46EFB /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = 41D1971524552E8500A46EFB /* Quick */; };
+		41D25C7E24553FFA0091F6AB /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D25C7D24553FFA0091F6AB /* MainTabBarController.swift */; };
 		B66B54892187C4750038C84A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66B54882187C4750038C84A /* AppDelegate.swift */; };
 		B66B548B2187C4750038C84A /* TypeStyleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66B548A2187C4750038C84A /* TypeStyleViewController.swift */; };
 		B66B54902187C4770038C84A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B66B548F2187C4770038C84A /* Assets.xcassets */; };
@@ -62,6 +63,7 @@
 		41159514236E7D860049509F /* StyleFactorySpec.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = StyleFactorySpec.swift; sourceTree = "<group>"; tabWidth = 2; };
 		41588F6A2357CBC6004E78FD /* TypeStyle.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TypeStyle.entitlements; sourceTree = "<group>"; };
 		4197FA8E2221D06F000516AA /* CustomTransforms.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = CustomTransforms.swift; sourceTree = "<group>"; tabWidth = 2; };
+		41D25C7D24553FFA0091F6AB /* MainTabBarController.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; tabWidth = 2; };
 		B66B54852187C4750038C84A /* TypeStyle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TypeStyle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B66B54882187C4750038C84A /* AppDelegate.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; tabWidth = 2; };
 		B66B548A2187C4750038C84A /* TypeStyleViewController.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = TypeStyleViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
@@ -174,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				B66B548A2187C4750038C84A /* TypeStyleViewController.swift */,
+				41D25C7D24553FFA0091F6AB /* MainTabBarController.swift */,
 				B6E91DE721AA2FA7003214C9 /* AboutViewController.swift */,
 			);
 			path = Controllers;
@@ -343,6 +346,7 @@
 				B6E91DE821AA2FA7003214C9 /* AboutViewController.swift in Sources */,
 				B69D281C218BC96E00A298A9 /* DecorationFactory.swift in Sources */,
 				B6E91DEC21AA3542003214C9 /* AboutButtonTableViewCell.swift in Sources */,
+				41D25C7E24553FFA0091F6AB /* MainTabBarController.swift in Sources */,
 				B69D281F218BD2E800A298A9 /* Transformer.swift in Sources */,
 				B68C6EAD218A365A007CB17A /* UIColor+Extension.swift in Sources */,
 				B68C6EAF218A3E63007CB17A /* OutputTableViewCell.swift in Sources */,

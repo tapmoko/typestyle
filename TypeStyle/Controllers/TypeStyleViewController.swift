@@ -28,7 +28,6 @@ class TypeStyleViewController: UIViewController {
     setUpModeSegmentedControl()
     setUpTableView()
     setUpCopiedView()
-    setUpAboutButton()
   }
 
   func setUpInputContainerView() {
@@ -59,19 +58,6 @@ class TypeStyleViewController: UIViewController {
       make.centerX.equalToSuperview()
       make.leading.greaterThanOrEqualTo(view.safeAreaLayoutGuide.snp.leading).inset(generalMargin)
       make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).inset(generalMargin)
-    }
-  }
-
-  func setUpAboutButton() {
-    aboutButton.addTarget(self, action: #selector(didTapAboutButton), for: .touchUpInside)
-    aboutButton.tintColor = .appText
-
-    view.addSubview(aboutButton)
-
-    aboutButton.snp.makeConstraints { make in
-      make.centerY.equalTo(modeSegmentedControl.snp.centerY)
-      make.leading.equalTo(modeSegmentedControl.snp.trailing).inset(generalMargin)
-      make.trailing.equalTo(view.safeAreaLayoutGuide.snp.trailing).inset(generalMargin)
     }
   }
 
@@ -118,12 +104,6 @@ class TypeStyleViewController: UIViewController {
     inputContainerView.inputTextView.text = ""
     refreshUI()
     inputContainerView.inputTextView.becomeFirstResponder()
-  }
-
-  @objc func didTapAboutButton() {
-    let aboutVC = AboutViewController()
-    let aboutNavigationVC = UINavigationController(rootViewController: aboutVC)
-    present(aboutNavigationVC, animated: true, completion: nil)
   }
 
   func refreshUI() {

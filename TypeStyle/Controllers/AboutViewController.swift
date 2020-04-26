@@ -17,26 +17,10 @@ class AboutViewController: UITableViewController {
 
     view.backgroundColor = .appBackground
 
-    // Set navigation bar colors and style
-    navigationController?.navigationBar.barTintColor = .appDarkBackground
-    navigationController?.navigationBar.tintColor = .appText
-    navigationController?.navigationBar.barStyle = .black
-
-    // Set navigation bar contents
-
-    navigationItem.title = "About TypeStyle"
-    navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done,
-                                                        target: self,
-                                                        action: #selector(didTapDoneButton))
-
     // Set up table view
 
     tableView.separatorStyle = .none
     tableView.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
-  }
-
-  @objc func didTapDoneButton() {
-    dismiss(animated: true, completion: nil)
   }
 
 }
