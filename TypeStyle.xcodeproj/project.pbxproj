@@ -177,8 +177,8 @@
 		B69D280F218A7A4800A298A9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				B66B548A2187C4750038C84A /* TypeStyleViewController.swift */,
 				41D25C7D24553FFA0091F6AB /* MainTabBarController.swift */,
+				B66B548A2187C4750038C84A /* TypeStyleViewController.swift */,
 				B6E91DE721AA2FA7003214C9 /* AboutViewController.swift */,
 			);
 			path = Controllers;

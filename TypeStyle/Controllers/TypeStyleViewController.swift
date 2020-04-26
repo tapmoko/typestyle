@@ -52,6 +52,10 @@ class TypeStyleViewController: UIViewController {
   }
 
   func setUpModeSegmentedControl() {
+    guard transformerManager.mode != .emoticons else {
+      return
+    }
+
     modeSegmentedControl.tintColor = .appText
     modeSegmentedControl.selectedSegmentIndex = 0
     modeSegmentedControl.addTarget(self, action: #selector(modeDidChange), for: .valueChanged)
@@ -84,7 +88,12 @@ class TypeStyleViewController: UIViewController {
       make.top.equalTo(inputContainerView.snp.bottom)
       make.leading.equalTo(view.safeAreaLayoutGuide.snp.leading)
       make.trailing.equalTo(view.safeAreaLayoutGuide.snp.trailing)
-      make.bottom.equalTo(modeSegmentedControl.snp.top).inset(generalMargin)
+
+      if transformerManager.mode != .emoticons {
+        make.bottom.equalTo(modeSegmentedControl.snp.top).inset(generalMargin)
+      } else {
+        make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).inset(generalMargin)
+      }
     }
   }
 
