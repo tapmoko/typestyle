@@ -4,9 +4,9 @@ import SnapKit
 class ActionConfirmationView: UIView {
 
   let radius: CGFloat = 10
-  let checkmarkLabel = UILabel()
+  let imageView = UIImageView()
   let textLabel = UILabel()
-  let textLabelPadding: CGFloat = 10
+  let textLabelPadding: CGFloat = 15
 
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -24,29 +24,29 @@ class ActionConfirmationView: UIView {
     layer.shadowColor = UIColor.black.cgColor
     layer.shadowOpacity = 0.3
 
-    setUpCheckmarkLabel()
-    setUptextLabel()
+    setUpImageView()
+    setUpTextLabel()
   }
 
   required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
 
-  func setUpCheckmarkLabel() {
-    checkmarkLabel.text = "✓"
-    checkmarkLabel.textColor = .appText
-    checkmarkLabel.font = UIFont.preferredFont(forTextStyle: .title1)
-    checkmarkLabel.adjustsFontForContentSizeCategory = true
+  private func setUpImageView() {
+    imageView.image = UIImage(systemName: "doc.on.doc")
+    imageView.tintColor = .appText
 
-    addSubview(checkmarkLabel)
+    addSubview(imageView)
 
-    checkmarkLabel.snp.makeConstraints { make in
+    imageView.snp.makeConstraints { make in
+      make.width.equalTo(30)
+      make.height.equalTo(30)
       make.centerX.equalToSuperview()
-      make.centerY.equalToSuperview().offset(-10)
+      make.centerY.equalToSuperview().offset(-15)
     }
   }
 
-  func setUptextLabel() {
+  private func setUpTextLabel() {
     textLabel.text = "Copied"
     textLabel.textColor = .appText
     textLabel.font = UIFont.preferredFont(forTextStyle: .body)
@@ -56,7 +56,7 @@ class ActionConfirmationView: UIView {
 
     textLabel.snp.makeConstraints { make in
       make.centerX.equalToSuperview()
-      make.centerY.equalToSuperview().offset(15)
+      make.centerY.equalToSuperview().offset(20)
       make.leading.equalToSuperview().inset(textLabelPadding)
       make.trailing.equalToSuperview().inset(textLabelPadding)
     }
