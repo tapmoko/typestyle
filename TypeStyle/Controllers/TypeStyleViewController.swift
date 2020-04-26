@@ -5,7 +5,6 @@ import CoreServices
 class TypeStyleViewController: UIViewController {
 
   override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
-  var isInitialAppearance = true
   let feedbackGenerator = UINotificationFeedbackGenerator()
   var transformerManager = TransformerManager()
 
@@ -94,10 +93,10 @@ class TypeStyleViewController: UIViewController {
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
 
-    guard isInitialAppearance else { return }
+    if (UIApplication.shared.delegate as? AppDelegate)?.didAutomaticallyShowKeyboardOnce ?? false { return }
 
     inputContainerView.inputTextView.becomeFirstResponder()
-    isInitialAppearance = false
+    (UIApplication.shared.delegate as? AppDelegate)?.didAutomaticallyShowKeyboardOnce = true
   }
 
   @objc func didTapClearButton() {
