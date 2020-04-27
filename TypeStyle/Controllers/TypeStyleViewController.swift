@@ -22,7 +22,7 @@ class TypeStyleViewController: UIViewController {
 
   let tableView = UITableView()
 
-  let modeSegmentedControl = UISegmentedControl(items: ["Generate", "Browse"])
+  let viewModeSegmentedControl = UISegmentedControl(items: ["Generate", "Browse"])
 
   let actionConfirmationView = ActionConfirmationView()
   var actionConfirmationViewTimer: Timer?
@@ -81,17 +81,17 @@ class TypeStyleViewController: UIViewController {
       return
     }
 
-    modeSegmentedControl.tintColor = .appText
-    modeSegmentedControl.selectedSegmentIndex = 0
-    modeSegmentedControl.addTarget(self, action: #selector(modeDidChange), for: .valueChanged)
+    viewModeSegmentedControl.tintColor = .appText
+    viewModeSegmentedControl.selectedSegmentIndex = 0
+    viewModeSegmentedControl.addTarget(self, action: #selector(modeDidChange), for: .valueChanged)
 
     // TODO: Make this adjust automatically somehow, not just on app launch
     let font = UIFont.preferredFont(forTextStyle: .body)
-    modeSegmentedControl.setTitleTextAttributes([.font: font], for: .normal)
+    viewModeSegmentedControl.setTitleTextAttributes([.font: font], for: .normal)
 
-    view.addSubview(modeSegmentedControl)
+    view.addSubview(viewModeSegmentedControl)
 
-    modeSegmentedControl.snp.makeConstraints { make in
+    viewModeSegmentedControl.snp.makeConstraints { make in
       make.centerX.equalToSuperview()
       make.leading.greaterThanOrEqualTo(view.safeAreaLayoutGuide.snp.leading).inset(generalMargin)
       make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).inset(generalMargin)
@@ -115,7 +115,7 @@ class TypeStyleViewController: UIViewController {
       make.trailing.equalTo(view.safeAreaLayoutGuide.snp.trailing)
 
       if transformerManager.mode != .emoticons {
-        make.bottom.equalTo(modeSegmentedControl.snp.top).inset(generalMargin)
+        make.bottom.equalTo(viewModeSegmentedControl.snp.top).inset(generalMargin)
       } else {
         make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).inset(generalMargin)
       }
@@ -189,7 +189,7 @@ class TypeStyleViewController: UIViewController {
 
   @objc func modeDidChange() {
     inputContainerView.inputTextView.text = nil
-    switch modeSegmentedControl.selectedSegmentIndex {
+    switch viewModeSegmentedControl.selectedSegmentIndex {
     case 0: viewMode = .generate
     case 1: viewMode = .browse
     default: break
