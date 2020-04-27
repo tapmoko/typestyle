@@ -115,9 +115,9 @@ class TypeStyleViewController: UIViewController {
       make.trailing.equalTo(view.safeAreaLayoutGuide.snp.trailing)
 
       if transformerManager.mode != .emoticons {
-        make.bottom.equalTo(viewModeSegmentedControl.snp.top).inset(generalMargin)
+        make.bottom.equalTo(viewModeSegmentedControl.snp.top).offset(-generalMargin)
       } else {
-        make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).inset(generalMargin)
+        make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
       }
     }
   }
