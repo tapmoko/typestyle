@@ -12,7 +12,6 @@ struct TransformerManager {
 
   let transformerGroupings: [Transformer.Grouping]
   var transformerGroupingsToDisplay: [Transformer.Grouping] = []
-  var filteredTransformerGroupingsToDisplay: [Transformer.Grouping] = []
 
   init(mode: Mode) {
     self.mode = mode
@@ -26,7 +25,7 @@ struct TransformerManager {
     updateTransformersToDisplay()
   }
 
-  mutating func updateTransformersToDisplay() {
+  mutating func updateTransformersToDisplay(filterInput: String? = nil) {
     let favorited: [Transformer.Grouping] = [(
       groupName: "Favorites",
       transformers: transformerGroupings.flatMap {
@@ -35,10 +34,26 @@ struct TransformerManager {
     )]
 
     let unfavorited: [Transformer.Grouping] = transformerGroupings.map {
-      (groupName: $0.groupName, transformers: $0.transformers.filter { !isFavorited(transformer: $0) })
+      (
+        groupName: $0.groupName,
+        transformers: $0.transformers.filter { !isFavorited(transformer: $0) }
+      )
     }
 
     transformerGroupingsToDisplay = favorited + unfavorited
+
+    if let filterInput = filterInput {
+      if !filterInput.isEmpty {
+        let lowercasedInput = filterInput.lowercased()
+
+        transformerGroupingsToDisplay = transformerGroupingsToDisplay.map {
+          (
+            groupName: $0.groupName,
+            transformers: $0.transformers.filter { $0.name.lowercased().contains(lowercasedInput) }
+          )
+        }
+      }
+    }
   }
 
   func transformedText(for text: String?, indexPath: IndexPath) -> String {

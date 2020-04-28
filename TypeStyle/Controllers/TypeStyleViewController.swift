@@ -161,6 +161,8 @@ class TypeStyleViewController: UIViewController {
       input = inputContainerView.inputTextView.text ?? ""
     }
 
+    transformerManager.updateTransformersToDisplay(filterInput: (viewMode == .browse) ? input : nil)
+
     inputContainerView.clearButton.isHidden = input.isEmpty || (inputContainerView.inputTextView.textColor == .appFadedText)
     tableView.reloadData()
 
