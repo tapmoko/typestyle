@@ -47,10 +47,9 @@ class OutputTableViewCell: UITableViewCell {
     addSubview(favoriteImageView)
 
     favoriteImageView.snp.makeConstraints { make in
-      make.top.equalToSuperview().inset(padding)
-      make.leading.greaterThanOrEqualTo(outputLabel.snp.trailing).inset(padding)
+      make.leading.greaterThanOrEqualTo(outputLabel.snp.trailing).offset(padding)
       make.trailing.equalToSuperview().inset(padding)
-      make.bottom.equalToSuperview().inset(padding)
+      make.centerY.equalToSuperview()
       make.width.equalTo(25)
       make.height.equalTo(25)
     }
