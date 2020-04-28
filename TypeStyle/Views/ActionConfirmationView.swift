@@ -3,6 +3,28 @@ import SnapKit
 
 class ActionConfirmationView: UIView {
 
+  enum Style {
+    case copied
+    case favorited
+    case unfavorited
+  }
+
+  var style: Style = .copied {
+    didSet {
+      switch style {
+      case .copied:
+        imageView.image = UIImage(systemName: "doc.on.doc")
+        textLabel.text = "Copied"
+      case .favorited:
+        imageView.image = UIImage(systemName: "heart")
+        textLabel.text = "Favorited"
+      case .unfavorited:
+        imageView.image = UIImage(systemName: "heart.slash")
+        textLabel.text = "Unfavorited"
+      }
+    }
+  }
+
   let radius: CGFloat = 10
   let imageView = UIImageView()
   let textLabel = UILabel()

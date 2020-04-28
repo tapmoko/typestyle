@@ -268,11 +268,20 @@ extension TypeStyleViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     inputContainerView.inputTextView.resignFirstResponder()
 
-    let selectedString = output(for: indexPath)
-    UIPasteboard.general.string = selectedString
+    if viewMode == .generate || (viewMode == .browse && transformerManager.mode == .emoticons) {
+      let selectedString = output(for: indexPath)
+      UIPasteboard.general.string = selectedString
+      actionConfirmationView.style = .copied
+    } else {
+      // Favorite or unfavorite
+      let transformer = transformerManager.transformerGroupingsToDisplay[indexPath.section].transformers[indexPath.row]
+      transformerManager.toggleFavorite(transformer: transformer)
+      actionConfirmationView.style = self.transformerManager.isFavorited(at: indexPath) ? .favorited : .unfavorited
+      refreshUI()
+    }
 
-    feedbackGenerator.notificationOccurred(.success)
     showActionConfirmationView()
+    feedbackGenerator.notificationOccurred(.success)
   }
 
   func showActionConfirmationView() {
