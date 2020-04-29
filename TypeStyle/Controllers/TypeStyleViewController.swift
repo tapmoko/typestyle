@@ -53,6 +53,8 @@ class TypeStyleViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    overrideUserInterfaceStyle = .dark
+
     view.backgroundColor = .appBackground
 
     setUpInputContainerView()

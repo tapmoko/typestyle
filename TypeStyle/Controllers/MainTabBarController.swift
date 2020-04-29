@@ -5,6 +5,8 @@ class MainTabBarController: UITabBarController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    overrideUserInterfaceStyle = .dark
+
     let stylesVC = TypeStyleViewController(transformerMode: .styles)
     stylesVC.tabBarItem = UITabBarItem(title: "Styles",
                                        image: UIImage(systemName: "bold.italic.underline"),
