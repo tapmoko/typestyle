@@ -4,6 +4,15 @@ import StoreKit
 
 class AboutViewController: UIViewController {
 
+  // MARK: - Static variables
+
+  static let priceFormatter: NumberFormatter = {
+    let formatter = NumberFormatter()
+    formatter.formatterBehavior = .behavior10_4
+    formatter.numberStyle = .currency
+    return formatter
+  }()
+
   // MARK: - Instance variables
 
   var confettiView: ConfettiView?
@@ -21,6 +30,7 @@ class AboutViewController: UIViewController {
   ]
 
   lazy var tipLabelView = AboutLabelView(text: tipMessages[0])
+  lazy var tipButtonView = AboutButtonView(text: "Tip", kind: .tip)
 
   let scrollView = UIScrollView()
 
@@ -29,7 +39,7 @@ class AboutViewController: UIViewController {
       AboutLabelView(text: "TypeStyle is an app created by me, Eugene Belinski."),
       AboutButtonView(text: "My Website", kind: .link("https://ebelinski.com")),
       tipLabelView,
-      AboutButtonView(text: "$1.99 Tip", kind: .tip),
+      tipButtonView,
       AboutLabelView(text: "TypeStyle is open source! It is written in Swift 5, and released under the GNU-GPL 3.0 license."),
       AboutButtonView(text: "View Source", kind: .link("https://github.com/ebelinski/typestyle-ios")),
       AboutLabelView(text: "The TypeStyle privacy policy is available here:"),
@@ -82,6 +92,27 @@ class AboutViewController: UIViewController {
                                            selector: #selector(handlePurchaseFailure(_:)),
                                            name: Notification.Name.IAP.purchaseFailed,
                                            object: nil)
+  }
+
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+
+    guard let product = Products.tipProducts.first else {
+      removeTipButton()
+      return
+    }
+    AboutViewController.priceFormatter.locale = product.priceLocale
+    guard let price = AboutViewController.priceFormatter.string(from: product.price) else {
+      removeTipButton()
+      return
+    }
+
+    tipButtonView.set(text: "\(price) Tip")
+  }
+
+  func removeTipButton() {
+    tipLabelView.removeFromSuperview()
+    tipButtonView.removeFromSuperview()
   }
 
   @objc func handlePurchaseSuccess(_ notification: Notification) {
@@ -175,13 +206,13 @@ extension AboutViewController: AboutButtonViewDelegate {
   }
 
   func openTip() {
-    if Products.tipProducts.isEmpty {
+    guard let product = Products.tipProducts.first else {
       log.error("tipProducts is empty")
       return
     }
 
     startLoadingView()
-    Products.store.buyProduct(Products.tipProducts[0])
+    Products.store.buyProduct(product)
   }
 
 }

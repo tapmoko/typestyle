@@ -39,13 +39,7 @@ class AboutButtonView: UIView {
 
     button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
 
-    let attributes: [NSAttributedString.Key: Any] = [
-      NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue,
-      NSAttributedString.Key.foregroundColor: UIColor.appText
-    ]
-    let underlinedText = NSAttributedString(string: text,
-                                            attributes: attributes)
-    button.setAttributedTitle(underlinedText, for: .normal)
+    set(text: text)
 
     addSubview(button)
 
@@ -55,6 +49,16 @@ class AboutButtonView: UIView {
       make.width.lessThanOrEqualToSuperview().inset(padding * 2)
       make.bottom.equalToSuperview().inset(padding / 2)
     }
+  }
+
+  func set(text: String) {
+    let attributes: [NSAttributedString.Key: Any] = [
+      NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue,
+      NSAttributedString.Key.foregroundColor: UIColor.appText
+    ]
+    let underlinedText = NSAttributedString(string: text,
+                                            attributes: attributes)
+    button.setAttributedTitle(underlinedText, for: .normal)
   }
 
   @objc func didTapButton() {
