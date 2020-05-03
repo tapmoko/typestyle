@@ -2,6 +2,7 @@ import UIKit
 
 protocol AboutButtonTableViewCellDelegate: class {
   func open(link: String)
+  func openTip()
 }
 
 class AboutButtonTableViewCell: UITableViewCell {
@@ -40,7 +41,7 @@ class AboutButtonTableViewCell: UITableViewCell {
     button.titleLabel?.adjustsFontForContentSizeCategory = true
     button.titleLabel?.numberOfLines = 0 // unlimited
 
-    button.addTarget(self, action: #selector(openLink), for: .touchUpInside)
+    button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
 
     let attributes: [NSAttributedString.Key: Any] = [
       NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue,
@@ -60,10 +61,10 @@ class AboutButtonTableViewCell: UITableViewCell {
     }
   }
 
-  @objc func openLink() {
+  @objc func didTapButton() {
     switch kind {
     case .link(let link): delegate?.open(link: link)
-    case .tip: break
+    case .tip: delegate?.openTip()
     }
   }
 

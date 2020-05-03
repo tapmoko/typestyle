@@ -1,7 +1,9 @@
 import UIKit
 import SafariServices
 
-class AboutViewController: UITableViewController {
+class AboutViewController: UIViewController {
+
+  // MARK: - Instance variables
 
   let cells: [UITableViewCell] = [
     AboutLabelTableViewCell(text: "TypeStyle is an app created by me, Eugene Belinski."),
@@ -14,6 +16,12 @@ class AboutViewController: UITableViewController {
     AboutButtonTableViewCell(text: "Privacy Policy", kind: .link("https://typestyle.app/privacy-policy"))
   ]
 
+  let confettiView = ConfettiView()
+
+  let tableView = UITableView()
+
+  // MARK: - Methods
+
   override func viewDidLoad() {
     super.viewDidLoad()
 
@@ -21,21 +29,27 @@ class AboutViewController: UITableViewController {
 
     // Set up table view
 
+    tableView.backgroundColor = .appBackground
     tableView.separatorStyle = .none
+    tableView.dataSource = self
     tableView.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
+    view.addSubview(tableView)
+    tableView.snp.makeConstraints { make in
+      make.edges.equalToSuperview()
+    }
   }
 
 }
 
 // MARK: Table view data source
 
-extension AboutViewController {
+extension AboutViewController: UITableViewDataSource {
 
-  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return cells.count
   }
 
-  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = cells[indexPath.row]
     (cell as? AboutButtonTableViewCell)?.delegate = self
     return cell
@@ -52,6 +66,17 @@ extension AboutViewController: AboutButtonTableViewCellDelegate {
     svc.preferredBarTintColor = .appBackground
     svc.preferredControlTintColor = .appText
     present(svc, animated: true, completion: nil)
+  }
+
+  func openTip() {
+    confettiView.isUserInteractionEnabled = false
+    view.addSubview(confettiView)
+
+    confettiView.snp.makeConstraints { make in
+      make.edges.equalToSuperview()
+    }
+
+    confettiView.start()
   }
 
 }
