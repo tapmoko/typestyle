@@ -6,13 +6,18 @@ protocol AboutButtonTableViewCellDelegate: class {
 
 class AboutButtonTableViewCell: UITableViewCell {
 
+  enum Kind {
+    case link(String)
+    case tip
+  }
+
   let button = UIButton()
   let padding: CGFloat = 20
-  let link: String
+  let kind: Kind
   weak var delegate: AboutButtonTableViewCellDelegate?
 
-  init(text: String, link: String) {
-    self.link = link
+  init(text: String, kind: Kind) {
+    self.kind = kind
 
     super.init(style: .default, reuseIdentifier: nil)
 
@@ -56,7 +61,10 @@ class AboutButtonTableViewCell: UITableViewCell {
   }
 
   @objc func openLink() {
-    delegate?.open(link: link)
+    switch kind {
+    case .link(let link): delegate?.open(link: link)
+    case .tip: break
+    }
   }
 
 }
