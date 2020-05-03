@@ -12,22 +12,35 @@ class AboutViewController: UIViewController {
     "Another tip?? You're the best!\n❤️🧡💛💚💙💜",
   ]
 
-  lazy var tipLabelCell = AboutLabelTableViewCell(text: tipMessages[0])
+  lazy var tipLabelView = AboutLabelView(text: tipMessages[0])
 
-  lazy var cells: [UITableViewCell] = [
-    AboutLabelTableViewCell(text: "TypeStyle is an app created by me, Eugene Belinski."),
-    AboutButtonTableViewCell(text: "My Website", kind: .link("https://ebelinski.com")),
-    tipLabelCell,
-    AboutButtonTableViewCell(text: "$1.99 Tip", kind: .tip),
-    AboutLabelTableViewCell(text: "TypeStyle is open source! It is written in Swift 5, and released under the GNU-GPL 3.0 license."),
-    AboutButtonTableViewCell(text: "View Source", kind: .link("https://github.com/ebelinski/typestyle-ios")),
-    AboutLabelTableViewCell(text: "The TypeStyle privacy policy is available here:"),
-    AboutButtonTableViewCell(text: "Privacy Policy", kind: .link("https://typestyle.app/privacy-policy"))
-  ]
+  let scrollView: UIScrollView = {
+    let scrollView = UIScrollView()
+//    scrollView.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
+    return scrollView
+  }()
+
+  lazy var stackView: UIStackView = {
+    let stackView = UIStackView(arrangedSubviews: [
+      AboutLabelView(text: "TypeStyle is an app created by me, Eugene Belinski."),
+      AboutButtonView(text: "My Website", kind: .link("https://ebelinski.com")),
+      tipLabelView,
+      AboutButtonView(text: "$1.99 Tip", kind: .tip),
+      AboutLabelView(text: "TypeStyle is open source! It is written in Swift 5, and released under the GNU-GPL 3.0 license."),
+      AboutButtonView(text: "View Source", kind: .link("https://github.com/ebelinski/typestyle-ios")),
+      AboutLabelView(text: "The TypeStyle privacy policy is available here:"),
+      AboutButtonView(text: "Privacy Policy", kind: .link("https://typestyle.app/privacy-policy"))
+    ])
+
+    stackView.alignment = .fill
+    stackView.axis = .vertical
+    stackView.spacing = 0
+    stackView.subviews.forEach { ($0 as? AboutButtonView)?.delegate = self }
+
+    return stackView
+  }()
 
   var confettiView: ConfettiView?
-
-  let tableView = UITableView()
 
   // MARK: - Tipping
 
@@ -40,15 +53,20 @@ class AboutViewController: UIViewController {
 
     view.backgroundColor = .appBackground
 
-    // Set up table view
+    // Set up scroll view
 
-    tableView.backgroundColor = .appBackground
-    tableView.separatorStyle = .none
-    tableView.dataSource = self
-    tableView.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
-    view.addSubview(tableView)
-    tableView.snp.makeConstraints { make in
-      make.edges.equalToSuperview()
+    view.addSubview(scrollView)
+    scrollView.snp.makeConstraints { make in
+      make.edges.equalTo(view.safeAreaLayoutGuide)
+    }
+
+    // Set up stack
+
+    stackView.backgroundColor = .appBackground
+    scrollView.addSubview(stackView)
+    stackView.snp.makeConstraints { make in
+      make.edges.equalTo(scrollView)
+      make.width.equalTo(view.safeAreaLayoutGuide)
     }
 
     // Tip
@@ -76,10 +94,10 @@ class AboutViewController: UIViewController {
   }
 
   func confirmTipPurchase() {
-    if tipLabelCell.label.text == tipMessages[0] {
-      tipLabelCell.label.text = tipMessages[1]
-    } else if tipLabelCell.label.text == tipMessages[1] {
-      tipLabelCell.label.text = tipMessages[2]
+    if tipLabelView.label.text == tipMessages[0] {
+      tipLabelView.label.text = tipMessages[1]
+    } else if tipLabelView.label.text == tipMessages[1] {
+      tipLabelView.label.text = tipMessages[2]
     }
 
     confettiView = ConfettiView()
@@ -100,24 +118,9 @@ class AboutViewController: UIViewController {
 
 }
 
-// MARK: Table view data source
-
-extension AboutViewController: UITableViewDataSource {
-
-  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return cells.count
-  }
-
-  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = cells[indexPath.row]
-    (cell as? AboutButtonTableViewCell)?.delegate = self
-    return cell
-  }
-}
-
 // MARK: URL opening
 
-extension AboutViewController: AboutButtonTableViewCellDelegate {
+extension AboutViewController: AboutButtonViewDelegate {
 
   func open(link: String) {
     guard let url = URL(string: link) else { return }

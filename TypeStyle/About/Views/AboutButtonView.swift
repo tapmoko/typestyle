@@ -1,11 +1,11 @@
 import UIKit
 
-protocol AboutButtonTableViewCellDelegate: class {
+protocol AboutButtonViewDelegate: class {
   func open(link: String)
   func openTip()
 }
 
-class AboutButtonTableViewCell: UITableViewCell {
+class AboutButtonView: UIView {
 
   enum Kind {
     case link(String)
@@ -15,18 +15,14 @@ class AboutButtonTableViewCell: UITableViewCell {
   let button = UIButton(type: .system)
   let padding: CGFloat = 20
   let kind: Kind
-  weak var delegate: AboutButtonTableViewCellDelegate?
+  weak var delegate: AboutButtonViewDelegate?
 
   init(text: String, kind: Kind) {
     self.kind = kind
 
-    super.init(style: .default, reuseIdentifier: nil)
+    super.init(frame: .zero)
 
     backgroundColor = .appBackground
-
-    let selectedView = UIView()
-    selectedView.backgroundColor = .appBackground
-    selectedBackgroundView = selectedView
 
     setUpButton(text: text)
   }

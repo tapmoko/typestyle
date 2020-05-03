@@ -1,18 +1,14 @@
 import UIKit
 
-class AboutLabelTableViewCell: UITableViewCell {
+class AboutLabelView: UIView {
 
   let label = UILabel()
   let padding: CGFloat = 20
 
   init(text: String) {
-    super.init(style: .default, reuseIdentifier: nil)
+    super.init(frame: .zero)
 
     backgroundColor = .appBackground
-
-    let selectedView = UIView()
-    selectedView.backgroundColor = .appBackground
-    selectedBackgroundView = selectedView
 
     setUpLabel()
     label.text = text

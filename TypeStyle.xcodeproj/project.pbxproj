@@ -14,8 +14,8 @@
 		41159518236E7F000049509F /* InputContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69D2809218A407C00A298A9 /* InputContainerView.swift */; };
 		41159519236E7F000049509F /* ActionConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69D2812218A8ACD00A298A9 /* ActionConfirmationView.swift */; };
 		4115951A236E7F000049509F /* OutputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68C6EAE218A3E63007CB17A /* OutputTableViewCell.swift */; };
-		4115951B236E7F000049509F /* AboutLabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E91DE921AA32CD003214C9 /* AboutLabelTableViewCell.swift */; };
-		4115951C236E7F000049509F /* AboutButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E91DEB21AA3542003214C9 /* AboutButtonTableViewCell.swift */; };
+		4115951B236E7F000049509F /* AboutLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E91DE921AA32CD003214C9 /* AboutLabelView.swift */; };
+		4115951C236E7F000049509F /* AboutButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E91DEB21AA3542003214C9 /* AboutButtonView.swift */; };
 		4115951D236E7F000049509F /* GeneratorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66B548A2187C4750038C84A /* GeneratorViewController.swift */; };
 		4115951E236E7F000049509F /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E91DE721AA2FA7003214C9 /* AboutViewController.swift */; };
 		4115951F236E7F000049509F /* TransformerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68C6EAA218A3493007CB17A /* TransformerManager.swift */; };
@@ -50,8 +50,8 @@
 		B69D281F218BD2E800A298A9 /* Transformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69D281E218BD2E800A298A9 /* Transformer.swift */; };
 		B6E91DE621AA19B8003214C9 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E91DE521AA19B8003214C9 /* Global.swift */; };
 		B6E91DE821AA2FA7003214C9 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E91DE721AA2FA7003214C9 /* AboutViewController.swift */; };
-		B6E91DEA21AA32CD003214C9 /* AboutLabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E91DE921AA32CD003214C9 /* AboutLabelTableViewCell.swift */; };
-		B6E91DEC21AA3542003214C9 /* AboutButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E91DEB21AA3542003214C9 /* AboutButtonTableViewCell.swift */; };
+		B6E91DEA21AA32CD003214C9 /* AboutLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E91DE921AA32CD003214C9 /* AboutLabelView.swift */; };
+		B6E91DEC21AA3542003214C9 /* AboutButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E91DEB21AA3542003214C9 /* AboutButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,8 +93,8 @@
 		B69D281E218BD2E800A298A9 /* Transformer.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Transformer.swift; sourceTree = "<group>"; tabWidth = 2; };
 		B6E91DE521AA19B8003214C9 /* Global.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; tabWidth = 2; };
 		B6E91DE721AA2FA7003214C9 /* AboutViewController.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
-		B6E91DE921AA32CD003214C9 /* AboutLabelTableViewCell.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = AboutLabelTableViewCell.swift; sourceTree = "<group>"; tabWidth = 2; };
-		B6E91DEB21AA3542003214C9 /* AboutButtonTableViewCell.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = AboutButtonTableViewCell.swift; sourceTree = "<group>"; tabWidth = 2; };
+		B6E91DE921AA32CD003214C9 /* AboutLabelView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = AboutLabelView.swift; sourceTree = "<group>"; tabWidth = 2; };
+		B6E91DEB21AA3542003214C9 /* AboutButtonView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = AboutButtonView.swift; sourceTree = "<group>"; tabWidth = 2; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,8 +207,8 @@
 		412DB3AE245F0F6D00A91314 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B6E91DE921AA32CD003214C9 /* AboutLabelTableViewCell.swift */,
-				B6E91DEB21AA3542003214C9 /* AboutButtonTableViewCell.swift */,
+				B6E91DE921AA32CD003214C9 /* AboutLabelView.swift */,
+				B6E91DEB21AA3542003214C9 /* AboutButtonView.swift */,
 				412DB3A5245E749300A91314 /* ConfettiView.swift */,
 			);
 			path = Views;
@@ -411,9 +411,9 @@
 				41159522236E7F000049509F /* UIColor+Extension.swift in Sources */,
 				41D25C82245654F60091F6AB /* EmoticonFactory.swift in Sources */,
 				41159515236E7D860049509F /* StyleFactorySpec.swift in Sources */,
-				4115951C236E7F000049509F /* AboutButtonTableViewCell.swift in Sources */,
+				4115951C236E7F000049509F /* AboutButtonView.swift in Sources */,
 				41159517236E7F000049509F /* Transformer.swift in Sources */,
-				4115951B236E7F000049509F /* AboutLabelTableViewCell.swift in Sources */,
+				4115951B236E7F000049509F /* AboutLabelView.swift in Sources */,
 				41159518236E7F000049509F /* InputContainerView.swift in Sources */,
 				41159524236E7F000049509F /* CustomTransforms.swift in Sources */,
 				41D25C81245654EF0091F6AB /* MainTabBarController.swift in Sources */,
@@ -431,10 +431,10 @@
 				B68C6EAB218A3493007CB17A /* TransformerManager.swift in Sources */,
 				412DB3A6245E749300A91314 /* ConfettiView.swift in Sources */,
 				412DB3B7245F10D200A91314 /* StyleFactory.swift in Sources */,
-				B6E91DEA21AA32CD003214C9 /* AboutLabelTableViewCell.swift in Sources */,
+				B6E91DEA21AA32CD003214C9 /* AboutLabelView.swift in Sources */,
 				B6E91DE821AA2FA7003214C9 /* AboutViewController.swift in Sources */,
 				B69D281C218BC96E00A298A9 /* DecorationFactory.swift in Sources */,
-				B6E91DEC21AA3542003214C9 /* AboutButtonTableViewCell.swift in Sources */,
+				B6E91DEC21AA3542003214C9 /* AboutButtonView.swift in Sources */,
 				412DB3B3245F0FD500A91314 /* IAPHelper.swift in Sources */,
 				41D25C7E24553FFA0091F6AB /* MainTabBarController.swift in Sources */,
 				B69D281F218BD2E800A298A9 /* Transformer.swift in Sources */,
