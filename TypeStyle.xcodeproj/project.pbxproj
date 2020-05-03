@@ -68,6 +68,7 @@
 		41159514236E7D860049509F /* StyleFactorySpec.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = StyleFactorySpec.swift; sourceTree = "<group>"; tabWidth = 2; };
 		412DB3A3245E6F3800A91314 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		412DB3A5245E749300A91314 /* ConfettiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiView.swift; sourceTree = "<group>"; };
+		412DB3B0245F0FAF00A91314 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		41588F6A2357CBC6004E78FD /* TypeStyle.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TypeStyle.entitlements; sourceTree = "<group>"; };
 		4197FA8E2221D06F000516AA /* CustomTransforms.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = CustomTransforms.swift; sourceTree = "<group>"; tabWidth = 2; };
 		41D25C7D24553FFA0091F6AB /* MainTabBarController.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; tabWidth = 2; };
@@ -218,6 +219,7 @@
 		B66B547C2187C4750038C84A = {
 			isa = PBXGroup;
 			children = (
+				412DB3B0245F0FAF00A91314 /* README.md */,
 				B66B54872187C4750038C84A /* TypeStyle */,
 				4115950B236E7BE40049509F /* TypeStyleTests */,
 				B66B54862187C4750038C84A /* Products */,
