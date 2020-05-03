@@ -7,17 +7,17 @@ class MainTabBarController: UITabBarController {
 
     overrideUserInterfaceStyle = .dark
 
-    let stylesVC = TypeStyleViewController(transformerMode: .styles)
+    let stylesVC = GeneratorViewController(transformerMode: .styles)
     stylesVC.tabBarItem = UITabBarItem(title: "Styles",
                                        image: UIImage(systemName: "bold.italic.underline"),
                                        tag: 0)
 
-    let decorationsVC = TypeStyleViewController(transformerMode: .decorations)
+    let decorationsVC = GeneratorViewController(transformerMode: .decorations)
     decorationsVC.tabBarItem = UITabBarItem(title: "Decorations",
                                             image: UIImage(systemName: "wand.and.stars"),
                                             tag: 1)
 
-    let emoticonsVC = TypeStyleViewController(transformerMode: .emoticons)
+    let emoticonsVC = GeneratorViewController(transformerMode: .emoticons)
     emoticonsVC.tabBarItem = UITabBarItem(title: "Emoticons",
                                           image: UIImage(systemName: "smiley"),
                                           tag: 2)

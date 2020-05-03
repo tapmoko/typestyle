@@ -2,7 +2,7 @@ import UIKit
 import SnapKit
 import CoreServices
 
-class TypeStyleViewController: UIViewController {
+class GeneratorViewController: UIViewController {
 
   enum ViewMode {
     case generate
@@ -210,7 +210,7 @@ class TypeStyleViewController: UIViewController {
 
 // MARK: - UITableViewDataSource
 
-extension TypeStyleViewController: UITableViewDataSource {
+extension GeneratorViewController: UITableViewDataSource {
 
   func numberOfSections(in tableView: UITableView) -> Int {
     return transformerManager.transformerGroupingsToDisplay.count
@@ -261,7 +261,7 @@ extension TypeStyleViewController: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 
-extension TypeStyleViewController: UITableViewDelegate {
+extension GeneratorViewController: UITableViewDelegate {
 
   func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
     inputContainerView.inputTextView.resignFirstResponder()
@@ -316,7 +316,7 @@ extension TypeStyleViewController: UITableViewDelegate {
 
 // MARK: - UITextViewDelegate
 
-extension TypeStyleViewController: UITextViewDelegate {
+extension GeneratorViewController: UITextViewDelegate {
 
   func textViewDidBeginEditing(_ textView: UITextView) {
     if textView.textColor == .appFadedText {
@@ -340,7 +340,7 @@ extension TypeStyleViewController: UITextViewDelegate {
 
 // MARK: - UITableViewDragDelegate
 
-extension TypeStyleViewController: UITableViewDragDelegate {
+extension GeneratorViewController: UITableViewDragDelegate {
 
   func tableView(_ tableView: UITableView,
                  itemsForBeginning session: UIDragSession,

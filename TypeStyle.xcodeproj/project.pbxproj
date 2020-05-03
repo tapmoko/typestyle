@@ -16,7 +16,7 @@
 		4115951A236E7F000049509F /* OutputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68C6EAE218A3E63007CB17A /* OutputTableViewCell.swift */; };
 		4115951B236E7F000049509F /* AboutLabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E91DE921AA32CD003214C9 /* AboutLabelTableViewCell.swift */; };
 		4115951C236E7F000049509F /* AboutButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E91DEB21AA3542003214C9 /* AboutButtonTableViewCell.swift */; };
-		4115951D236E7F000049509F /* TypeStyleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66B548A2187C4750038C84A /* TypeStyleViewController.swift */; };
+		4115951D236E7F000049509F /* GeneratorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66B548A2187C4750038C84A /* GeneratorViewController.swift */; };
 		4115951E236E7F000049509F /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E91DE721AA2FA7003214C9 /* AboutViewController.swift */; };
 		4115951F236E7F000049509F /* TransformerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68C6EAA218A3493007CB17A /* TransformerManager.swift */; };
 		41159520236E7F000049509F /* StyleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69D2819218BC95200A298A9 /* StyleFactory.swift */; };
@@ -35,7 +35,7 @@
 		41D25C81245654EF0091F6AB /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D25C7D24553FFA0091F6AB /* MainTabBarController.swift */; };
 		41D25C82245654F60091F6AB /* EmoticonFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D25C7F2455BEB20091F6AB /* EmoticonFactory.swift */; };
 		B66B54892187C4750038C84A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66B54882187C4750038C84A /* AppDelegate.swift */; };
-		B66B548B2187C4750038C84A /* TypeStyleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66B548A2187C4750038C84A /* TypeStyleViewController.swift */; };
+		B66B548B2187C4750038C84A /* GeneratorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66B548A2187C4750038C84A /* GeneratorViewController.swift */; };
 		B66B54902187C4770038C84A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B66B548F2187C4770038C84A /* Assets.xcassets */; };
 		B66B54932187C4770038C84A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B66B54912187C4770038C84A /* LaunchScreen.storyboard */; };
 		B68C6EAB218A3493007CB17A /* TransformerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68C6EAA218A3493007CB17A /* TransformerManager.swift */; };
@@ -74,7 +74,7 @@
 		41D25C7F2455BEB20091F6AB /* EmoticonFactory.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = EmoticonFactory.swift; sourceTree = "<group>"; tabWidth = 2; };
 		B66B54852187C4750038C84A /* TypeStyle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TypeStyle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B66B54882187C4750038C84A /* AppDelegate.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; tabWidth = 2; };
-		B66B548A2187C4750038C84A /* TypeStyleViewController.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = TypeStyleViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
+		B66B548A2187C4750038C84A /* GeneratorViewController.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = GeneratorViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
 		B66B548F2187C4770038C84A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B66B54922187C4770038C84A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B66B54942187C4770038C84A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -131,6 +131,90 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		412DB3A7245F0EAA00A91314 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				412DB3A8245F0EDD00A91314 /* Extensions */,
+				B69D280D218A7A3800A298A9 /* Models */,
+				B66B54882187C4750038C84A /* AppDelegate.swift */,
+				B6E91DE521AA19B8003214C9 /* Constants.swift */,
+				41D25C7D24553FFA0091F6AB /* MainTabBarController.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		412DB3A8245F0EDD00A91314 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B68C6EAC218A365A007CB17A /* UIColor+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		412DB3A9245F0F1F00A91314 /* Generator */ = {
+			isa = PBXGroup;
+			children = (
+				412DB3AC245F0F5700A91314 /* Controllers */,
+				B69D281D218BCA4600A298A9 /* Factories */,
+				412DB3AD245F0F6200A91314 /* Managers */,
+				412DB3AB245F0F5100A91314 /* Views */,
+			);
+			path = Generator;
+			sourceTree = "<group>";
+		};
+		412DB3AA245F0F2200A91314 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				412DB3AF245F0F7700A91314 /* Controllers */,
+				412DB3AE245F0F6D00A91314 /* Views */,
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
+		412DB3AB245F0F5100A91314 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B69D2809218A407C00A298A9 /* InputContainerView.swift */,
+				B69D2812218A8ACD00A298A9 /* ActionConfirmationView.swift */,
+				B68C6EAE218A3E63007CB17A /* OutputTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		412DB3AC245F0F5700A91314 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B66B548A2187C4750038C84A /* GeneratorViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		412DB3AD245F0F6200A91314 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				B68C6EAA218A3493007CB17A /* TransformerManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		412DB3AE245F0F6D00A91314 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B6E91DE921AA32CD003214C9 /* AboutLabelTableViewCell.swift */,
+				B6E91DEB21AA3542003214C9 /* AboutButtonTableViewCell.swift */,
+				412DB3A5245E749300A91314 /* ConfettiView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		412DB3AF245F0F7700A91314 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B6E91DE721AA2FA7003214C9 /* AboutViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		B66B547C2187C4750038C84A = {
 			isa = PBXGroup;
 			children = (
@@ -154,15 +238,9 @@
 			isa = PBXGroup;
 			children = (
 				41588F6A2357CBC6004E78FD /* TypeStyle.entitlements */,
-				B66B54882187C4750038C84A /* AppDelegate.swift */,
-				B69D280D218A7A3800A298A9 /* Models */,
-				B69D280E218A7A4100A298A9 /* Views */,
-				B69D280F218A7A4800A298A9 /* Controllers */,
-				B69D2818218BC94000A298A9 /* Managers */,
-				B69D281D218BCA4600A298A9 /* Factories */,
-				B68C6EAC218A365A007CB17A /* UIColor+Extension.swift */,
-				B6E91DE521AA19B8003214C9 /* Constants.swift */,
-				4197FA8E2221D06F000516AA /* CustomTransforms.swift */,
+				412DB3A7245F0EAA00A91314 /* Application */,
+				412DB3A9245F0F1F00A91314 /* Generator */,
+				412DB3AA245F0F2200A91314 /* About */,
 				B66B548F2187C4770038C84A /* Assets.xcassets */,
 				B66B54912187C4770038C84A /* LaunchScreen.storyboard */,
 				B66B54942187C4770038C84A /* Info.plist */,
@@ -173,40 +251,10 @@
 		B69D280D218A7A3800A298A9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4197FA8E2221D06F000516AA /* CustomTransforms.swift */,
 				B69D281E218BD2E800A298A9 /* Transformer.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		B69D280E218A7A4100A298A9 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				B69D2809218A407C00A298A9 /* InputContainerView.swift */,
-				B69D2812218A8ACD00A298A9 /* ActionConfirmationView.swift */,
-				B68C6EAE218A3E63007CB17A /* OutputTableViewCell.swift */,
-				B6E91DE921AA32CD003214C9 /* AboutLabelTableViewCell.swift */,
-				B6E91DEB21AA3542003214C9 /* AboutButtonTableViewCell.swift */,
-				412DB3A5245E749300A91314 /* ConfettiView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		B69D280F218A7A4800A298A9 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				41D25C7D24553FFA0091F6AB /* MainTabBarController.swift */,
-				B66B548A2187C4750038C84A /* TypeStyleViewController.swift */,
-				B6E91DE721AA2FA7003214C9 /* AboutViewController.swift */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		B69D2818218BC94000A298A9 /* Managers */ = {
-			isa = PBXGroup;
-			children = (
-				B68C6EAA218A3493007CB17A /* TransformerManager.swift */,
-			);
-			path = Managers;
 			sourceTree = "<group>";
 		};
 		B69D281D218BCA4600A298A9 /* Factories */ = {
@@ -334,7 +382,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				41159519236E7F000049509F /* ActionConfirmationView.swift in Sources */,
-				4115951D236E7F000049509F /* TypeStyleViewController.swift in Sources */,
+				4115951D236E7F000049509F /* GeneratorViewController.swift in Sources */,
 				4115951E236E7F000049509F /* AboutViewController.swift in Sources */,
 				41159516236E7F000049509F /* AppDelegate.swift in Sources */,
 				41159521236E7F000049509F /* DecorationFactory.swift in Sources */,
@@ -358,7 +406,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B66B548B2187C4750038C84A /* TypeStyleViewController.swift in Sources */,
+				B66B548B2187C4750038C84A /* GeneratorViewController.swift in Sources */,
 				B6E91DE621AA19B8003214C9 /* Constants.swift in Sources */,
 				B66B54892187C4750038C84A /* AppDelegate.swift in Sources */,
 				B69D2813218A8ACD00A298A9 /* ActionConfirmationView.swift in Sources */,
