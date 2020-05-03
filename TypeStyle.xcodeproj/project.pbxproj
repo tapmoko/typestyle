@@ -21,12 +21,15 @@
 		4115951F236E7F000049509F /* TransformerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68C6EAA218A3493007CB17A /* TransformerManager.swift */; };
 		41159521236E7F000049509F /* DecorationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69D281B218BC96E00A298A9 /* DecorationFactory.swift */; };
 		41159522236E7F000049509F /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68C6EAC218A365A007CB17A /* UIColor+Extension.swift */; };
-		41159523236E7F000049509F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E91DE521AA19B8003214C9 /* Constants.swift */; };
+		41159523236E7F000049509F /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E91DE521AA19B8003214C9 /* Global.swift */; };
 		41159524236E7F000049509F /* CustomTransforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4197FA8E2221D06F000516AA /* CustomTransforms.swift */; };
 		41159525236E802F0049509F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B66B54912187C4770038C84A /* LaunchScreen.storyboard */; };
 		412DB3A4245E6F3800A91314 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 412DB3A3245E6F3800A91314 /* StoreKit.framework */; };
 		412DB3A6245E749300A91314 /* ConfettiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412DB3A5245E749300A91314 /* ConfettiView.swift */; };
+		412DB3B3245F0FD500A91314 /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412DB3B2245F0FD500A91314 /* IAPHelper.swift */; };
+		412DB3B5245F0FEB00A91314 /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412DB3B4245F0FEB00A91314 /* Products.swift */; };
 		412DB3B7245F10D200A91314 /* StyleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412DB3B6245F10D200A91314 /* StyleFactory.swift */; };
+		412DB3BA245F114F00A91314 /* SwiftyBeaver in Frameworks */ = {isa = PBXBuildFile; productRef = 412DB3B9245F114F00A91314 /* SwiftyBeaver */; };
 		4141902923803FC5009D3225 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4141902823803FC5009D3225 /* SnapKit */; };
 		4197FA8F2221D06F000516AA /* CustomTransforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4197FA8E2221D06F000516AA /* CustomTransforms.swift */; };
 		41D1971624552E8500A46EFB /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = 41D1971524552E8500A46EFB /* Quick */; };
@@ -45,7 +48,7 @@
 		B69D2813218A8ACD00A298A9 /* ActionConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69D2812218A8ACD00A298A9 /* ActionConfirmationView.swift */; };
 		B69D281C218BC96E00A298A9 /* DecorationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69D281B218BC96E00A298A9 /* DecorationFactory.swift */; };
 		B69D281F218BD2E800A298A9 /* Transformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69D281E218BD2E800A298A9 /* Transformer.swift */; };
-		B6E91DE621AA19B8003214C9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E91DE521AA19B8003214C9 /* Constants.swift */; };
+		B6E91DE621AA19B8003214C9 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E91DE521AA19B8003214C9 /* Global.swift */; };
 		B6E91DE821AA2FA7003214C9 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E91DE721AA2FA7003214C9 /* AboutViewController.swift */; };
 		B6E91DEA21AA32CD003214C9 /* AboutLabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E91DE921AA32CD003214C9 /* AboutLabelTableViewCell.swift */; };
 		B6E91DEC21AA3542003214C9 /* AboutButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E91DEB21AA3542003214C9 /* AboutButtonTableViewCell.swift */; };
@@ -68,6 +71,8 @@
 		412DB3A3245E6F3800A91314 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		412DB3A5245E749300A91314 /* ConfettiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiView.swift; sourceTree = "<group>"; };
 		412DB3B0245F0FAF00A91314 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		412DB3B2245F0FD500A91314 /* IAPHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
+		412DB3B4245F0FEB00A91314 /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
 		412DB3B6245F10D200A91314 /* StyleFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleFactory.swift; sourceTree = "<group>"; };
 		41588F6A2357CBC6004E78FD /* TypeStyle.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TypeStyle.entitlements; sourceTree = "<group>"; };
 		4197FA8E2221D06F000516AA /* CustomTransforms.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = CustomTransforms.swift; sourceTree = "<group>"; tabWidth = 2; };
@@ -86,7 +91,7 @@
 		B69D2812218A8ACD00A298A9 /* ActionConfirmationView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = ActionConfirmationView.swift; sourceTree = "<group>"; tabWidth = 2; };
 		B69D281B218BC96E00A298A9 /* DecorationFactory.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = DecorationFactory.swift; sourceTree = "<group>"; tabWidth = 2; };
 		B69D281E218BD2E800A298A9 /* Transformer.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Transformer.swift; sourceTree = "<group>"; tabWidth = 2; };
-		B6E91DE521AA19B8003214C9 /* Constants.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; tabWidth = 2; };
+		B6E91DE521AA19B8003214C9 /* Global.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; tabWidth = 2; };
 		B6E91DE721AA2FA7003214C9 /* AboutViewController.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
 		B6E91DE921AA32CD003214C9 /* AboutLabelTableViewCell.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = AboutLabelTableViewCell.swift; sourceTree = "<group>"; tabWidth = 2; };
 		B6E91DEB21AA3542003214C9 /* AboutButtonTableViewCell.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = AboutButtonTableViewCell.swift; sourceTree = "<group>"; tabWidth = 2; };
@@ -108,6 +113,7 @@
 			files = (
 				4141902923803FC5009D3225 /* SnapKit in Frameworks */,
 				412DB3A4245E6F3800A91314 /* StoreKit.framework in Frameworks */,
+				412DB3BA245F114F00A91314 /* SwiftyBeaver in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,7 +143,7 @@
 				412DB3A8245F0EDD00A91314 /* Extensions */,
 				B69D280D218A7A3800A298A9 /* Models */,
 				B66B54882187C4750038C84A /* AppDelegate.swift */,
-				B6E91DE521AA19B8003214C9 /* Constants.swift */,
+				B6E91DE521AA19B8003214C9 /* Global.swift */,
 				41D25C7D24553FFA0091F6AB /* MainTabBarController.swift */,
 			);
 			path = Application;
@@ -166,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				412DB3AF245F0F7700A91314 /* Controllers */,
+				412DB3B1245F0FCB00A91314 /* IAP */,
 				412DB3AE245F0F6D00A91314 /* Views */,
 			);
 			path = About;
@@ -213,6 +220,15 @@
 				B6E91DE721AA2FA7003214C9 /* AboutViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		412DB3B1245F0FCB00A91314 /* IAP */ = {
+			isa = PBXGroup;
+			children = (
+				412DB3B2245F0FD500A91314 /* IAPHelper.swift */,
+				412DB3B4245F0FEB00A91314 /* Products.swift */,
+			);
+			path = IAP;
 			sourceTree = "<group>";
 		};
 		B66B547C2187C4750038C84A = {
@@ -308,6 +324,7 @@
 			name = TypeStyle;
 			packageProductDependencies = (
 				4141902823803FC5009D3225 /* SnapKit */,
+				412DB3B9245F114F00A91314 /* SwiftyBeaver */,
 			);
 			productName = TypeStyle;
 			productReference = B66B54852187C4750038C84A /* TypeStyle.app */;
@@ -346,6 +363,7 @@
 				4141902723803FC5009D3225 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				4104613F24552D7E0002D713 /* XCRemoteSwiftPackageReference "Nimble" */,
 				41D1971424552E8500A46EFB /* XCRemoteSwiftPackageReference "Quick" */,
+				412DB3B8245F114F00A91314 /* XCRemoteSwiftPackageReference "SwiftyBeaver" */,
 			);
 			productRefGroup = B66B54862187C4750038C84A /* Products */;
 			projectDirPath = "";
@@ -389,7 +407,7 @@
 				41159521236E7F000049509F /* DecorationFactory.swift in Sources */,
 				4115951A236E7F000049509F /* OutputTableViewCell.swift in Sources */,
 				4115951F236E7F000049509F /* TransformerManager.swift in Sources */,
-				41159523236E7F000049509F /* Constants.swift in Sources */,
+				41159523236E7F000049509F /* Global.swift in Sources */,
 				41159522236E7F000049509F /* UIColor+Extension.swift in Sources */,
 				41D25C82245654F60091F6AB /* EmoticonFactory.swift in Sources */,
 				41159515236E7D860049509F /* StyleFactorySpec.swift in Sources */,
@@ -407,7 +425,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B66B548B2187C4750038C84A /* GeneratorViewController.swift in Sources */,
-				B6E91DE621AA19B8003214C9 /* Constants.swift in Sources */,
+				B6E91DE621AA19B8003214C9 /* Global.swift in Sources */,
 				B66B54892187C4750038C84A /* AppDelegate.swift in Sources */,
 				B69D2813218A8ACD00A298A9 /* ActionConfirmationView.swift in Sources */,
 				B68C6EAB218A3493007CB17A /* TransformerManager.swift in Sources */,
@@ -417,11 +435,13 @@
 				B6E91DE821AA2FA7003214C9 /* AboutViewController.swift in Sources */,
 				B69D281C218BC96E00A298A9 /* DecorationFactory.swift in Sources */,
 				B6E91DEC21AA3542003214C9 /* AboutButtonTableViewCell.swift in Sources */,
+				412DB3B3245F0FD500A91314 /* IAPHelper.swift in Sources */,
 				41D25C7E24553FFA0091F6AB /* MainTabBarController.swift in Sources */,
 				B69D281F218BD2E800A298A9 /* Transformer.swift in Sources */,
 				B68C6EAD218A365A007CB17A /* UIColor+Extension.swift in Sources */,
 				41D25C802455BEB20091F6AB /* EmoticonFactory.swift in Sources */,
 				B68C6EAF218A3E63007CB17A /* OutputTableViewCell.swift in Sources */,
+				412DB3B5245F0FEB00A91314 /* Products.swift in Sources */,
 				B69D280A218A407C00A298A9 /* InputContainerView.swift in Sources */,
 				4197FA8F2221D06F000516AA /* CustomTransforms.swift in Sources */,
 			);
@@ -696,6 +716,14 @@
 				minimumVersion = 8.0.7;
 			};
 		};
+		412DB3B8245F114F00A91314 /* XCRemoteSwiftPackageReference "SwiftyBeaver" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyBeaver/SwiftyBeaver";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.9.1;
+			};
+		};
 		4141902723803FC5009D3225 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
@@ -719,6 +747,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4104613F24552D7E0002D713 /* XCRemoteSwiftPackageReference "Nimble" */;
 			productName = Nimble;
+		};
+		412DB3B9245F114F00A91314 /* SwiftyBeaver */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 412DB3B8245F114F00A91314 /* XCRemoteSwiftPackageReference "SwiftyBeaver" */;
+			productName = SwiftyBeaver;
 		};
 		4141902823803FC5009D3225 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
