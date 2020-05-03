@@ -10,6 +10,10 @@ class AboutViewController: UIViewController {
     "TypeStyle is ad-free, tracker-free, and free of charge! Instead, I rely on your support to fund its development. Please consider leaving a tip in the Tip Jar.",
     "Thank you so much for tipping! 💛",
     "Another tip?? You're the best!\n❤️🧡💛💚💙💜",
+    "You are the reason there are no ads or trackers on this app. 😎",
+    "Maybe some more confetti? 🤔",
+    "Ok maybe a lot more confetti. 😄",
+    "At this point we'll just keep increasing the confetti. 😛 Thanks again! 🥰",
   ]
 
   lazy var tipLabelView = AboutLabelView(text: tipMessages[0])
@@ -93,12 +97,23 @@ class AboutViewController: UIViewController {
     confirmTipPurchase()
   }
 
-  func confirmTipPurchase() {
-    if tipLabelView.label.text == tipMessages[0] {
-      tipLabelView.label.text = tipMessages[1]
-    } else if tipLabelView.label.text == tipMessages[1] {
-      tipLabelView.label.text = tipMessages[2]
+  private func confirmTipPurchase() {
+    initializeConfettiView()
+
+    let oldMessageIndex = tipMessages.firstIndex(of: tipLabelView.label.text ?? "") ?? 0
+    let newMessageIndex = oldMessageIndex + 1
+    
+    if tipMessages.count - 1 >= newMessageIndex {
+      tipLabelView.label.text = tipMessages[newMessageIndex]
     }
+
+    if newMessageIndex >= 4 {
+      confettiView?.increase()
+    }
+  }
+
+  private func initializeConfettiView() {
+    guard confettiView == nil else { return }
 
     confettiView = ConfettiView()
     confettiView?.alpha = 0

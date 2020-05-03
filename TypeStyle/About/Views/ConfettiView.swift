@@ -21,6 +21,10 @@ class ConfettiView: UIView {
     layer.addSublayer(emitter!)
   }
 
+  func increase() {
+    emitter?.birthRate *= 2
+  }
+
   func stop() {
     emitter?.birthRate = 0
   }
@@ -32,7 +36,7 @@ class ConfettiView: UIView {
     confettiCell.scale = 0.4
     confettiCell.color = color.cgColor
 
-    confettiCell.birthRate = 10
+    confettiCell.birthRate = 5
     confettiCell.lifetime = 8
     confettiCell.lifetimeRange = 0
     confettiCell.velocity = 175
