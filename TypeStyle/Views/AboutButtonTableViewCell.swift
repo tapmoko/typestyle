@@ -12,7 +12,7 @@ class AboutButtonTableViewCell: UITableViewCell {
     case tip
   }
 
-  let button = UIButton()
+  let button = UIButton(type: .system)
   let padding: CGFloat = 20
   let kind: Kind
   weak var delegate: AboutButtonTableViewCellDelegate?
