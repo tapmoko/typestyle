@@ -6,6 +6,10 @@ class AboutViewController: UIViewController {
 
   // MARK: - Instance variables
 
+  var confettiView: ConfettiView?
+
+  let loadingView = LoadingView()
+
   let tipMessages = [
     "TypeStyle is ad-free, tracker-free, and free of charge! Instead, I rely on your support to fund its development. Please consider leaving a tip in the Tip Jar.",
     "Thank you so much for tipping! 💛",
@@ -18,11 +22,7 @@ class AboutViewController: UIViewController {
 
   lazy var tipLabelView = AboutLabelView(text: tipMessages[0])
 
-  let scrollView: UIScrollView = {
-    let scrollView = UIScrollView()
-//    scrollView.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
-    return scrollView
-  }()
+  let scrollView = UIScrollView()
 
   lazy var stackView: UIStackView = {
     let stackView = UIStackView(arrangedSubviews: [
@@ -43,10 +43,6 @@ class AboutViewController: UIViewController {
 
     return stackView
   }()
-
-  var confettiView: ConfettiView?
-
-  // MARK: - Tipping
 
   var tipProducts: [SKProduct] = []
 
@@ -79,7 +75,7 @@ class AboutViewController: UIViewController {
                                            name: .iapHelperPurchaseNotification,
                                            object: nil)
 
-    Products.store.requestProducts{ [weak self] success, tipProducts in
+    Products.store.requestProducts { [weak self] success, tipProducts in
       guard let self = self else { return }
       if success {
         self.tipProducts = tipProducts!
@@ -98,11 +94,12 @@ class AboutViewController: UIViewController {
   }
 
   private func confirmTipPurchase() {
+    stopLoadingView()
     initializeConfettiView()
 
     let oldMessageIndex = tipMessages.firstIndex(of: tipLabelView.label.text ?? "") ?? 0
     let newMessageIndex = oldMessageIndex + 1
-    
+
     if tipMessages.count - 1 >= newMessageIndex {
       tipLabelView.label.text = tipMessages[newMessageIndex]
     }
@@ -131,6 +128,22 @@ class AboutViewController: UIViewController {
     }, completion: nil)
   }
 
+  private func startLoadingView() {
+    loadingView.start()
+
+    view.addSubview(loadingView)
+
+    loadingView.snp.makeConstraints { make in
+      make.center.equalToSuperview()
+    }
+    loadingView.start()
+  }
+
+  private func stopLoadingView() {
+    loadingView.stop()
+    loadingView.removeFromSuperview()
+  }
+
 }
 
 // MARK: URL opening
@@ -150,6 +163,8 @@ extension AboutViewController: AboutButtonViewDelegate {
       log.error("tipProducts is empty")
       return
     }
+
+    startLoadingView()
     Products.store.buyProduct(tipProducts[0])
   }
 

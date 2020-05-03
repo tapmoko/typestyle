@@ -24,6 +24,7 @@
 		41159523236E7F000049509F /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E91DE521AA19B8003214C9 /* Global.swift */; };
 		41159524236E7F000049509F /* CustomTransforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4197FA8E2221D06F000516AA /* CustomTransforms.swift */; };
 		41159525236E802F0049509F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B66B54912187C4770038C84A /* LaunchScreen.storyboard */; };
+		41187B5F245F74BA004C0958 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41187B5E245F74BA004C0958 /* LoadingView.swift */; };
 		412DB3A4245E6F3800A91314 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 412DB3A3245E6F3800A91314 /* StoreKit.framework */; };
 		412DB3A6245E749300A91314 /* ConfettiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412DB3A5245E749300A91314 /* ConfettiView.swift */; };
 		412DB3B3245F0FD500A91314 /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412DB3B2245F0FD500A91314 /* IAPHelper.swift */; };
@@ -68,6 +69,7 @@
 		4115950A236E7BE40049509F /* TypeStyleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TypeStyleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4115950E236E7BE40049509F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		41159514236E7D860049509F /* StyleFactorySpec.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = StyleFactorySpec.swift; sourceTree = "<group>"; tabWidth = 2; };
+		41187B5E245F74BA004C0958 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		412DB3A3245E6F3800A91314 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		412DB3A5245E749300A91314 /* ConfettiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiView.swift; sourceTree = "<group>"; };
 		412DB3B0245F0FAF00A91314 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				B6E91DE921AA32CD003214C9 /* AboutLabelView.swift */,
 				B6E91DEB21AA3542003214C9 /* AboutButtonView.swift */,
 				412DB3A5245E749300A91314 /* ConfettiView.swift */,
+				41187B5E245F74BA004C0958 /* LoadingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -429,6 +432,7 @@
 				B66B54892187C4750038C84A /* AppDelegate.swift in Sources */,
 				B69D2813218A8ACD00A298A9 /* ActionConfirmationView.swift in Sources */,
 				B68C6EAB218A3493007CB17A /* TransformerManager.swift in Sources */,
+				41187B5F245F74BA004C0958 /* LoadingView.swift in Sources */,
 				412DB3A6245E749300A91314 /* ConfettiView.swift in Sources */,
 				412DB3B7245F10D200A91314 /* StyleFactory.swift in Sources */,
 				B6E91DEA21AA32CD003214C9 /* AboutLabelView.swift in Sources */,
