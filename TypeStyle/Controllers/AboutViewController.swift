@@ -8,7 +8,7 @@ class AboutViewController: UIViewController {
   let cells: [UITableViewCell] = [
     AboutLabelTableViewCell(text: "TypeStyle is an app created by me, Eugene Belinski."),
     AboutButtonTableViewCell(text: "My Website", kind: .link("https://ebelinski.com")),
-    AboutLabelTableViewCell(text: "TypeStyle is free, add-free, and tracker-free! Instead, I rely on your support to fund its development. Please consider leaving a tip in the Tip Jar."),
+    AboutLabelTableViewCell(text: "TypeStyle is ad-free, tracker-free, and free of charge! Instead, I rely on your support to fund its development. Please consider leaving a tip in the Tip Jar."),
     AboutButtonTableViewCell(text: "$1.99 Tip", kind: .tip),
     AboutLabelTableViewCell(text: "TypeStyle is open source! It is written in Swift 5, and released under the GNU-GPL 3.0 license."),
     AboutButtonTableViewCell(text: "View Source", kind: .link("https://github.com/ebelinski/typestyle-ios")),
@@ -16,7 +16,7 @@ class AboutViewController: UIViewController {
     AboutButtonTableViewCell(text: "Privacy Policy", kind: .link("https://typestyle.app/privacy-policy"))
   ]
 
-  let confettiView = ConfettiView()
+  var confettiView: ConfettiView?
 
   let tableView = UITableView()
 
@@ -69,14 +69,29 @@ extension AboutViewController: AboutButtonTableViewCellDelegate {
   }
 
   func openTip() {
-    confettiView.isUserInteractionEnabled = false
-    view.addSubview(confettiView)
+    confettiView = ConfettiView()
+    confettiView?.alpha = 0
+    confettiView?.isUserInteractionEnabled = false
 
-    confettiView.snp.makeConstraints { make in
+    view.addSubview(confettiView!)
+    confettiView?.snp.makeConstraints { make in
       make.edges.equalToSuperview()
     }
 
-    confettiView.start()
+    confettiView?.start()
+
+    UIView.animate(withDuration: 0.3, animations: {
+      self.confettiView?.alpha = 1
+    }, completion: { _ in
+      DispatchQueue.main.asyncAfter(deadline: .now() + 20) {
+        UIView.animate(withDuration: 1, animations: {
+          self.confettiView?.alpha = 0
+        }, completion: { _ in
+          self.confettiView?.removeFromSuperview()
+          self.confettiView = nil
+        })
+      }
+    })
   }
 
 }
