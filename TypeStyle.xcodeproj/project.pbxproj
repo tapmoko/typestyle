@@ -19,7 +19,6 @@
 		4115951D236E7F000049509F /* GeneratorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66B548A2187C4750038C84A /* GeneratorViewController.swift */; };
 		4115951E236E7F000049509F /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E91DE721AA2FA7003214C9 /* AboutViewController.swift */; };
 		4115951F236E7F000049509F /* TransformerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68C6EAA218A3493007CB17A /* TransformerManager.swift */; };
-		41159520236E7F000049509F /* StyleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69D2819218BC95200A298A9 /* StyleFactory.swift */; };
 		41159521236E7F000049509F /* DecorationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69D281B218BC96E00A298A9 /* DecorationFactory.swift */; };
 		41159522236E7F000049509F /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68C6EAC218A365A007CB17A /* UIColor+Extension.swift */; };
 		41159523236E7F000049509F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E91DE521AA19B8003214C9 /* Constants.swift */; };
@@ -27,6 +26,7 @@
 		41159525236E802F0049509F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B66B54912187C4770038C84A /* LaunchScreen.storyboard */; };
 		412DB3A4245E6F3800A91314 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 412DB3A3245E6F3800A91314 /* StoreKit.framework */; };
 		412DB3A6245E749300A91314 /* ConfettiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412DB3A5245E749300A91314 /* ConfettiView.swift */; };
+		412DB3B7245F10D200A91314 /* StyleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412DB3B6245F10D200A91314 /* StyleFactory.swift */; };
 		4141902923803FC5009D3225 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4141902823803FC5009D3225 /* SnapKit */; };
 		4197FA8F2221D06F000516AA /* CustomTransforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4197FA8E2221D06F000516AA /* CustomTransforms.swift */; };
 		41D1971624552E8500A46EFB /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = 41D1971524552E8500A46EFB /* Quick */; };
@@ -43,7 +43,6 @@
 		B68C6EAF218A3E63007CB17A /* OutputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68C6EAE218A3E63007CB17A /* OutputTableViewCell.swift */; };
 		B69D280A218A407C00A298A9 /* InputContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69D2809218A407C00A298A9 /* InputContainerView.swift */; };
 		B69D2813218A8ACD00A298A9 /* ActionConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69D2812218A8ACD00A298A9 /* ActionConfirmationView.swift */; };
-		B69D281A218BC95200A298A9 /* StyleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69D2819218BC95200A298A9 /* StyleFactory.swift */; };
 		B69D281C218BC96E00A298A9 /* DecorationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69D281B218BC96E00A298A9 /* DecorationFactory.swift */; };
 		B69D281F218BD2E800A298A9 /* Transformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69D281E218BD2E800A298A9 /* Transformer.swift */; };
 		B6E91DE621AA19B8003214C9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E91DE521AA19B8003214C9 /* Constants.swift */; };
@@ -69,6 +68,7 @@
 		412DB3A3245E6F3800A91314 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		412DB3A5245E749300A91314 /* ConfettiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiView.swift; sourceTree = "<group>"; };
 		412DB3B0245F0FAF00A91314 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		412DB3B6245F10D200A91314 /* StyleFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleFactory.swift; sourceTree = "<group>"; };
 		41588F6A2357CBC6004E78FD /* TypeStyle.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TypeStyle.entitlements; sourceTree = "<group>"; };
 		4197FA8E2221D06F000516AA /* CustomTransforms.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = CustomTransforms.swift; sourceTree = "<group>"; tabWidth = 2; };
 		41D25C7D24553FFA0091F6AB /* MainTabBarController.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; tabWidth = 2; };
@@ -84,7 +84,6 @@
 		B68C6EAE218A3E63007CB17A /* OutputTableViewCell.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = OutputTableViewCell.swift; sourceTree = "<group>"; tabWidth = 2; };
 		B69D2809218A407C00A298A9 /* InputContainerView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = InputContainerView.swift; sourceTree = "<group>"; tabWidth = 2; };
 		B69D2812218A8ACD00A298A9 /* ActionConfirmationView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = ActionConfirmationView.swift; sourceTree = "<group>"; tabWidth = 2; };
-		B69D2819218BC95200A298A9 /* StyleFactory.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; name = StyleFactory.swift; path = TypeStyle/Factories/StyleFactory.swift; sourceTree = SOURCE_ROOT; tabWidth = 2; };
 		B69D281B218BC96E00A298A9 /* DecorationFactory.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = DecorationFactory.swift; sourceTree = "<group>"; tabWidth = 2; };
 		B69D281E218BD2E800A298A9 /* Transformer.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Transformer.swift; sourceTree = "<group>"; tabWidth = 2; };
 		B6E91DE521AA19B8003214C9 /* Constants.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; tabWidth = 2; };
@@ -239,13 +238,13 @@
 		B66B54872187C4750038C84A /* TypeStyle */ = {
 			isa = PBXGroup;
 			children = (
-				41588F6A2357CBC6004E78FD /* TypeStyle.entitlements */,
 				412DB3A7245F0EAA00A91314 /* Application */,
 				412DB3A9245F0F1F00A91314 /* Generator */,
 				412DB3AA245F0F2200A91314 /* About */,
 				B66B548F2187C4770038C84A /* Assets.xcassets */,
 				B66B54912187C4770038C84A /* LaunchScreen.storyboard */,
 				B66B54942187C4770038C84A /* Info.plist */,
+				41588F6A2357CBC6004E78FD /* TypeStyle.entitlements */,
 			);
 			path = TypeStyle;
 			sourceTree = "<group>";
@@ -262,7 +261,7 @@
 		B69D281D218BCA4600A298A9 /* Factories */ = {
 			isa = PBXGroup;
 			children = (
-				B69D2819218BC95200A298A9 /* StyleFactory.swift */,
+				412DB3B6245F10D200A91314 /* StyleFactory.swift */,
 				B69D281B218BC96E00A298A9 /* DecorationFactory.swift */,
 				41D25C7F2455BEB20091F6AB /* EmoticonFactory.swift */,
 			);
@@ -391,7 +390,6 @@
 				4115951A236E7F000049509F /* OutputTableViewCell.swift in Sources */,
 				4115951F236E7F000049509F /* TransformerManager.swift in Sources */,
 				41159523236E7F000049509F /* Constants.swift in Sources */,
-				41159520236E7F000049509F /* StyleFactory.swift in Sources */,
 				41159522236E7F000049509F /* UIColor+Extension.swift in Sources */,
 				41D25C82245654F60091F6AB /* EmoticonFactory.swift in Sources */,
 				41159515236E7D860049509F /* StyleFactorySpec.swift in Sources */,
@@ -413,8 +411,8 @@
 				B66B54892187C4750038C84A /* AppDelegate.swift in Sources */,
 				B69D2813218A8ACD00A298A9 /* ActionConfirmationView.swift in Sources */,
 				B68C6EAB218A3493007CB17A /* TransformerManager.swift in Sources */,
-				B69D281A218BC95200A298A9 /* StyleFactory.swift in Sources */,
 				412DB3A6245E749300A91314 /* ConfettiView.swift in Sources */,
+				412DB3B7245F10D200A91314 /* StyleFactory.swift in Sources */,
 				B6E91DEA21AA32CD003214C9 /* AboutLabelTableViewCell.swift in Sources */,
 				B6E91DE821AA2FA7003214C9 /* AboutViewController.swift in Sources */,
 				B69D281C218BC96E00A298A9 /* DecorationFactory.swift in Sources */,
