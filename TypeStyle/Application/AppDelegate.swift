@@ -13,6 +13,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     window?.rootViewController = MainTabBarController()
     window?.makeKeyAndVisible()
 
+    Products.store.requestProducts { success, tipProducts in
+      if success {
+        Products.tipProducts = tipProducts!
+      }
+    }
+
     return true
   }
 

@@ -44,8 +44,6 @@ class AboutViewController: UIViewController {
     return stackView
   }()
 
-  var tipProducts: [SKProduct] = []
-
   // MARK: - Methods
 
   override func viewDidLoad() {
@@ -71,19 +69,22 @@ class AboutViewController: UIViewController {
 
     // Tip
     NotificationCenter.default.addObserver(self,
-                                           selector: #selector(handlePurchaseNotification(_:)),
-                                           name: .iapHelperPurchaseNotification,
+                                           selector: #selector(handlePurchaseSuccess(_:)),
+                                           name: Notification.Name.IAP.purchaseSuccess,
                                            object: nil)
 
-    Products.store.requestProducts { [weak self] success, tipProducts in
-      guard let self = self else { return }
-      if success {
-        self.tipProducts = tipProducts!
-      }
-    }
+    NotificationCenter.default.addObserver(self,
+                                           selector: #selector(handlePurchaseCancelled(_:)),
+                                           name: Notification.Name.IAP.purchaseCancelled,
+                                           object: nil)
+
+    NotificationCenter.default.addObserver(self,
+                                           selector: #selector(handlePurchaseFailure(_:)),
+                                           name: Notification.Name.IAP.purchaseFailed,
+                                           object: nil)
   }
 
-  @objc func handlePurchaseNotification(_ notification: Notification) {
+  @objc func handlePurchaseSuccess(_ notification: Notification) {
     guard let productID = notification.object as? String else {
       log.error("Could not get productID from purchase notification")
       return
@@ -91,6 +92,15 @@ class AboutViewController: UIViewController {
     log.info("Got purchase notification for productID \(productID)")
 
     confirmTipPurchase()
+  }
+
+  @objc func handlePurchaseCancelled(_ notification: Notification) {
+    stopLoadingView()
+  }
+
+  @objc func handlePurchaseFailure(_ notification: Notification) {
+    stopLoadingView()
+    alert(errorMessage: "An unknown error occurred. Please try again later.")
   }
 
   private func confirmTipPurchase() {
@@ -144,6 +154,12 @@ class AboutViewController: UIViewController {
     loadingView.removeFromSuperview()
   }
 
+  func alert(errorMessage: String = "An error occurred. Please try again later.") {
+    let alert = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
+    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+    present(alert, animated: true)
+  }
+
 }
 
 // MARK: URL opening
@@ -159,13 +175,13 @@ extension AboutViewController: AboutButtonViewDelegate {
   }
 
   func openTip() {
-    if tipProducts.isEmpty {
+    if Products.tipProducts.isEmpty {
       log.error("tipProducts is empty")
       return
     }
 
     startLoadingView()
-    Products.store.buyProduct(tipProducts[0])
+    Products.store.buyProduct(Products.tipProducts[0])
   }
 
 }
