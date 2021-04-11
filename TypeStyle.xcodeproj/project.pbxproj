@@ -25,6 +25,7 @@
 		244234A626228363009AAFDD /* DecorationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244234A526228363009AAFDD /* DecorationFactory.swift */; };
 		244234A8262283F2009AAFDD /* EmoticonFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244234A7262283F2009AAFDD /* EmoticonFactory.swift */; };
 		244234AB2622843D009AAFDD /* TransformerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244234AA2622843D009AAFDD /* TransformerManager.swift */; };
+		244234AD262284A7009AAFDD /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244234AC262284A7009AAFDD /* MainTabView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		244234A526228363009AAFDD /* DecorationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecorationFactory.swift; sourceTree = "<group>"; };
 		244234A7262283F2009AAFDD /* EmoticonFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmoticonFactory.swift; sourceTree = "<group>"; };
 		244234AA2622843D009AAFDD /* TransformerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerManager.swift; sourceTree = "<group>"; };
+		244234AC262284A7009AAFDD /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 				2442349826227A07009AAFDD /* Global.swift */,
 				2442349A26227A57009AAFDD /* Log.swift */,
 				2442345E2622732D009AAFDD /* TypeStyleApp.swift */,
+				244234AC262284A7009AAFDD /* MainTabView.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				2442349B26227A57009AAFDD /* Log.swift in Sources */,
 				2442349926227A07009AAFDD /* Global.swift in Sources */,
 				244234AB2622843D009AAFDD /* TransformerManager.swift in Sources */,
+				244234AD262284A7009AAFDD /* MainTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
