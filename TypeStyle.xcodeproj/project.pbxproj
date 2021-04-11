@@ -179,6 +179,7 @@
 			children = (
 				2442349D26228310009AAFDD /* Factories */,
 				244234A926228433009AAFDD /* Managers */,
+				244234AE262286A7009AAFDD /* Views */,
 			);
 			path = Generator;
 			sourceTree = "<group>";
@@ -208,6 +209,13 @@
 				244234AA2622843D009AAFDD /* TransformerManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		244234AE262286A7009AAFDD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
