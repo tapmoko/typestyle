@@ -12,6 +12,7 @@
 		244234632622732D009AAFDD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 244234622622732D009AAFDD /* Assets.xcassets */; };
 		244234662622732D009AAFDD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 244234652622732D009AAFDD /* Preview Assets.xcassets */; };
 		244234712622732D009AAFDD /* TypeStyleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244234702622732D009AAFDD /* TypeStyleTests.swift */; };
+		2442348D262278FC009AAFDD /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442348C262278FC009AAFDD /* Color+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,7 @@
 		244234702622732D009AAFDD /* TypeStyleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeStyleTests.swift; sourceTree = "<group>"; };
 		244234722622732D009AAFDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2442348926227720009AAFDD /* TypeStyle.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TypeStyle.entitlements; sourceTree = "<group>"; };
+		2442348C262278FC009AAFDD /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,9 +108,18 @@
 		2442348A26227856009AAFDD /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				2442348B262278F3009AAFDD /* Extensions */,
 				2442345E2622732D009AAFDD /* TypeStyleApp.swift */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		2442348B262278F3009AAFDD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2442348C262278FC009AAFDD /* Color+.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				244234612622732D009AAFDD /* ContentView.swift in Sources */,
+				2442348D262278FC009AAFDD /* Color+.swift in Sources */,
 				2442345F2622732D009AAFDD /* TypeStyleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
