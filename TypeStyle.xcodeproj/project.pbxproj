@@ -19,6 +19,11 @@
 		24423497262279F4009AAFDD /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24423496262279F4009AAFDD /* Products.swift */; };
 		2442349926227A07009AAFDD /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442349826227A07009AAFDD /* Global.swift */; };
 		2442349B26227A57009AAFDD /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442349A26227A57009AAFDD /* Log.swift */; };
+		2442349F26228319009AAFDD /* StyleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442349E26228319009AAFDD /* StyleFactory.swift */; };
+		244234A22622834C009AAFDD /* CustomTransformers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244234A12622834C009AAFDD /* CustomTransformers.swift */; };
+		244234A426228355009AAFDD /* Transformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244234A326228355009AAFDD /* Transformer.swift */; };
+		244234A626228363009AAFDD /* DecorationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244234A526228363009AAFDD /* DecorationFactory.swift */; };
+		244234A8262283F2009AAFDD /* EmoticonFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244234A7262283F2009AAFDD /* EmoticonFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +54,11 @@
 		24423496262279F4009AAFDD /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
 		2442349826227A07009AAFDD /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		2442349A26227A57009AAFDD /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		2442349E26228319009AAFDD /* StyleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleFactory.swift; sourceTree = "<group>"; };
+		244234A12622834C009AAFDD /* CustomTransformers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTransformers.swift; sourceTree = "<group>"; };
+		244234A326228355009AAFDD /* Transformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transformer.swift; sourceTree = "<group>"; };
+		244234A526228363009AAFDD /* DecorationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecorationFactory.swift; sourceTree = "<group>"; };
+		244234A7262283F2009AAFDD /* EmoticonFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmoticonFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				2442348A26227856009AAFDD /* Application */,
+				2442349C26228301009AAFDD /* Generator */,
 				2442348926227720009AAFDD /* TypeStyle.entitlements */,
 				244234602622732D009AAFDD /* ContentView.swift */,
 				244234622622732D009AAFDD /* Assets.xcassets */,
@@ -124,6 +135,7 @@
 			children = (
 				2442348B262278F3009AAFDD /* Extensions */,
 				24423491262279AB009AAFDD /* IAP */,
+				244234A02622833F009AAFDD /* Models */,
 				2442349826227A07009AAFDD /* Global.swift */,
 				2442349A26227A57009AAFDD /* Log.swift */,
 				2442345E2622732D009AAFDD /* TypeStyleApp.swift */,
@@ -155,6 +167,33 @@
 				24423496262279F4009AAFDD /* Products.swift */,
 			);
 			path = IAP;
+			sourceTree = "<group>";
+		};
+		2442349C26228301009AAFDD /* Generator */ = {
+			isa = PBXGroup;
+			children = (
+				2442349D26228310009AAFDD /* Factories */,
+			);
+			path = Generator;
+			sourceTree = "<group>";
+		};
+		2442349D26228310009AAFDD /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				2442349E26228319009AAFDD /* StyleFactory.swift */,
+				244234A526228363009AAFDD /* DecorationFactory.swift */,
+				244234A7262283F2009AAFDD /* EmoticonFactory.swift */,
+			);
+			path = Factories;
+			sourceTree = "<group>";
+		};
+		244234A02622833F009AAFDD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				244234A12622834C009AAFDD /* CustomTransformers.swift */,
+				244234A326228355009AAFDD /* Transformer.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,8 +295,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				244234A426228355009AAFDD /* Transformer.swift in Sources */,
+				244234A8262283F2009AAFDD /* EmoticonFactory.swift in Sources */,
+				244234A22622834C009AAFDD /* CustomTransformers.swift in Sources */,
+				244234A626228363009AAFDD /* DecorationFactory.swift in Sources */,
 				24423493262279BF009AAFDD /* Notification.Name+.swift in Sources */,
 				244234612622732D009AAFDD /* ContentView.swift in Sources */,
+				2442349F26228319009AAFDD /* StyleFactory.swift in Sources */,
 				2442348D262278FC009AAFDD /* Color+.swift in Sources */,
 				24423497262279F4009AAFDD /* Products.swift in Sources */,
 				24423495262279ED009AAFDD /* IAPHelper.swift in Sources */,
