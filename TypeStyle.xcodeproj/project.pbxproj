@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2442345F2622732D009AAFDD /* TypeStyleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442345E2622732D009AAFDD /* TypeStyleApp.swift */; };
-		244234612622732D009AAFDD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244234602622732D009AAFDD /* ContentView.swift */; };
 		244234632622732D009AAFDD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 244234622622732D009AAFDD /* Assets.xcassets */; };
 		244234662622732D009AAFDD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 244234652622732D009AAFDD /* Preview Assets.xcassets */; };
 		244234712622732D009AAFDD /* TypeStyleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244234702622732D009AAFDD /* TypeStyleTests.swift */; };
@@ -42,7 +41,6 @@
 /* Begin PBXFileReference section */
 		2442345B2622732D009AAFDD /* TypeStyle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TypeStyle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2442345E2622732D009AAFDD /* TypeStyleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeStyleApp.swift; sourceTree = "<group>"; };
-		244234602622732D009AAFDD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		244234622622732D009AAFDD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		244234652622732D009AAFDD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		244234672622732D009AAFDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -111,7 +109,6 @@
 				2442348A26227856009AAFDD /* Application */,
 				2442349C26228301009AAFDD /* Generator */,
 				2442348926227720009AAFDD /* TypeStyle.entitlements */,
-				244234602622732D009AAFDD /* ContentView.swift */,
 				244234622622732D009AAFDD /* Assets.xcassets */,
 				244234672622732D009AAFDD /* Info.plist */,
 				244234642622732D009AAFDD /* Preview Content */,
@@ -326,7 +323,6 @@
 				244234A22622834C009AAFDD /* CustomTransformers.swift in Sources */,
 				244234A626228363009AAFDD /* DecorationFactory.swift in Sources */,
 				24423493262279BF009AAFDD /* Notification.Name+.swift in Sources */,
-				244234612622732D009AAFDD /* ContentView.swift in Sources */,
 				2442349F26228319009AAFDD /* StyleFactory.swift in Sources */,
 				2442348D262278FC009AAFDD /* Color+.swift in Sources */,
 				24423497262279F4009AAFDD /* Products.swift in Sources */,
