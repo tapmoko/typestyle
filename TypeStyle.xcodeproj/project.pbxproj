@@ -76,8 +76,8 @@
 		2442345D2622732D009AAFDD /* TypeStyle */ = {
 			isa = PBXGroup;
 			children = (
+				2442348A26227856009AAFDD /* Application */,
 				2442348926227720009AAFDD /* TypeStyle.entitlements */,
-				2442345E2622732D009AAFDD /* TypeStyleApp.swift */,
 				244234602622732D009AAFDD /* ContentView.swift */,
 				244234622622732D009AAFDD /* Assets.xcassets */,
 				244234672622732D009AAFDD /* Info.plist */,
@@ -101,6 +101,14 @@
 				244234722622732D009AAFDD /* Info.plist */,
 			);
 			path = TypeStyleTests;
+			sourceTree = "<group>";
+		};
+		2442348A26227856009AAFDD /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				2442345E2622732D009AAFDD /* TypeStyleApp.swift */,
+			);
+			path = Application;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
