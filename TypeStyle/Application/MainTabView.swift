@@ -3,17 +3,17 @@ import SwiftUI
 struct MainTabView: View {
   var body: some View {
     TabView {
-      Text("Styles page")
+      GeneratorView(transformerMode: .styles)
         .tabItem {
           Label("Styles", systemImage: "bold.italic.underline")
         }
 
-      Text("Decorations page")
+      GeneratorView(transformerMode: .decorations)
         .tabItem {
           Label("Decorations", systemImage: "wand.and.stars")
         }
 
-      Text("Emoticons page")
+      GeneratorView(transformerMode: .emoticons)
         .tabItem {
           Label("Emoticons", systemImage: "smiley")
         }

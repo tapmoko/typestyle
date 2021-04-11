@@ -26,6 +26,7 @@
 		244234A8262283F2009AAFDD /* EmoticonFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244234A7262283F2009AAFDD /* EmoticonFactory.swift */; };
 		244234AB2622843D009AAFDD /* TransformerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244234AA2622843D009AAFDD /* TransformerManager.swift */; };
 		244234AD262284A7009AAFDD /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244234AC262284A7009AAFDD /* MainTabView.swift */; };
+		244234B026228875009AAFDD /* GeneratorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244234AF26228875009AAFDD /* GeneratorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		244234A7262283F2009AAFDD /* EmoticonFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmoticonFactory.swift; sourceTree = "<group>"; };
 		244234AA2622843D009AAFDD /* TransformerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerManager.swift; sourceTree = "<group>"; };
 		244234AC262284A7009AAFDD /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		244234AF26228875009AAFDD /* GeneratorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +216,7 @@
 		244234AE262286A7009AAFDD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				244234AF26228875009AAFDD /* GeneratorView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				244234B026228875009AAFDD /* GeneratorView.swift in Sources */,
 				244234A426228355009AAFDD /* Transformer.swift in Sources */,
 				244234A8262283F2009AAFDD /* EmoticonFactory.swift in Sources */,
 				244234A22622834C009AAFDD /* CustomTransformers.swift in Sources */,
