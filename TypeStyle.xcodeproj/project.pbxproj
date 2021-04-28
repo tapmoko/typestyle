@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -26,6 +26,9 @@
 		244234AB2622843D009AAFDD /* TransformerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244234AA2622843D009AAFDD /* TransformerManager.swift */; };
 		244234AD262284A7009AAFDD /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244234AC262284A7009AAFDD /* MainTabView.swift */; };
 		244234B026228875009AAFDD /* GeneratorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244234AF26228875009AAFDD /* GeneratorView.swift */; };
+		244234B326232F4D009AAFDD /* InputContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244234B226232F4D009AAFDD /* InputContainerView.swift */; };
+		244234B626232FD8009AAFDD /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 244234B526232FD8009AAFDD /* SnapKit */; };
+		244234B826233E97009AAFDD /* InputViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244234B726233E97009AAFDD /* InputViewRepresentable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +66,8 @@
 		244234AA2622843D009AAFDD /* TransformerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerManager.swift; sourceTree = "<group>"; };
 		244234AC262284A7009AAFDD /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		244234AF26228875009AAFDD /* GeneratorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorView.swift; sourceTree = "<group>"; };
+		244234B226232F4D009AAFDD /* InputContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputContainerView.swift; sourceTree = "<group>"; };
+		244234B726233E97009AAFDD /* InputViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewRepresentable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +76,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				24423490262279A5009AAFDD /* StoreKit.framework in Frameworks */,
+				244234B626232FD8009AAFDD /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,9 +219,19 @@
 		244234AE262286A7009AAFDD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				244234B126232F26009AAFDD /* Input */,
 				244234AF26228875009AAFDD /* GeneratorView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		244234B126232F26009AAFDD /* Input */ = {
+			isa = PBXGroup;
+			children = (
+				244234B226232F4D009AAFDD /* InputContainerView.swift */,
+				244234B726233E97009AAFDD /* InputViewRepresentable.swift */,
+			);
+			path = Input;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +250,9 @@
 			dependencies = (
 			);
 			name = TypeStyle;
+			packageProductDependencies = (
+				244234B526232FD8009AAFDD /* SnapKit */,
+			);
 			productName = TypeStyle;
 			productReference = 2442345B2622732D009AAFDD /* TypeStyle.app */;
 			productType = "com.apple.product-type.application";
@@ -283,6 +302,9 @@
 				Base,
 			);
 			mainGroup = 244234522622732D009AAFDD;
+			packageReferences = (
+				244234B426232FD8009AAFDD /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 2442345C2622732D009AAFDD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -318,6 +340,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				244234B026228875009AAFDD /* GeneratorView.swift in Sources */,
+				244234B326232F4D009AAFDD /* InputContainerView.swift in Sources */,
 				244234A426228355009AAFDD /* Transformer.swift in Sources */,
 				244234A8262283F2009AAFDD /* EmoticonFactory.swift in Sources */,
 				244234A22622834C009AAFDD /* CustomTransformers.swift in Sources */,
@@ -328,6 +351,7 @@
 				24423497262279F4009AAFDD /* Products.swift in Sources */,
 				24423495262279ED009AAFDD /* IAPHelper.swift in Sources */,
 				2442345F2622732D009AAFDD /* TypeStyleApp.swift in Sources */,
+				244234B826233E97009AAFDD /* InputViewRepresentable.swift in Sources */,
 				2442349B26227A57009AAFDD /* Log.swift in Sources */,
 				2442349926227A07009AAFDD /* Global.swift in Sources */,
 				244234AB2622843D009AAFDD /* TransformerManager.swift in Sources */,
@@ -492,7 +516,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,6";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -518,7 +542,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,6";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -597,6 +621,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		244234B426232FD8009AAFDD /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		244234B526232FD8009AAFDD /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 244234B426232FD8009AAFDD /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 244234532622732D009AAFDD /* Project object */;
 }

@@ -39,14 +39,17 @@ struct GeneratorView: View {
       if showOutput {
         outputList
       }
+
+      Spacer()
     }
-    .edgesIgnoringSafeArea(.bottom)
   }
 
   // MARK: - Other views
 
   var inputEditor: some View {
-    TextEditor(text: $input)
+//    TextField("Input", text: $input)
+//      .padding()
+    InputViewRepresentable(input: $input, viewMode: $viewMode)
   }
 
   var outputList: some View {
