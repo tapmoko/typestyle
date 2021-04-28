@@ -2,6 +2,13 @@ import UIKit
 import SwiftUI
 import SnapKit
 
+protocol InputContainerViewDelegate {
+  func textViewDidBeginEditing(inputContainerView: InputContainerView)
+  func textViewDidChange(inputContainerView: InputContainerView)
+  func textViewDidEndEditing(inputContainerView: InputContainerView)
+  func didTapClearButton(inputContainerView: InputContainerView)
+}
+
 class InputContainerView: UIView {
 
   let inputTextView = UITextView()
@@ -11,6 +18,8 @@ class InputContainerView: UIView {
   let inputTextViewRadius: CGFloat = 10
   let inputTextViewPadding: CGFloat = 15
   let inputTextViewMargin: CGFloat = 10
+
+  var delegate: InputContainerViewDelegate?
 
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -48,6 +57,8 @@ class InputContainerView: UIView {
     clearButton.setTitleColor(UIColor(Color.appText), for: .normal)
     clearButton.isHidden = true
 
+    clearButton.addTarget(self, action: #selector(didTapClearButton), for: .touchUpInside)
+
     inputTextViewContainer.addSubview(clearButton)
 
     clearButton.snp.makeConstraints { make in
@@ -57,6 +68,9 @@ class InputContainerView: UIView {
   }
 
   func setUpInputTextView() {
+    // Delegate
+    inputTextView.delegate = self
+
     // Editing
     inputTextView.isEditable = true
     inputTextView.isScrollEnabled = false
@@ -94,6 +108,26 @@ class InputContainerView: UIView {
 
   func setTextSize(_ size: UIFont.TextStyle) {
     inputTextView.font = UIFont.preferredFont(forTextStyle: size)
+  }
+
+  @objc func didTapClearButton() {
+    delegate?.didTapClearButton(inputContainerView: self)
+  }
+
+}
+
+extension InputContainerView: UITextViewDelegate {
+
+  func textViewDidBeginEditing(_ textView: UITextView) {
+    delegate?.textViewDidBeginEditing(inputContainerView: self)
+  }
+
+  func textViewDidChange(_ textView: UITextView) {
+    delegate?.textViewDidChange(inputContainerView: self)
+  }
+
+  func textViewDidEndEditing(_ textView: UITextView) {
+    delegate?.textViewDidEndEditing(inputContainerView: self)
   }
 
 }
