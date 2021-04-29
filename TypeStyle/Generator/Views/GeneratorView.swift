@@ -2,9 +2,9 @@ import SwiftUI
 
 struct GeneratorView: View {
 
-  enum ViewMode {
-    case generate
-    case browse
+  enum ViewMode: String, CaseIterable {
+    case generate = "Generate"
+    case browse = "Browse"
   }
 
   @State var input = ""
@@ -36,11 +36,9 @@ struct GeneratorView: View {
     VStack {
       inputView
 
-      if showOutput {
-        outputList
-      }
+      outputList
 
-      Spacer()
+      viewModeSegmentedControl
     }
     .background(Color.appBackground)
   }
@@ -75,14 +73,28 @@ struct GeneratorView: View {
 
   var outputList: some View {
     List {
-      ForEach(transformerManager.transformerGroupingsToDisplay, id: \.groupName) { grouping in
-        Section(header: Text(headerTextFor(grouping: grouping))) {
-          ForEach(grouping.transformers, id: \.name) { transformer in
-            Text(transformer.name)
+      if showOutput {
+        ForEach(transformerManager.transformerGroupingsToDisplay, id: \.groupName) { grouping in
+          Section(header: Text(headerTextFor(grouping: grouping))) {
+            ForEach(grouping.transformers, id: \.name) { transformer in
+              Text(transformer.name)
+                .background(Color.appBackground)
+            }.background(Color.appBackground)
           }
         }
+        .background(Color.appBackground)
       }
     }
+    .background(Color.appBackground)
+  }
+
+  var viewModeSegmentedControl: some View {
+    Picker("", selection: $viewMode) {
+      Text(ViewMode.generate.rawValue).tag(ViewMode.generate)
+      Text(ViewMode.browse.rawValue).tag(ViewMode.browse)
+    }
+    .pickerStyle(SegmentedPickerStyle())
+    .padding(10)
   }
 
   // MARK: - Methods
