@@ -33,14 +33,19 @@ struct GeneratorView: View {
   // MARK: - Body view
 
   var body: some View {
-    VStack {
-      inputView
+    ZStack {
+      Rectangle()
+        .fill(Color.appBackground)
+        .edgesIgnoringSafeArea(.all)
 
-      outputList
+      VStack {
+        inputView
 
-      viewModeSegmentedControl
+        outputList
+
+        viewModeSegmentedControl
+      }
     }
-    .background(Color.appBackground)
   }
 
   // MARK: - Other views
