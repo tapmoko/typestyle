@@ -6,14 +6,12 @@ protocol InputContainerViewDelegate {
   func textViewDidBeginEditing(inputContainerView: InputContainerView)
   func textViewDidChange(inputContainerView: InputContainerView)
   func textViewDidEndEditing(inputContainerView: InputContainerView)
-  func didTapClearButton(inputContainerView: InputContainerView)
 }
 
 class InputContainerView: UIView {
 
   let inputTextView = UITextView()
   let inputTextViewContainer = UIView()
-  let clearButton = UIButton()
 
   let inputTextViewRadius: CGFloat = 10
   let inputTextViewPadding: CGFloat = 15
@@ -25,7 +23,6 @@ class InputContainerView: UIView {
     super.init(frame: frame)
 
     setUpInputTextViewContainer()
-    setUpClearInputButton()
     setUpInputTextView()
   }
 
@@ -47,23 +44,6 @@ class InputContainerView: UIView {
 
     inputTextViewContainer.snp.makeConstraints { make in
       make.edges.equalToSuperview().inset(inputTextViewMargin)
-    }
-  }
-
-  func setUpClearInputButton() {
-    clearButton.setTitle("×", for: .normal)
-    clearButton.titleLabel?.font = UIFont.preferredFont(forTextStyle: .title2)
-    clearButton.titleLabel?.adjustsFontForContentSizeCategory = true
-    clearButton.setTitleColor(UIColor(Color.appText), for: .normal)
-    clearButton.isHidden = true
-
-    clearButton.addTarget(self, action: #selector(didTapClearButton), for: .touchUpInside)
-
-    inputTextViewContainer.addSubview(clearButton)
-
-    clearButton.snp.makeConstraints { make in
-      make.centerY.equalToSuperview()
-      make.trailing.equalToSuperview().inset(inputTextViewPadding)
     }
   }
 
@@ -99,19 +79,12 @@ class InputContainerView: UIView {
     inputTextViewContainer.addSubview(inputTextView)
 
     inputTextView.snp.makeConstraints { make in
-      make.top.equalToSuperview()
-      make.leading.equalToSuperview()
-      make.bottom.equalToSuperview()
-      make.trailing.equalTo(clearButton.snp.leading)
+      make.edges.equalToSuperview()
     }
   }
 
   func setTextSize(_ size: UIFont.TextStyle) {
     inputTextView.font = UIFont.preferredFont(forTextStyle: size)
-  }
-
-  @objc func didTapClearButton() {
-    delegate?.didTapClearButton(inputContainerView: self)
   }
 
 }

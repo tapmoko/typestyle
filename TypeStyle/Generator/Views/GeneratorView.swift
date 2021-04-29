@@ -34,24 +34,37 @@ struct GeneratorView: View {
 
   var body: some View {
     VStack {
-      inputEditor
-        .layoutPriority(1)
+      inputView
 
       if showOutput {
         outputList
-          .layoutPriority(2)
       }
 
       Spacer()
-        .layoutPriority(1)
     }
     .background(Color.appBackground)
   }
 
   // MARK: - Other views
 
-  var inputEditor: some View {
-    InputViewRepresentable(input: $input, viewMode: $viewMode)
+  var inputView: some View {
+    HStack {
+      InputViewRepresentable(input: $input, viewMode: $viewMode)
+
+      if !input.isEmpty {
+        clearButton
+      }
+    }
+  }
+
+  var clearButton: some View {
+    Button(action: {
+      input = ""
+    }) {
+      Image(systemName: "xmark")
+        .foregroundColor(.appText)
+        .font(.title2.bold())
+    }
   }
 
   var outputList: some View {

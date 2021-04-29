@@ -13,7 +13,6 @@ struct InputViewRepresentable: UIViewRepresentable {
     let inputContainerView = InputContainerView()
 
     inputContainerView.delegate = context.coordinator
-//    inputContainerView.inputTextView.delegate = context.coordinator
 
     return inputContainerView
   }
@@ -51,9 +50,6 @@ struct InputViewRepresentable: UIViewRepresentable {
         control.input = inputContainerView.inputTextView.text ?? ""
       }
 
-      inputContainerView.clearButton.isHidden = control.input.isEmpty || (inputContainerView.inputTextView.textColor == UIColor(Color.appFadedText))
-      //          tableView.reloadData()
-
       if control.input.isEmpty {
         showInputPlaceholder(inputTextView: inputContainerView.inputTextView)
       }
@@ -85,13 +81,6 @@ struct InputViewRepresentable: UIViewRepresentable {
       }
 
       refreshUI(inputContainerView: inputContainerView)
-    }
-
-    func didTapClearButton(inputContainerView: InputContainerView) {
-      inputContainerView.inputTextView.resignFirstResponder()
-      inputContainerView.inputTextView.text = nil
-      refreshUI(inputContainerView: inputContainerView)
-      inputContainerView.inputTextView.becomeFirstResponder()
     }
 
   }
