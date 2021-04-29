@@ -56,11 +56,6 @@ struct TransformerManager {
     }
   }
 
-  func transformedText(for text: String?, indexPath: IndexPath) -> String {
-    // If no text is provided, we use the name of the transformer.
-    return transformerGroupingsToDisplay[indexPath.section].transformers[indexPath.row].transform(text ?? transformerGroupingsToDisplay[indexPath.section].transformers[indexPath.row].name)
-  }
-
 }
 
 // MARK: Favoriting

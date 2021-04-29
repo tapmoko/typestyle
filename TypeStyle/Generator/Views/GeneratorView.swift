@@ -78,13 +78,13 @@ struct GeneratorView: View {
           if let header = headerTextFor(grouping: grouping) {
             Section(header: Text(header)) {
               ForEach(grouping.transformers, id: \.name) { transformer in
-                Text(transformer.name)
+                Text(output(for: input, with: transformer))
                   .listRowBackground(Color.clear)
               }
             }
           } else {
             ForEach(grouping.transformers, id: \.name) { transformer in
-              Text(transformer.name)
+              Text(output(for: input, with: transformer))
                 .listRowBackground(Color.clear)
             }
           }
@@ -112,9 +112,8 @@ struct GeneratorView: View {
     }
   }
 
-  func output(for indexPath: IndexPath) -> String {
-    return transformerManager.transformedText(for: (viewMode == .generate) ? input : nil,
-                                              indexPath: indexPath)
+  func output(for text: String?, with transformer: Transformer) -> String {
+    return transformer.transform(text ?? transformer.name)
   }
 
 }
