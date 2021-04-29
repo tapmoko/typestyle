@@ -58,17 +58,17 @@ struct GeneratorView: View {
         isInputFocused: $isInputFocused,
         viewMode: $viewMode
       )
-      .padding(10)
+      .padding(Theme.spacing)
 
       if !input.isEmpty {
         clearButton
-          .padding(.trailing, 10)
+          .padding(.trailing, Theme.spacing)
       }
     }
     .background(Color.appDarkBackground)
-    .cornerRadius(10)
+    .cornerRadius(Theme.spacing)
     .shadow(color: .black.opacity(0.3), radius: 8, x: 0, y: 0)
-    .padding(10)
+    .padding(Theme.spacing)
   }
 
   var clearButton: some View {
@@ -90,14 +90,12 @@ struct GeneratorView: View {
             if let header = headerTextFor(grouping: grouping) {
               Section(header: Text(header)) {
                 ForEach(grouping.transformers, id: \.name) { transformer in
-                  Text(output(for: input, with: transformer))
-                    .listRowBackground(Color.clear)
+                  OutputRow(output: output(for: input, with: transformer))
                 }
               }
             } else {
               ForEach(grouping.transformers, id: \.name) { transformer in
-                Text(output(for: input, with: transformer))
-                  .listRowBackground(Color.clear)
+                OutputRow(output: output(for: input, with: transformer))
               }
             }
           }
@@ -112,7 +110,7 @@ struct GeneratorView: View {
       Text(ViewMode.browse.rawValue).tag(ViewMode.browse)
     }
     .pickerStyle(SegmentedPickerStyle())
-    .padding(10)
+    .padding(Theme.spacing)
   }
 
   // MARK: - Methods
