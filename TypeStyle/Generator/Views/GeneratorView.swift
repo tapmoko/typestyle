@@ -78,11 +78,10 @@ struct GeneratorView: View {
           Section(header: Text(headerTextFor(grouping: grouping))) {
             ForEach(grouping.transformers, id: \.name) { transformer in
               Text(transformer.name)
-                .background(Color.appBackground)
-            }.background(Color.appBackground)
+                .listRowBackground(Color.clear)
+            }
           }
         }
-        .background(Color.appBackground)
       }
     }
     .background(Color.appBackground)

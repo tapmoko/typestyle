@@ -14,6 +14,14 @@ struct TypeStyleApp: App {
     }
   }
 
+  // MARK: - Initialization
+
+  init() {
+    didBecomeActive()
+  }
+
+  // MARK: - App lifecycle
+
   private func handle(scenePhase: ScenePhase) {
     switch scenePhase {
     case .active: didBecomeActive()
@@ -27,11 +35,8 @@ struct TypeStyleApp: App {
   private func didBecomeActive() {
     if !isInitialDidBecomeActive { return }
 
-    Products.store.requestProducts { success, tipProducts in
-      if success {
-        Products.tipProducts = tipProducts!
-      }
-    }
+    requestProducts()
+    setGlobalAppearance()
 
     isInitialDidBecomeActive = false
   }
@@ -42,6 +47,22 @@ struct TypeStyleApp: App {
 
   // The scene isn’t currently visible in the UI.
   private func didEnterBackground() {
+  }
+
+  // MARK: - Helper methods
+
+  private func requestProducts() {
+    Products.store.requestProducts { success, tipProducts in
+      if success {
+        Products.tipProducts = tipProducts!
+      }
+    }
+  }
+
+  private func setGlobalAppearance() {
+    UITableView.appearance().separatorStyle = .none
+    UITableView.appearance().backgroundColor = .clear
+    UITableViewCell.appearance().backgroundColor = .clear
   }
 
 }
