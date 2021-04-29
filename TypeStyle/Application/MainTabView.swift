@@ -23,6 +23,7 @@ struct MainTabView: View {
           Label("About", systemImage: "info.circle")
         }
     }
+    .background(Color.appBackground)
   }
 }
 

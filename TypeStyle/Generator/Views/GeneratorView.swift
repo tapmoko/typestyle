@@ -35,20 +35,22 @@ struct GeneratorView: View {
   var body: some View {
     VStack {
       inputEditor
+        .layoutPriority(1)
 
       if showOutput {
         outputList
+          .layoutPriority(2)
       }
 
       Spacer()
+        .layoutPriority(1)
     }
+    .background(Color.appBackground)
   }
 
   // MARK: - Other views
 
   var inputEditor: some View {
-//    TextField("Input", text: $input)
-//      .padding()
     InputViewRepresentable(input: $input, viewMode: $viewMode)
   }
 
