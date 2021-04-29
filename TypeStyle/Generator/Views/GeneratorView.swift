@@ -50,11 +50,17 @@ struct GeneratorView: View {
   var inputView: some View {
     HStack {
       InputViewRepresentable(input: $input, viewMode: $viewMode)
+        .padding(10)
 
       if !input.isEmpty {
         clearButton
+          .padding(.trailing, 10)
       }
     }
+    .background(Color.appDarkBackground)
+    .cornerRadius(10)
+    .shadow(color: .black.opacity(0.3), radius: 8, x: 0, y: 0)
+    .padding(10)
   }
 
   var clearButton: some View {
