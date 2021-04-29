@@ -8,6 +8,7 @@ struct GeneratorView: View {
   }
 
   @State var input = ""
+  @State var isInputFocused = false
   @State var viewMode: ViewMode = .generate
 
   // Determines if the output list should be displayed
@@ -52,8 +53,12 @@ struct GeneratorView: View {
 
   var inputView: some View {
     HStack {
-      InputViewRepresentable(input: $input, viewMode: $viewMode)
-        .padding(10)
+      InputViewRepresentable(
+        input: $input,
+        isInputFocused: $isInputFocused,
+        viewMode: $viewMode
+      )
+      .padding(10)
 
       if !input.isEmpty {
         clearButton
@@ -68,11 +73,12 @@ struct GeneratorView: View {
 
   var clearButton: some View {
     Button(action: {
+      isInputFocused = false
       input = ""
     }) {
       Image(systemName: "xmark")
         .foregroundColor(.appText)
-        .font(.title2.bold())
+        .font(.title3.bold())
     }
   }
 

@@ -3,6 +3,7 @@ import SwiftUI
 struct InputViewRepresentable: UIViewRepresentable {
 
   @Binding var input: String
+  @Binding var isInputFocused: Bool
   @Binding var viewMode: GeneratorView.ViewMode
 
   var inputPlaceholder: String {
@@ -36,7 +37,11 @@ struct InputViewRepresentable: UIViewRepresentable {
   }
 
   func updateUIView(_ uiView: UITextView, context: Context) {
-
+    if isInputFocused {
+      uiView.becomeFirstResponder()
+    } else {
+      uiView.resignFirstResponder()
+    }
   }
 
   func makeCoordinator() -> Coordinator {
@@ -71,10 +76,6 @@ struct InputViewRepresentable: UIViewRepresentable {
         control.input = inputTextView.text ?? ""
       }
 
-      if control.input.isEmpty {
-        showInputPlaceholder(inputTextView: inputTextView)
-      }
-
       if control.input.count > 200 {
         control.setTextSize(textView: inputTextView, size: .footnote)
       } else if control.input.count > 100 {
@@ -87,6 +88,8 @@ struct InputViewRepresentable: UIViewRepresentable {
     // MARK: - UITextViewDelegate
 
     func textViewDidBeginEditing(_ textView: UITextView) {
+      control.isInputFocused = true
+
       if textView.textColor == UIColor(Color.appFadedText) {
         hideInputPlaceholder(inputTextView: textView)
       }
@@ -97,6 +100,8 @@ struct InputViewRepresentable: UIViewRepresentable {
     }
 
     func textViewDidEndEditing(_ textView: UITextView) {
+      control.isInputFocused = false
+
       if textView.text.isEmpty {
         showInputPlaceholder(inputTextView: textView)
       }
