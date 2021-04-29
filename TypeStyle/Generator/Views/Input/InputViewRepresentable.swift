@@ -24,9 +24,9 @@ struct InputViewRepresentable: UIViewRepresentable {
     inputTextView.keyboardAppearance = .dark
 
     // Color
-    inputTextView.textColor = UIColor(Color.appText)
-    inputTextView.tintColor = UIColor(Color.appText)
-    inputTextView.backgroundColor = UIColor(Color.appDarkBackground)
+    inputTextView.textColor = UIColor(Theme.appText)
+    inputTextView.tintColor = UIColor(Theme.appText)
+    inputTextView.backgroundColor = UIColor(Theme.appDarkBackground)
 
     // Font
     setTextSize(textView: inputTextView, size: .title2)
@@ -61,16 +61,16 @@ struct InputViewRepresentable: UIViewRepresentable {
 
     func showInputPlaceholder(inputTextView: UITextView) {
       inputTextView.text = control.inputPlaceholder
-      inputTextView.textColor = UIColor(Color.appFadedText)
+      inputTextView.textColor = UIColor(Theme.appFadedText)
     }
 
     func hideInputPlaceholder(inputTextView: UITextView) {
       inputTextView.text = nil
-      inputTextView.textColor = UIColor(Color.appText)
+      inputTextView.textColor = UIColor(Theme.appText)
     }
 
     func refreshUI(inputTextView: UITextView) {
-      if inputTextView.textColor == UIColor(Color.appFadedText) {
+      if inputTextView.textColor == UIColor(Theme.appFadedText) {
         control.input = ""
       } else {
         control.input = inputTextView.text ?? ""
@@ -90,7 +90,7 @@ struct InputViewRepresentable: UIViewRepresentable {
     func textViewDidBeginEditing(_ textView: UITextView) {
       control.isInputFocused = true
 
-      if textView.textColor == UIColor(Color.appFadedText) {
+      if textView.textColor == UIColor(Theme.appFadedText) {
         hideInputPlaceholder(inputTextView: textView)
       }
     }

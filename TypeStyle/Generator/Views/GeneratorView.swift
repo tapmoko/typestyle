@@ -36,7 +36,7 @@ struct GeneratorView: View {
   var body: some View {
     ZStack {
       Rectangle()
-        .fill(Color.appBackground)
+        .fill(Theme.appBackground)
         .edgesIgnoringSafeArea(.all)
 
       VStack {
@@ -65,7 +65,7 @@ struct GeneratorView: View {
           .padding(.trailing, Theme.spacing)
       }
     }
-    .background(Color.appDarkBackground)
+    .background(Theme.appDarkBackground)
     .cornerRadius(Theme.spacing)
     .shadow(color: .black.opacity(0.3), radius: 8, x: 0, y: 0)
     .padding(Theme.spacing)
@@ -77,7 +77,7 @@ struct GeneratorView: View {
       input = ""
     }) {
       Image(systemName: "xmark")
-        .foregroundColor(.appText)
+        .foregroundColor(Theme.appText)
         .font(.title3.bold())
     }
   }

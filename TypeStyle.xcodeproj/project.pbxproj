@@ -11,7 +11,6 @@
 		244234632622732D009AAFDD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 244234622622732D009AAFDD /* Assets.xcassets */; };
 		244234662622732D009AAFDD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 244234652622732D009AAFDD /* Preview Assets.xcassets */; };
 		244234712622732D009AAFDD /* TypeStyleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244234702622732D009AAFDD /* TypeStyleTests.swift */; };
-		2442348D262278FC009AAFDD /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2442348C262278FC009AAFDD /* Color+.swift */; };
 		24423490262279A5009AAFDD /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2442348F262279A5009AAFDD /* StoreKit.framework */; };
 		24423493262279BF009AAFDD /* Notification.Name+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24423492262279BF009AAFDD /* Notification.Name+.swift */; };
 		24423495262279ED009AAFDD /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24423494262279ED009AAFDD /* IAPHelper.swift */; };
@@ -52,7 +51,6 @@
 		244234702622732D009AAFDD /* TypeStyleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeStyleTests.swift; sourceTree = "<group>"; };
 		244234722622732D009AAFDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2442348926227720009AAFDD /* TypeStyle.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TypeStyle.entitlements; sourceTree = "<group>"; };
-		2442348C262278FC009AAFDD /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
 		2442348F262279A5009AAFDD /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/System/iOSSupport/System/Library/Frameworks/StoreKit.framework; sourceTree = DEVELOPER_DIR; };
 		24423492262279BF009AAFDD /* Notification.Name+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification.Name+.swift"; sourceTree = "<group>"; };
 		24423494262279ED009AAFDD /* IAPHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
@@ -159,7 +157,6 @@
 		2442348B262278F3009AAFDD /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				2442348C262278FC009AAFDD /* Color+.swift */,
 				24423492262279BF009AAFDD /* Notification.Name+.swift */,
 			);
 			path = Extensions;
@@ -349,7 +346,6 @@
 				244234A626228363009AAFDD /* DecorationFactory.swift in Sources */,
 				24423493262279BF009AAFDD /* Notification.Name+.swift in Sources */,
 				2442349F26228319009AAFDD /* StyleFactory.swift in Sources */,
-				2442348D262278FC009AAFDD /* Color+.swift in Sources */,
 				24423497262279F4009AAFDD /* Products.swift in Sources */,
 				24D570A1263B468000B0AE69 /* Theme.swift in Sources */,
 				24423495262279ED009AAFDD /* IAPHelper.swift in Sources */,

@@ -9,7 +9,7 @@ struct OutputRow: View {
   var body: some View {
     HStack(spacing: Theme.spacing) {
       Text(output)
-        .foregroundColor(.appText)
+        .foregroundColor(Theme.appText)
 
       Spacer(minLength: 0)
     }
@@ -21,7 +21,7 @@ struct OutputRow: View {
 struct OutputRow_Previews: PreviewProvider {
   static var previews: some View {
     OutputRow(output: "Hello World")
-      .background(Color.appBackground)
+      .background(Theme.appBackground)
       .previewLayout(.sizeThatFits)
   }
 }
