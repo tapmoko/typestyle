@@ -61,6 +61,8 @@ struct TypeStyleApp: App {
 
   private func setGlobalAppearance() {
     UITableView.appearance().separatorStyle = .none
+    UITableView.appearance().separatorColor = .clear
+
     UITableView.appearance().backgroundColor = .clear
     UITableViewCell.appearance().backgroundColor = .clear
   }

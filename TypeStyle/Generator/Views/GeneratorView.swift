@@ -77,26 +77,27 @@ struct GeneratorView: View {
   }
 
   var outputList: some View {
-    List {
+    ScrollView {
       if showOutput {
         ForEach(transformerManager.transformerGroupingsToDisplay, id: \.groupName) { grouping in
-          if let header = headerTextFor(grouping: grouping) {
-            Section(header: Text(header)) {
+          LazyVStack(alignment: .leading, spacing: 0, pinnedViews: [.sectionHeaders]) {
+            if let header = headerTextFor(grouping: grouping) {
+              Section(header: Text(header)) {
+                ForEach(grouping.transformers, id: \.name) { transformer in
+                  Text(output(for: input, with: transformer))
+                    .listRowBackground(Color.clear)
+                }
+              }
+            } else {
               ForEach(grouping.transformers, id: \.name) { transformer in
                 Text(output(for: input, with: transformer))
                   .listRowBackground(Color.clear)
               }
             }
-          } else {
-            ForEach(grouping.transformers, id: \.name) { transformer in
-              Text(output(for: input, with: transformer))
-                .listRowBackground(Color.clear)
-            }
           }
         }
       }
     }
-    .background(Color.appBackground)
   }
 
   var viewModeSegmentedControl: some View {
