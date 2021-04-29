@@ -75,7 +75,14 @@ struct GeneratorView: View {
     List {
       if showOutput {
         ForEach(transformerManager.transformerGroupingsToDisplay, id: \.groupName) { grouping in
-          Section(header: Text(headerTextFor(grouping: grouping))) {
+          if let header = headerTextFor(grouping: grouping) {
+            Section(header: Text(header)) {
+              ForEach(grouping.transformers, id: \.name) { transformer in
+                Text(transformer.name)
+                  .listRowBackground(Color.clear)
+              }
+            }
+          } else {
             ForEach(grouping.transformers, id: \.name) { transformer in
               Text(transformer.name)
                 .listRowBackground(Color.clear)
@@ -98,9 +105,9 @@ struct GeneratorView: View {
 
   // MARK: - Methods
 
-  func headerTextFor(grouping: Transformer.Grouping) -> String {
+  func headerTextFor(grouping: Transformer.Grouping) -> String? {
     switch transformerManager.mode {
-    case .styles, .decorations: return "no header"
+    case .styles, .decorations: return nil
     case .emoticons: return grouping.groupName
     }
   }
