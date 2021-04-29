@@ -26,7 +26,6 @@
 		244234AB2622843D009AAFDD /* TransformerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244234AA2622843D009AAFDD /* TransformerManager.swift */; };
 		244234AD262284A7009AAFDD /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244234AC262284A7009AAFDD /* MainTabView.swift */; };
 		244234B026228875009AAFDD /* GeneratorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244234AF26228875009AAFDD /* GeneratorView.swift */; };
-		244234B326232F4D009AAFDD /* InputContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244234B226232F4D009AAFDD /* InputContainerView.swift */; };
 		244234B626232FD8009AAFDD /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 244234B526232FD8009AAFDD /* SnapKit */; };
 		244234B826233E97009AAFDD /* InputViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244234B726233E97009AAFDD /* InputViewRepresentable.swift */; };
 /* End PBXBuildFile section */
@@ -66,7 +65,6 @@
 		244234AA2622843D009AAFDD /* TransformerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerManager.swift; sourceTree = "<group>"; };
 		244234AC262284A7009AAFDD /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		244234AF26228875009AAFDD /* GeneratorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorView.swift; sourceTree = "<group>"; };
-		244234B226232F4D009AAFDD /* InputContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputContainerView.swift; sourceTree = "<group>"; };
 		244234B726233E97009AAFDD /* InputViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewRepresentable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -228,7 +226,6 @@
 		244234B126232F26009AAFDD /* Input */ = {
 			isa = PBXGroup;
 			children = (
-				244234B226232F4D009AAFDD /* InputContainerView.swift */,
 				244234B726233E97009AAFDD /* InputViewRepresentable.swift */,
 			);
 			path = Input;
@@ -340,7 +337,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				244234B026228875009AAFDD /* GeneratorView.swift in Sources */,
-				244234B326232F4D009AAFDD /* InputContainerView.swift in Sources */,
 				244234A426228355009AAFDD /* Transformer.swift in Sources */,
 				244234A8262283F2009AAFDD /* EmoticonFactory.swift in Sources */,
 				244234A22622834C009AAFDD /* CustomTransformers.swift in Sources */,

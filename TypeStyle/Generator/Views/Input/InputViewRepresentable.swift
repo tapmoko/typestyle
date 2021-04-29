@@ -9,15 +9,33 @@ struct InputViewRepresentable: UIViewRepresentable {
     (viewMode == .generate) ? "Your text..." : "Search..."
   }
 
-  func makeUIView(context: Context) -> InputContainerView {
-    let inputContainerView = InputContainerView()
+  func makeUIView(context: Context) -> UITextView {
+    let inputTextView = UITextView()
 
-    inputContainerView.delegate = context.coordinator
+    // Delegate
+    inputTextView.delegate = context.coordinator
 
-    return inputContainerView
+    // Editing
+    inputTextView.isEditable = true
+    inputTextView.isScrollEnabled = false
+
+    // Keyboard
+    inputTextView.keyboardAppearance = .dark
+
+    // Color
+    inputTextView.textColor = UIColor(Color.appText)
+    inputTextView.tintColor = UIColor(Color.appText)
+    inputTextView.backgroundColor = UIColor(Color.appDarkBackground)
+
+    // Font
+    setTextSize(textView: inputTextView, size: .title2)
+    inputTextView.adjustsFontForContentSizeCategory = true
+    inputTextView.delegate = context.coordinator
+
+    return inputTextView
   }
 
-  func updateUIView(_ uiView: InputContainerView, context: Context) {
+  func updateUIView(_ uiView: UITextView, context: Context) {
 
   }
 
@@ -25,8 +43,11 @@ struct InputViewRepresentable: UIViewRepresentable {
     Coordinator(self)
   }
 
-  final class Coordinator: NSObject, InputContainerViewDelegate {
+  func setTextSize(textView: UITextView, size: UIFont.TextStyle) {
+    textView.font = UIFont.preferredFont(forTextStyle: size)
+  }
 
+  class Coordinator: NSObject, UITextViewDelegate {
     var control: InputViewRepresentable
 
     init(_ control: InputViewRepresentable) {
@@ -43,46 +64,45 @@ struct InputViewRepresentable: UIViewRepresentable {
       inputTextView.textColor = UIColor(Color.appText)
     }
 
-    func refreshUI(inputContainerView: InputContainerView) {
-      if inputContainerView.inputTextView.textColor == UIColor(Color.appFadedText) {
+    func refreshUI(inputTextView: UITextView) {
+      if inputTextView.textColor == UIColor(Color.appFadedText) {
         control.input = ""
       } else {
-        control.input = inputContainerView.inputTextView.text ?? ""
+        control.input = inputTextView.text ?? ""
       }
 
       if control.input.isEmpty {
-        showInputPlaceholder(inputTextView: inputContainerView.inputTextView)
+        showInputPlaceholder(inputTextView: inputTextView)
       }
 
       if control.input.count > 200 {
-        inputContainerView.setTextSize(.footnote)
+        control.setTextSize(textView: inputTextView, size: .footnote)
       } else if control.input.count > 100 {
-        inputContainerView.setTextSize(.body)
+        control.setTextSize(textView: inputTextView, size: .body)
       } else {
-        inputContainerView.setTextSize(.title2)
+        control.setTextSize(textView: inputTextView, size: .title2)
       }
     }
 
-    // MARK: - InputContainerViewDelegate
+    // MARK: - UITextViewDelegate
 
-    func textViewDidBeginEditing(inputContainerView: InputContainerView) {
-      if inputContainerView.inputTextView.textColor == UIColor(Color.appFadedText) {
-        hideInputPlaceholder(inputTextView: inputContainerView.inputTextView)
+    func textViewDidBeginEditing(_ textView: UITextView) {
+      if textView.textColor == UIColor(Color.appFadedText) {
+        hideInputPlaceholder(inputTextView: textView)
       }
     }
 
-    func textViewDidChange(inputContainerView: InputContainerView) {
-      refreshUI(inputContainerView: inputContainerView)
+    func textViewDidChange(_ textView: UITextView) {
+      refreshUI(inputTextView: textView)
     }
 
-    func textViewDidEndEditing(inputContainerView: InputContainerView) {
-      if inputContainerView.inputTextView.text.isEmpty {
-        showInputPlaceholder(inputTextView: inputContainerView.inputTextView)
+    func textViewDidEndEditing(_ textView: UITextView) {
+      if textView.text.isEmpty {
+        showInputPlaceholder(inputTextView: textView)
       }
 
-      refreshUI(inputContainerView: inputContainerView)
+      refreshUI(inputTextView: textView)
     }
-
   }
 
 }
