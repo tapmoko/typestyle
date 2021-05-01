@@ -38,9 +38,13 @@ struct InputViewRepresentable: UIViewRepresentable {
 
   func updateUIView(_ uiView: UITextView, context: Context) {
     if isInputFocused {
-      uiView.becomeFirstResponder()
+      if !uiView.isFirstResponder {
+        uiView.becomeFirstResponder()
+      }
     } else {
-      uiView.resignFirstResponder()
+      if uiView.isFirstResponder {
+        uiView.resignFirstResponder()
+      }
     }
   }
 

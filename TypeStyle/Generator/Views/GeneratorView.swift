@@ -83,7 +83,11 @@ struct GeneratorView: View {
   }
 
   var outputList: some View {
-    ScrollView {
+    ObservableScrollView(
+      axes: [.vertical],
+      showsIndicators: true,
+      offsetChanged: { _ in isInputFocused = false }
+    ) {
       if showOutput {
         ForEach(transformerManager.transformerGroupingsToDisplay, id: \.groupName) { grouping in
           LazyVStack(alignment: .leading, spacing: 0, pinnedViews: [.sectionHeaders]) {

@@ -28,6 +28,7 @@
 		244234B826233E97009AAFDD /* InputViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244234B726233E97009AAFDD /* InputViewRepresentable.swift */; };
 		24D5709F263B462700B0AE69 /* OutputRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D5709E263B462700B0AE69 /* OutputRow.swift */; };
 		24D570A1263B468000B0AE69 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D570A0263B468000B0AE69 /* Theme.swift */; };
+		24D570A3263B499500B0AE69 /* ObservableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D570A2263B499500B0AE69 /* ObservableScrollView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		244234B726233E97009AAFDD /* InputViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewRepresentable.swift; sourceTree = "<group>"; };
 		24D5709E263B462700B0AE69 /* OutputRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputRow.swift; sourceTree = "<group>"; };
 		24D570A0263B468000B0AE69 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		24D570A2263B499500B0AE69 /* ObservableScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableScrollView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +222,7 @@
 				244234B126232F26009AAFDD /* Input */,
 				244234AF26228875009AAFDD /* GeneratorView.swift */,
 				24D5709E263B462700B0AE69 /* OutputRow.swift */,
+				24D570A2263B499500B0AE69 /* ObservableScrollView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				244234B826233E97009AAFDD /* InputViewRepresentable.swift in Sources */,
 				2442349B26227A57009AAFDD /* Log.swift in Sources */,
 				2442349926227A07009AAFDD /* Global.swift in Sources */,
+				24D570A3263B499500B0AE69 /* ObservableScrollView.swift in Sources */,
 				244234AB2622843D009AAFDD /* TransformerManager.swift in Sources */,
 				24D5709F263B462700B0AE69 /* OutputRow.swift in Sources */,
 				244234AD262284A7009AAFDD /* MainTabView.swift in Sources */,
