@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2498BA6E263D901700B72F3F /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2498BA6D263D901700B72F3F /* Log.swift */; };
 		41159515236E7D860049509F /* StyleFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41159514236E7D860049509F /* StyleFactoryTests.swift */; };
 		41159525236E802F0049509F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B66B54912187C4770038C84A /* LaunchScreen.storyboard */; };
 		41187B5F245F74BA004C0958 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41187B5E245F74BA004C0958 /* LoadingView.swift */; };
@@ -15,7 +16,6 @@
 		412DB3B3245F0FD500A91314 /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412DB3B2245F0FD500A91314 /* IAPHelper.swift */; };
 		412DB3B5245F0FEB00A91314 /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412DB3B4245F0FEB00A91314 /* Products.swift */; };
 		412DB3B7245F10D200A91314 /* StyleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412DB3B6245F10D200A91314 /* StyleFactory.swift */; };
-		412DB3BA245F114F00A91314 /* SwiftyBeaver in Frameworks */ = {isa = PBXBuildFile; productRef = 412DB3B9245F114F00A91314 /* SwiftyBeaver */; };
 		4131C16A245F7C92007626F6 /* Notification.Name+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4131C169245F7C92007626F6 /* Notification.Name+Extension.swift */; };
 		4141902923803FC5009D3225 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4141902823803FC5009D3225 /* SnapKit */; };
 		4197FA8F2221D06F000516AA /* CustomTransforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4197FA8E2221D06F000516AA /* CustomTransforms.swift */; };
@@ -49,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2498BA6D263D901700B72F3F /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		4115950A236E7BE40049509F /* TypeStyleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TypeStyleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4115950E236E7BE40049509F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		41159514236E7D860049509F /* StyleFactoryTests.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = StyleFactoryTests.swift; sourceTree = "<group>"; tabWidth = 2; };
@@ -97,7 +98,6 @@
 			files = (
 				4141902923803FC5009D3225 /* SnapKit in Frameworks */,
 				412DB3A4245E6F3800A91314 /* StoreKit.framework in Frameworks */,
-				412DB3BA245F114F00A91314 /* SwiftyBeaver in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,6 +129,7 @@
 				B69D280D218A7A3800A298A9 /* Models */,
 				B66B54882187C4750038C84A /* AppDelegate.swift */,
 				B6E91DE521AA19B8003214C9 /* Global.swift */,
+				2498BA6D263D901700B72F3F /* Log.swift */,
 				41D25C7D24553FFA0091F6AB /* MainTabBarController.swift */,
 			);
 			path = Application;
@@ -308,7 +309,6 @@
 			name = TypeStyle;
 			packageProductDependencies = (
 				4141902823803FC5009D3225 /* SnapKit */,
-				412DB3B9245F114F00A91314 /* SwiftyBeaver */,
 			);
 			productName = TypeStyle;
 			productReference = B66B54852187C4750038C84A /* TypeStyle.app */;
@@ -345,7 +345,6 @@
 			mainGroup = B66B547C2187C4750038C84A;
 			packageReferences = (
 				4141902723803FC5009D3225 /* XCRemoteSwiftPackageReference "SnapKit" */,
-				412DB3B8245F114F00A91314 /* XCRemoteSwiftPackageReference "SwiftyBeaver" */,
 			);
 			productRefGroup = B66B54862187C4750038C84A /* Products */;
 			projectDirPath = "";
@@ -391,6 +390,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B66B548B2187C4750038C84A /* GeneratorViewController.swift in Sources */,
+				2498BA6E263D901700B72F3F /* Log.swift in Sources */,
 				B6E91DE621AA19B8003214C9 /* Global.swift in Sources */,
 				4131C16A245F7C92007626F6 /* Notification.Name+Extension.swift in Sources */,
 				B66B54892187C4750038C84A /* AppDelegate.swift in Sources */,
@@ -678,14 +678,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		412DB3B8245F114F00A91314 /* XCRemoteSwiftPackageReference "SwiftyBeaver" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SwiftyBeaver/SwiftyBeaver";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.9.1;
-			};
-		};
 		4141902723803FC5009D3225 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
@@ -697,11 +689,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		412DB3B9245F114F00A91314 /* SwiftyBeaver */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 412DB3B8245F114F00A91314 /* XCRemoteSwiftPackageReference "SwiftyBeaver" */;
-			productName = SwiftyBeaver;
-		};
 		4141902823803FC5009D3225 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 4141902723803FC5009D3225 /* XCRemoteSwiftPackageReference "SnapKit" */;
