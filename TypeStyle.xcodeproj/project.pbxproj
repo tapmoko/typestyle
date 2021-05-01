@@ -7,22 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4104614124552D7E0002D713 /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = 4104614024552D7E0002D713 /* Nimble */; };
-		41159515236E7D860049509F /* StyleFactorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41159514236E7D860049509F /* StyleFactorySpec.swift */; };
-		41159516236E7F000049509F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66B54882187C4750038C84A /* AppDelegate.swift */; };
-		41159517236E7F000049509F /* Transformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69D281E218BD2E800A298A9 /* Transformer.swift */; };
-		41159518236E7F000049509F /* InputContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69D2809218A407C00A298A9 /* InputContainerView.swift */; };
-		41159519236E7F000049509F /* ActionConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69D2812218A8ACD00A298A9 /* ActionConfirmationView.swift */; };
-		4115951A236E7F000049509F /* OutputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68C6EAE218A3E63007CB17A /* OutputTableViewCell.swift */; };
-		4115951B236E7F000049509F /* AboutLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E91DE921AA32CD003214C9 /* AboutLabelView.swift */; };
-		4115951C236E7F000049509F /* AboutButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E91DEB21AA3542003214C9 /* AboutButtonView.swift */; };
-		4115951D236E7F000049509F /* GeneratorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66B548A2187C4750038C84A /* GeneratorViewController.swift */; };
-		4115951E236E7F000049509F /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E91DE721AA2FA7003214C9 /* AboutViewController.swift */; };
-		4115951F236E7F000049509F /* TransformerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68C6EAA218A3493007CB17A /* TransformerManager.swift */; };
-		41159521236E7F000049509F /* DecorationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69D281B218BC96E00A298A9 /* DecorationFactory.swift */; };
-		41159522236E7F000049509F /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68C6EAC218A365A007CB17A /* UIColor+Extension.swift */; };
-		41159523236E7F000049509F /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E91DE521AA19B8003214C9 /* Global.swift */; };
-		41159524236E7F000049509F /* CustomTransforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4197FA8E2221D06F000516AA /* CustomTransforms.swift */; };
+		41159515236E7D860049509F /* StyleFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41159514236E7D860049509F /* StyleFactoryTests.swift */; };
 		41159525236E802F0049509F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B66B54912187C4770038C84A /* LaunchScreen.storyboard */; };
 		41187B5F245F74BA004C0958 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41187B5E245F74BA004C0958 /* LoadingView.swift */; };
 		412DB3A4245E6F3800A91314 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 412DB3A3245E6F3800A91314 /* StoreKit.framework */; };
@@ -34,11 +19,8 @@
 		4131C16A245F7C92007626F6 /* Notification.Name+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4131C169245F7C92007626F6 /* Notification.Name+Extension.swift */; };
 		4141902923803FC5009D3225 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4141902823803FC5009D3225 /* SnapKit */; };
 		4197FA8F2221D06F000516AA /* CustomTransforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4197FA8E2221D06F000516AA /* CustomTransforms.swift */; };
-		41D1971624552E8500A46EFB /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = 41D1971524552E8500A46EFB /* Quick */; };
 		41D25C7E24553FFA0091F6AB /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D25C7D24553FFA0091F6AB /* MainTabBarController.swift */; };
 		41D25C802455BEB20091F6AB /* EmoticonFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D25C7F2455BEB20091F6AB /* EmoticonFactory.swift */; };
-		41D25C81245654EF0091F6AB /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D25C7D24553FFA0091F6AB /* MainTabBarController.swift */; };
-		41D25C82245654F60091F6AB /* EmoticonFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D25C7F2455BEB20091F6AB /* EmoticonFactory.swift */; };
 		B66B54892187C4750038C84A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66B54882187C4750038C84A /* AppDelegate.swift */; };
 		B66B548B2187C4750038C84A /* GeneratorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66B548A2187C4750038C84A /* GeneratorViewController.swift */; };
 		B66B54902187C4770038C84A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B66B548F2187C4770038C84A /* Assets.xcassets */; };
@@ -69,7 +51,7 @@
 /* Begin PBXFileReference section */
 		4115950A236E7BE40049509F /* TypeStyleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TypeStyleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4115950E236E7BE40049509F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		41159514236E7D860049509F /* StyleFactorySpec.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = StyleFactorySpec.swift; sourceTree = "<group>"; tabWidth = 2; };
+		41159514236E7D860049509F /* StyleFactoryTests.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = StyleFactoryTests.swift; sourceTree = "<group>"; tabWidth = 2; };
 		41187B5E245F74BA004C0958 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		412DB3A3245E6F3800A91314 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		412DB3A5245E749300A91314 /* ConfettiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiView.swift; sourceTree = "<group>"; };
@@ -106,8 +88,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				41D1971624552E8500A46EFB /* Quick in Frameworks */,
-				4104614124552D7E0002D713 /* Nimble in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,7 +107,7 @@
 		4115950B236E7BE40049509F /* TypeStyleTests */ = {
 			isa = PBXGroup;
 			children = (
-				41159514236E7D860049509F /* StyleFactorySpec.swift */,
+				41159514236E7D860049509F /* StyleFactoryTests.swift */,
 				4115950E236E7BE40049509F /* Info.plist */,
 			);
 			path = TypeStyleTests;
@@ -308,8 +288,6 @@
 			);
 			name = TypeStyleTests;
 			packageProductDependencies = (
-				4104614024552D7E0002D713 /* Nimble */,
-				41D1971524552E8500A46EFB /* Quick */,
 			);
 			productName = TypeStyleTests;
 			productReference = 4115950A236E7BE40049509F /* TypeStyleTests.xctest */;
@@ -367,8 +345,6 @@
 			mainGroup = B66B547C2187C4750038C84A;
 			packageReferences = (
 				4141902723803FC5009D3225 /* XCRemoteSwiftPackageReference "SnapKit" */,
-				4104613F24552D7E0002D713 /* XCRemoteSwiftPackageReference "Nimble" */,
-				41D1971424552E8500A46EFB /* XCRemoteSwiftPackageReference "Quick" */,
 				412DB3B8245F114F00A91314 /* XCRemoteSwiftPackageReference "SwiftyBeaver" */,
 			);
 			productRefGroup = B66B54862187C4750038C84A /* Products */;
@@ -406,23 +382,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				41159519236E7F000049509F /* ActionConfirmationView.swift in Sources */,
-				4115951D236E7F000049509F /* GeneratorViewController.swift in Sources */,
-				4115951E236E7F000049509F /* AboutViewController.swift in Sources */,
-				41159516236E7F000049509F /* AppDelegate.swift in Sources */,
-				41159521236E7F000049509F /* DecorationFactory.swift in Sources */,
-				4115951A236E7F000049509F /* OutputTableViewCell.swift in Sources */,
-				4115951F236E7F000049509F /* TransformerManager.swift in Sources */,
-				41159523236E7F000049509F /* Global.swift in Sources */,
-				41159522236E7F000049509F /* UIColor+Extension.swift in Sources */,
-				41D25C82245654F60091F6AB /* EmoticonFactory.swift in Sources */,
-				41159515236E7D860049509F /* StyleFactorySpec.swift in Sources */,
-				4115951C236E7F000049509F /* AboutButtonView.swift in Sources */,
-				41159517236E7F000049509F /* Transformer.swift in Sources */,
-				4115951B236E7F000049509F /* AboutLabelView.swift in Sources */,
-				41159518236E7F000049509F /* InputContainerView.swift in Sources */,
-				41159524236E7F000049509F /* CustomTransforms.swift in Sources */,
-				41D25C81245654EF0091F6AB /* MainTabBarController.swift in Sources */,
+				41159515236E7D860049509F /* StyleFactoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -718,14 +678,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		4104613F24552D7E0002D713 /* XCRemoteSwiftPackageReference "Nimble" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Quick/Nimble";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 8.0.7;
-			};
-		};
 		412DB3B8245F114F00A91314 /* XCRemoteSwiftPackageReference "SwiftyBeaver" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftyBeaver/SwiftyBeaver";
@@ -742,22 +694,9 @@
 				minimumVersion = 5.0.1;
 			};
 		};
-		41D1971424552E8500A46EFB /* XCRemoteSwiftPackageReference "Quick" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Quick/Quick";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.2.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		4104614024552D7E0002D713 /* Nimble */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 4104613F24552D7E0002D713 /* XCRemoteSwiftPackageReference "Nimble" */;
-			productName = Nimble;
-		};
 		412DB3B9245F114F00A91314 /* SwiftyBeaver */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 412DB3B8245F114F00A91314 /* XCRemoteSwiftPackageReference "SwiftyBeaver" */;
@@ -767,11 +706,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4141902723803FC5009D3225 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
-		};
-		41D1971524552E8500A46EFB /* Quick */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 41D1971424552E8500A46EFB /* XCRemoteSwiftPackageReference "Quick" */;
-			productName = Quick;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
