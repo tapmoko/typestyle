@@ -168,7 +168,7 @@ class GeneratorViewController: UIViewController {
     inputContainerView.clearButton.isHidden = input.isEmpty || (inputContainerView.inputTextView.textColor == .appFadedText)
     tableView.reloadData()
 
-    if input.isEmpty {
+    if input.isEmpty && !inputContainerView.inputTextView.isFirstResponder {
       showInputPlaceholder()
     }
 
