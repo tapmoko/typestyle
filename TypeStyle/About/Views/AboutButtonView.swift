@@ -1,6 +1,6 @@
 import UIKit
 
-protocol AboutButtonViewDelegate: class {
+protocol AboutButtonViewDelegate: AnyObject {
   func open(link: String)
   func openTip()
 }
