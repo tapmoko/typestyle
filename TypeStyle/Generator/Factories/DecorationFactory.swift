@@ -3,7 +3,7 @@ import Foundation
 struct DecorationFactory {
 
   static func allDecorations() -> [Transformer.Grouping] {
-  return [(groupName: "All Decorations", transformers: [
+    [(groupName: "All Decorations", transformers: [
       Transformer(name: "Decoration 1", before: "`•.,¸¸,.•´¯", after: "¯`•.,¸¸,.•´"),
       Transformer(name: "Decoration 2", before: "¸,ø¤º°`°º¤ø,¸", after: "¸,ø¤º°`°º¤ø,¸"),
       Transformer(name: "Decoration 3", before: "★·.·´¯`·.·★", after: "★·.·´¯`·.·★"),

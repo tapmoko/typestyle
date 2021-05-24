@@ -3,7 +3,7 @@ import Foundation
 struct EmoticonFactory {
 
   static func allEmoticons() -> [Transformer.Grouping] {
-    return [
+    [
       (groupName: "Angry", transformers: [
         Transformer(name: "Angry 1", output: "ಠ_ಠ"),
         Transformer(name: "Angry 2", output: "⋋_⋌"),

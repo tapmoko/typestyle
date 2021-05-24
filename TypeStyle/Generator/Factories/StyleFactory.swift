@@ -2,12 +2,10 @@ import Foundation
 
 struct StyleFactory {
 
-  static func inputBase() -> String {
-    return "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890"
-  }
+  static let inputBase = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890"
 
   static func allStyles() -> [Transformer.Grouping] {
-    return [(groupName: "All Styles", transformers: [
+    [(groupName: "All Styles", transformers: [
       Transformer(name: "Monospace",
                   outputBase: "𝙰𝙱𝙲𝙳𝙴𝙵𝙶𝙷𝙸𝙹𝙺𝙻𝙼𝙽𝙾𝙿𝚀𝚁𝚂𝚃𝚄𝚅𝚆𝚇𝚈𝚉𝚊𝚋𝚌𝚍𝚎𝚏𝚐𝚑𝚒𝚓𝚔𝚕𝚖𝚗𝚘𝚙𝚚𝚛𝚜𝚝𝚞𝚟𝚠𝚡𝚢𝚣𝟷𝟸𝟹𝟺𝟻𝟼𝟽𝟾𝟿𝟶"),
       Transformer(name: "Reverse",
