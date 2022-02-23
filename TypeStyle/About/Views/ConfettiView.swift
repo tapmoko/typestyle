@@ -6,19 +6,21 @@ class ConfettiView: UIView {
   private var emitter: CAEmitterLayer?
 
   private let colors: [UIColor] = [#colorLiteral(red: 0.95, green: 0.40, blue: 0.28, alpha: 1.0), #colorLiteral(red: 1.00, green: 0.78, blue: 0.36, alpha: 1.0), #colorLiteral(red: 0.48, green: 0.78, blue: 0.64, alpha: 1.0), #colorLiteral(red: 0.30, green: 0.75, blue: 0.85, alpha: 1.0)]
-  private let intensity: Float = 0.5
+  private let intensity = 0.5
 
   func start() {
-    emitter = CAEmitterLayer()
+    let emitter = CAEmitterLayer()
 
-    emitter?.emitterPosition = CGPoint(x: frame.size.width / 2.0, y: 0)
-    emitter?.emitterShape = .line
-    emitter?.emitterSize = CGSize(width: frame.size.width, height: 1)
+    emitter.emitterPosition = CGPoint(x: frame.size.width / 2.0, y: 0)
+    emitter.emitterShape = .line
+    emitter.emitterSize = CGSize(width: frame.size.width, height: 1)
 
     let cells = colors.map { confettiCell(withColor: $0) }
 
-    emitter?.emitterCells = cells
-    layer.addSublayer(emitter!)
+    emitter.emitterCells = cells
+    layer.addSublayer(emitter)
+
+    self.emitter = emitter
   }
 
   func increase() {

@@ -58,7 +58,10 @@ struct TransformerManager {
 
   func transformedText(for text: String?, indexPath: IndexPath) -> String {
     // If no text is provided, we use the name of the transformer.
-    return transformerGroupingsToDisplay[indexPath.section].transformers[indexPath.row].transform(text ?? transformerGroupingsToDisplay[indexPath.section].transformers[indexPath.row].name)
+    let transformer = transformerGroupingsToDisplay[indexPath.section].transformers[indexPath.row]
+    let textToTransform = text ?? transformer.name
+
+    return transformer.transform(textToTransform)
   }
 
 }
@@ -68,18 +71,22 @@ struct TransformerManager {
 extension TransformerManager {
 
   func isFavorited(at indexPath: IndexPath) -> Bool {
-    return isFavorited(transformer: transformerGroupingsToDisplay[indexPath.section].transformers[indexPath.row])
+    isFavorited(
+      transformer: transformerGroupingsToDisplay[indexPath.section].transformers[indexPath.row]
+    )
   }
 
   func isFavorited(transformer: Transformer) -> Bool {
-    return UserDefaults.standard.bool(forKey: String.localizedStringWithFormat(transformerFavoritedKey,
-                                                                               transformer.name))
+    UserDefaults.standard.bool(
+      forKey: String.localizedStringWithFormat(transformerFavoritedKey, transformer.name)
+    )
   }
 
   func toggleFavorite(transformer: Transformer) {
-    UserDefaults.standard.set(!isFavorited(transformer: transformer),
-                              forKey: String.localizedStringWithFormat(transformerFavoritedKey,
-                                                                       transformer.name))
+    UserDefaults.standard.set(
+      !isFavorited(transformer: transformer),
+      forKey: String.localizedStringWithFormat(transformerFavoritedKey, transformer.name)
+    )
   }
 
 }

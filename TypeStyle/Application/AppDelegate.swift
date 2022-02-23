@@ -7,15 +7,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var didAutomaticallyShowKeyboardOnce = false
 
-  func application(_ application: UIApplication,
-                   didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+  func application(
+    _ application: UIApplication,
+    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
+  ) -> Bool {
     window = UIWindow(frame: UIScreen.main.bounds)
     window?.rootViewController = MainTabBarController()
     window?.makeKeyAndVisible()
 
     Products.store.requestProducts { success, tipProducts in
       if success {
-        Products.tipProducts = tipProducts!
+        if let tipProducts = tipProducts {
+          Products.tipProducts = tipProducts
+        }
       }
     }
 
