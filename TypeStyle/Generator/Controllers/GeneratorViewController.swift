@@ -11,7 +11,7 @@ class GeneratorViewController: UIViewController {
 
   // MARK: - Properties
 
-  override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
+  override var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }
   let feedbackGenerator = UINotificationFeedbackGenerator()
   var transformerManager: TransformerManager
 
@@ -67,7 +67,11 @@ class GeneratorViewController: UIViewController {
     inputContainerView.inputTextView.delegate = self
     inputContainerView.inputTextView.textColor = .appFadedText
 
-    inputContainerView.clearButton.addTarget(self, action: #selector(didTapClearButton), for: .touchUpInside)
+    inputContainerView.clearButton.addTarget(
+      self,
+      action: #selector(didTapClearButton),
+      for: .touchUpInside
+    )
 
     view.addSubview(inputContainerView)
 
@@ -85,7 +89,11 @@ class GeneratorViewController: UIViewController {
 
     viewModeSegmentedControl.tintColor = .appText
     viewModeSegmentedControl.selectedSegmentIndex = 0
-    viewModeSegmentedControl.addTarget(self, action: #selector(modeDidChange), for: .valueChanged)
+    viewModeSegmentedControl.addTarget(
+      self,
+      action: #selector(modeDidChange),
+      for: .valueChanged
+    )
 
     // TODO: Make this adjust automatically somehow, not just on app launch
     let font = UIFont.preferredFont(forTextStyle: .body)
@@ -101,7 +109,10 @@ class GeneratorViewController: UIViewController {
   }
 
   func setUpTableView() {
-    tableView.register(OutputTableViewCell.self, forCellReuseIdentifier: OutputTableViewCell.identifier)
+    tableView.register(
+      OutputTableViewCell.self,
+      forCellReuseIdentifier: OutputTableViewCell.identifier
+    )
 
     tableView.dataSource = self
     tableView.delegate = self
@@ -138,7 +149,8 @@ class GeneratorViewController: UIViewController {
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
 
-    if (UIApplication.shared.delegate as? AppDelegate)?.didAutomaticallyShowKeyboardOnce ?? false {
+    let appDelegate = UIApplication.shared.delegate as? AppDelegate
+    if appDelegate?.didAutomaticallyShowKeyboardOnce ?? false {
       showInputPlaceholder()
       return
     }
@@ -163,7 +175,9 @@ class GeneratorViewController: UIViewController {
       input = inputContainerView.inputTextView.text ?? ""
     }
 
-    transformerManager.updateTransformersToDisplay(filterInput: (viewMode == .browse) ? input : nil)
+    transformerManager.updateTransformersToDisplay(
+      filterInput: (viewMode == .browse) ? input : nil
+    )
 
     inputContainerView.clearButton.isHidden = input.isEmpty || (inputContainerView.inputTextView.textColor == .appFadedText)
     tableView.reloadData()
@@ -202,8 +216,10 @@ class GeneratorViewController: UIViewController {
   }
 
   func output(for indexPath: IndexPath) -> String {
-    return transformerManager.transformedText(for: (viewMode == .generate) ? input : nil,
-                                              indexPath: indexPath)
+    transformerManager.transformedText(
+      for: (viewMode == .generate) ? input : nil,
+      indexPath: indexPath
+    )
   }
 
 }
@@ -225,29 +241,45 @@ extension GeneratorViewController: UITableViewDataSource {
     return transformerManager.transformerGroupingsToDisplay[section].transformers.count
   }
 
-  func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+  func tableView(
+    _ tableView: UITableView,
+    titleForHeaderInSection section: Int
+  ) -> String? {
     switch transformerManager.mode {
-    case .styles, .decorations: return nil
-    case .emoticons: return transformerManager.transformerGroupingsToDisplay[section].groupName
+    case .styles, .decorations:
+      return nil
+    case .emoticons:
+      return transformerManager.transformerGroupingsToDisplay[section].groupName
     }
   }
 
-  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: OutputTableViewCell.identifier) as! OutputTableViewCell
+  func tableView(
+    _ tableView: UITableView,
+    cellForRowAt indexPath: IndexPath
+  ) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(
+      withIdentifier: OutputTableViewCell.identifier
+    ) as! OutputTableViewCell
+
     cell.outputLabel.text = output(for: indexPath)
     cell.favoriteImageView.image = transformerManager.isFavorited(at: indexPath)
       ? UIImage(systemName: "heart")?.withRenderingMode(.alwaysTemplate)
       : nil
+
     return cell
   }
 
-  func tableView(_ tableView: UITableView,
-                 trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+  func tableView(
+    _ tableView: UITableView,
+    trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath
+  ) -> UISwipeActionsConfiguration? {
     let favoriteTitle = transformerManager.isFavorited(at: indexPath) ? "Unfavorite" : "Favorite"
     let favoriteAction = UIContextualAction(style: .normal, title: favoriteTitle) {
-      (contextualAction, view, boolValue) in
+      contextualAction, view, boolValue in
 
-      let transformer = self.transformerManager.transformerGroupingsToDisplay[indexPath.section].transformers[indexPath.row]
+      let transformer = self.transformerManager
+        .transformerGroupingsToDisplay[indexPath.section]
+        .transformers[indexPath.row]
       self.transformerManager.toggleFavorite(transformer: transformer)
       self.transformerManager.updateTransformersToDisplay()
       self.refreshUI()
@@ -276,9 +308,13 @@ extension GeneratorViewController: UITableViewDelegate {
       actionConfirmationView.style = .copied
     } else {
       // Favorite or unfavorite
-      let transformer = transformerManager.transformerGroupingsToDisplay[indexPath.section].transformers[indexPath.row]
+      let transformer = transformerManager
+        .transformerGroupingsToDisplay[indexPath.section]
+        .transformers[indexPath.row]
       transformerManager.toggleFavorite(transformer: transformer)
-      actionConfirmationView.style = self.transformerManager.isFavorited(at: indexPath) ? .favorited : .unfavorited
+      actionConfirmationView.style = transformerManager.isFavorited(at: indexPath)
+        ? .favorited
+        : .unfavorited
       refreshUI()
     }
 
@@ -294,11 +330,13 @@ extension GeneratorViewController: UITableViewDelegate {
     UIView.animate(withDuration: 0.1, delay: 0, options: [], animations: {
       self.actionConfirmationView.alpha = 1
     }, completion: { _ in
-      self.actionConfirmationViewTimer = Timer.scheduledTimer(timeInterval: 0.5,
-                                                  target: self,
-                                                  selector: #selector(self.hideActionConfirmationView),
-                                                  userInfo: nil,
-                                                  repeats: false)
+      self.actionConfirmationViewTimer = Timer.scheduledTimer(
+        timeInterval: 0.5,
+        target: self,
+        selector: #selector(self.hideActionConfirmationView),
+        userInfo: nil,
+        repeats: false
+      )
     })
   }
 
@@ -342,15 +380,20 @@ extension GeneratorViewController: UITextViewDelegate {
 
 extension GeneratorViewController: UITableViewDragDelegate {
 
-  func tableView(_ tableView: UITableView,
-                 itemsForBeginning session: UIDragSession,
-                 at indexPath: IndexPath) -> [UIDragItem] {
+  func tableView(
+    _ tableView: UITableView,
+    itemsForBeginning session: UIDragSession,
+    at indexPath: IndexPath
+  ) -> [UIDragItem] {
     let draggedValue = output(for: indexPath).data(using: .utf8)
 
     let itemProvider = NSItemProvider()
     let typeIdentifier = kUTTypePlainText as String
 
-    itemProvider.registerDataRepresentation(forTypeIdentifier: typeIdentifier, visibility: .all) { completion in
+    itemProvider.registerDataRepresentation(
+      forTypeIdentifier: typeIdentifier,
+      visibility: .all
+    ) { completion in
       completion(draggedValue, nil)
       return nil
     }
