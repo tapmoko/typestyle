@@ -27,7 +27,7 @@ class GeneratorViewController: UIViewController {
   let actionConfirmationView = ActionConfirmationView()
   var actionConfirmationViewTimer: Timer?
 
-  let generalMargin: CGFloat = 15
+  let generalMargin = 15.0
 
   var viewMode: ViewMode = .generate
 

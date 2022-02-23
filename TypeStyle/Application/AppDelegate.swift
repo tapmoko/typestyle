@@ -16,10 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     window?.makeKeyAndVisible()
 
     Products.store.requestProducts { success, tipProducts in
-      if success {
-        if let tipProducts = tipProducts {
-          Products.tipProducts = tipProducts
-        }
+      if success, let tipProducts = tipProducts {
+        Products.tipProducts = tipProducts
       }
     }
 

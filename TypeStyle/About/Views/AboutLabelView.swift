@@ -3,7 +3,7 @@ import UIKit
 class AboutLabelView: UIView {
 
   let label = UILabel()
-  let padding: CGFloat = 20
+  let padding = 20.0
 
   init(text: String) {
     super.init(frame: .zero)

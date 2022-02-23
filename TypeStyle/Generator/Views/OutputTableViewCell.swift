@@ -6,7 +6,7 @@ class OutputTableViewCell: UITableViewCell {
 
   let outputLabel = UILabel()
   let favoriteImageView = UIImageView()
-  let padding: CGFloat = 10
+  let padding = 10.0
 
   override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)

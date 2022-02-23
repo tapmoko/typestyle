@@ -13,7 +13,7 @@ class AboutButtonView: UIView {
   }
 
   let button = UIButton(type: .system)
-  let padding: CGFloat = 20
+  let padding = 20.0
   let kind: Kind
   weak var delegate: AboutButtonViewDelegate?
 

@@ -6,9 +6,9 @@ class InputContainerView: UIView {
   let inputTextViewContainer = UIView()
   let clearButton = UIButton()
 
-  let inputTextViewRadius: CGFloat = 10
-  let inputTextViewPadding: CGFloat = 15
-  let inputTextViewMargin: CGFloat = 10
+  let inputTextViewRadius = 10.0
+  let inputTextViewPadding = 15.0
+  let inputTextViewMargin = 10.0
 
   override init(frame: CGRect) {
     super.init(frame: frame)

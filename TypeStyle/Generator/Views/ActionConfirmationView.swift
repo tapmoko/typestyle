@@ -25,10 +25,10 @@ class ActionConfirmationView: UIView {
     }
   }
 
-  let radius: CGFloat = 10
+  let radius = 10.0
   let imageView = UIImageView()
   let textLabel = UILabel()
-  let textLabelPadding: CGFloat = 15
+  let textLabelPadding = 15.0
 
   override init(frame: CGRect) {
     super.init(frame: frame)
