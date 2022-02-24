@@ -33,6 +33,8 @@ class GeneratorViewController: UIViewController {
 
   var input = ""
 
+  private var didAppearOnce = false
+
   // MARK: - Initialization
 
   init(transformerMode: TransformerManager.Mode) {
@@ -155,8 +157,12 @@ class GeneratorViewController: UIViewController {
       return
     }
 
-    inputContainerView.inputTextView.becomeFirstResponder()
-    (UIApplication.shared.delegate as? AppDelegate)?.didAutomaticallyShowKeyboardOnce = true
+    if !didAppearOnce {
+      inputContainerView.inputTextView.becomeFirstResponder()
+      appDelegate?.didAutomaticallyShowKeyboardOnce = true
+    }
+
+    didAppearOnce = true
   }
 
   // MARK: - Instance methods
