@@ -2,59 +2,11 @@ import UIKit
 
 class InputContainerView: UIView {
 
-  let inputTextView = UITextView()
-  let inputTextViewContainer = UIView()
-  let clearButton = UIButton()
+  // MARK: - Public properties
 
-  let inputTextViewRadius = 10.0
-  let inputTextViewPadding = 15.0
-  let inputTextViewMargin = 10.0
+  lazy var inputTextView: UITextView = {
+    let inputTextView = UITextView()
 
-  override init(frame: CGRect) {
-    super.init(frame: frame)
-
-    setUpInputTextViewContainer()
-    setUpClearInputButton()
-    setUpInputTextView()
-  }
-
-  required init?(coder aDecoder: NSCoder) {
-    fatalError("init(coder:) has not been implemented")
-  }
-
-  func setUpInputTextViewContainer() {
-    inputTextViewContainer.layer.cornerRadius = inputTextViewRadius
-    inputTextViewContainer.backgroundColor = .appDarkBackground
-
-    // Shadow
-    layer.shadowRadius = 8
-    layer.shadowOffset = CGSize(width: 0, height: 0)
-    layer.shadowColor = UIColor.black.cgColor
-    layer.shadowOpacity = 0.3
-
-    addSubview(inputTextViewContainer)
-
-    inputTextViewContainer.snp.makeConstraints { make in
-      make.edges.equalToSuperview().inset(inputTextViewMargin)
-    }
-  }
-
-  func setUpClearInputButton() {
-    clearButton.setTitle("×", for: .normal)
-    clearButton.titleLabel?.font = UIFont.preferredFont(forTextStyle: .title2)
-    clearButton.titleLabel?.adjustsFontForContentSizeCategory = true
-    clearButton.setTitleColor(.appText, for: .normal)
-    clearButton.isHidden = true
-
-    inputTextViewContainer.addSubview(clearButton)
-
-    clearButton.snp.makeConstraints { make in
-      make.centerY.equalToSuperview()
-      make.trailing.equalToSuperview().inset(inputTextViewPadding)
-    }
-  }
-
-  func setUpInputTextView() {
     // Editing
     inputTextView.isEditable = true
     inputTextView.isScrollEnabled = false
@@ -68,15 +20,77 @@ class InputContainerView: UIView {
     inputTextView.backgroundColor = .appDarkBackground
 
     // Font
-    setTextSize(.title2)
+    inputTextView.font = UIFont.preferredFont(forTextStyle: .title2)
     inputTextView.adjustsFontForContentSizeCategory = true
 
     // Shape
     inputTextView.layer.cornerRadius = inputTextViewRadius
-    inputTextView.textContainerInset = UIEdgeInsets(top: inputTextViewPadding,
-                                                    left: inputTextViewPadding,
-                                                    bottom: inputTextViewPadding,
-                                                    right: inputTextViewPadding)
+    inputTextView.textContainerInset = UIEdgeInsets(
+      top: inputTextViewPadding,
+      left: inputTextViewPadding,
+      bottom: inputTextViewPadding,
+      right: inputTextViewPadding
+    )
+
+    return inputTextView
+  }()
+
+  lazy var inputTextViewContainer: UIView = {
+    let inputTextViewContainer = UIView()
+
+    inputTextViewContainer.layer.cornerRadius = inputTextViewRadius
+    inputTextViewContainer.backgroundColor = .appDarkBackground
+
+    return inputTextViewContainer
+  }()
+
+  let clearButton: UIButton = {
+    let clearButton = UIButton()
+
+    clearButton.setTitle("×", for: .normal)
+    clearButton.titleLabel?.font = UIFont.preferredFont(forTextStyle: .title2)
+    clearButton.titleLabel?.adjustsFontForContentSizeCategory = true
+    clearButton.setTitleColor(.appText, for: .normal)
+    clearButton.isHidden = true
+
+    return clearButton
+  }()
+
+  // MARK: - Private properties
+
+  private let inputTextViewRadius = 10.0
+  private let inputTextViewPadding = 15.0
+  private let inputTextViewMargin = 10.0
+
+  // MARK: - Setup
+
+  override func willMove(toSuperview newSuperview: UIView?) {
+    super.willMove(toSuperview: newSuperview)
+
+    setUpShadow()
+    addSubviews()
+  }
+
+  private func setUpShadow() {
+    layer.shadowRadius = 8
+    layer.shadowOffset = CGSize(width: 0, height: 0)
+    layer.shadowColor = UIColor.black.cgColor
+    layer.shadowOpacity = 0.3
+  }
+
+  private func addSubviews() {
+    addSubview(inputTextViewContainer)
+
+    inputTextViewContainer.snp.makeConstraints { make in
+      make.edges.equalToSuperview().inset(inputTextViewMargin)
+    }
+
+    inputTextViewContainer.addSubview(clearButton)
+
+    clearButton.snp.makeConstraints { make in
+      make.centerY.equalToSuperview()
+      make.trailing.equalToSuperview().inset(inputTextViewPadding)
+    }
 
     inputTextViewContainer.addSubview(inputTextView)
 
@@ -87,6 +101,8 @@ class InputContainerView: UIView {
       make.trailing.equalTo(clearButton.snp.leading)
     }
   }
+
+  // MARK: - Public methods
 
   func setTextSize(_ size: UIFont.TextStyle) {
     inputTextView.font = UIFont.preferredFont(forTextStyle: size)
