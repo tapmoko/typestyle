@@ -12,26 +12,26 @@ class GeneratorViewController: UIViewController {
   // MARK: - Properties
 
   override var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }
-  let feedbackGenerator = UINotificationFeedbackGenerator()
-  var transformerManager: TransformerManager
+  private let feedbackGenerator = UINotificationFeedbackGenerator()
+  private var transformerManager: TransformerManager
 
-  let inputContainerView = InputContainerView()
-  var inputPlaceholder: String {
+  private let inputContainerView = InputContainerView()
+  private var inputPlaceholder: String {
     (viewMode == .generate) ? "Your text..." : "Search..."
   }
 
-  let tableView = UITableView()
+  private let tableView = UITableView()
 
-  let viewModeSegmentedControl = UISegmentedControl(items: ["Generate", "Browse"])
+  private let viewModeSegmentedControl = UISegmentedControl(items: ["Generate", "Browse"])
 
-  let actionConfirmationView = ActionConfirmationView()
-  var actionConfirmationViewTimer: Timer?
+  private let actionConfirmationView = ActionConfirmationView()
+  private var actionConfirmationViewTimer: Timer?
 
-  let generalMargin = 15.0
+  private let generalMargin = 15.0
 
-  var viewMode: ViewMode = .generate
+  private var viewMode: ViewMode = .generate
 
-  var input = ""
+  private var input = ""
 
   private var didAppearOnce = false
 
@@ -235,7 +235,7 @@ class GeneratorViewController: UIViewController {
 extension GeneratorViewController: UITableViewDataSource {
 
   func numberOfSections(in tableView: UITableView) -> Int {
-    return transformerManager.transformerGroupingsToDisplay.count
+    transformerManager.transformerGroupingsToDisplay.count
   }
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
