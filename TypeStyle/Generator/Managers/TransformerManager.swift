@@ -17,9 +17,9 @@ struct TransformerManager {
     self.mode = mode
 
     switch mode {
-    case .styles: self.transformerGroupings = StyleFactory.allStyles()
-    case .decorations: self.transformerGroupings = DecorationFactory.allDecorations()
-    case .emoticons: self.transformerGroupings = EmoticonFactory.allEmoticons()
+    case .styles: self.transformerGroupings = StyleTransformers.all
+    case .decorations: self.transformerGroupings = DecorationTransformers.all
+    case .emoticons: self.transformerGroupings = EmoticonTransformers.all
     }
 
     updateTransformersToDisplay()

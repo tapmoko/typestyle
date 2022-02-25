@@ -10,7 +10,7 @@ struct Transformer {
   init(name: String, outputBase: String, reverse: Bool = false) {
     self.name = name
 
-    let inputBase = StyleFactory.inputBase
+    let inputBase = StyleTransformers.inputBase
     let transformerDictionary = Dictionary(uniqueKeysWithValues: zip(inputBase, outputBase))
 
     self.transform = { input in

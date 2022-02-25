@@ -1,10 +1,10 @@
 import XCTest
 @testable import TypeStyle
 
-class StyleFactoryTests: XCTestCase {
+class StyleTransformersTests: XCTestCase {
 
   func testAllStyles() {
-    let styles = StyleFactory.allStyles()
+    let styles = StyleTransformers.allStyles()
 
     XCTAssertFalse(styles.isEmpty)
   }
