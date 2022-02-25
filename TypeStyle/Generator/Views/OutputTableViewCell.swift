@@ -42,7 +42,10 @@ class OutputTableViewCell: UITableViewCell {
 
   func setUpFavoriteImageView() {
     favoriteImageView.tintColor = .appText
-    favoriteImageView.setContentCompressionResistancePriority(UILayoutPriority(rawValue: 10000), for: .horizontal)
+    favoriteImageView.setContentCompressionResistancePriority(
+      UILayoutPriority(rawValue: 10000),
+      for: .horizontal
+    )
 
     addSubview(favoriteImageView)
 

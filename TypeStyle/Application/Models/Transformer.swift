@@ -14,12 +14,12 @@ struct Transformer {
     let transformerDictionary = Dictionary(uniqueKeysWithValues: zip(inputBase, outputBase))
 
     self.transform = { input in
-      var string = String(input.map {
+      let string = String(input.map {
         transformerDictionary[$0] ?? $0
       })
 
       if reverse {
-        string = String(string.reversed())
+        return String(string.reversed())
       }
       
       return string
