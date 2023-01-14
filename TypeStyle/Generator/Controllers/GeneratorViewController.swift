@@ -153,7 +153,7 @@ class GeneratorViewController: UIViewController {
 
     let appDelegate = UIApplication.shared.delegate as? AppDelegate
     if appDelegate?.didAutomaticallyShowKeyboardOnce ?? false {
-      showInputPlaceholder()
+      refreshUI()
       return
     }
 
@@ -163,6 +163,12 @@ class GeneratorViewController: UIViewController {
     }
 
     didAppearOnce = true
+  }
+  
+  override func viewDidDisappear(_ animated: Bool) {
+    super.viewDidDisappear(animated)
+    
+    inputContainerView.inputTextView.resignFirstResponder()
   }
 
   // MARK: - Instance methods
